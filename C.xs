@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2003/04/20 05:18:18 +0200 $
 * $Revision: 76 $
-* $Snapshot: /Convert-Binary-C/0.13 $
+* $Snapshot: /Convert-Binary-C/0.40 $
 * $Source: /C.xs $
 *
 ********************************************************************************

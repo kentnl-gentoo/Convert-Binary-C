@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/04/17 14:39:11 +0200 $
 # $Revision: 15 $
-# $Snapshot: /Convert-Binary-C/0.13 $
+# $Snapshot: /Convert-Binary-C/0.40 $
 # $Source: /t/901_memory.t $
 #
 ################################################################################
