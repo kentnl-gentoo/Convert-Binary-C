@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/09/10 19:45:27 +0200 $
 # $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.52 $
+# $Snapshot: /Convert-Binary-C/0.53 $
 # $Source: /t/902_pod.t $
 #
 ################################################################################

@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2004/03/22 20:38:02 +0100 $
 # $Revision: 7 $
-# $Snapshot: /Convert-Binary-C/0.52 $
+# $Snapshot: /Convert-Binary-C/0.53 $
 # $Source: /t/108_float.t $
 #
 ################################################################################
