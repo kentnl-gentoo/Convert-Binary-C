@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2002/11/21 22:00:25 +0100 $
 # $Revision: 9 $
-# $Snapshot: /Convert-Binary-C/0.04 $
+# $Snapshot: /Convert-Binary-C/0.05 $
 # $Source: /t/803_debug.t $
 #
 ################################################################################

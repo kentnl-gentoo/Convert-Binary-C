@@ -90,7 +90,7 @@
 * $Author: mhx $
 * $Date: 2002/05/22 14:38:18 +0200 $
 * $Revision: 2 $
-* $Snapshot: /Convert-Binary-C/0.04 $
+* $Snapshot: /Convert-Binary-C/0.05 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
