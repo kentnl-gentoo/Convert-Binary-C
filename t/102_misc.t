@@ -1,10 +1,10 @@
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/10 23:27:15 +0100 $
 # $Revision: 11 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /t/102_misc.t $
 #
 ################################################################################

@@ -8,11 +8,11 @@
 #
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/20 19:13:18 +0100 $
 # $Revision: 11 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /lib/Convert/Binary/C/Cached.pm $
 #
 ################################################################################

@@ -8,11 +8,11 @@
 #
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/08 07:58:06 +0100 $
 # $Revision: 8 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /ctlib/arch.pl $
 #
 ################################################################################

@@ -1,10 +1,10 @@
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/07 21:56:02 +0100 $
 # $Revision: 7 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /t/104_enum.t $
 #
 ################################################################################

@@ -9,11 +9,11 @@
 #
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/07 23:14:11 +0100 $
 # $Revision: 5 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /ctlib/util/tool/check_alloc.pl $
 #
 ################################################################################

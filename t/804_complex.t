@@ -1,10 +1,10 @@
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/07 22:23:55 +0100 $
 # $Revision: 14 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /t/804_complex.t $
 #
 ################################################################################

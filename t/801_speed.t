@@ -1,10 +1,10 @@
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/01 13:42:58 +0100 $
 # $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /t/801_speed.t $
 #
 ################################################################################

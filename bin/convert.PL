@@ -7,11 +7,11 @@ $Config{startperl} -w
 print OUT <<'!NO!SUBS!';
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/02 23:31:00 +0100 $
 # $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /bin/convert.PL $
 #
 ################################################################################

@@ -8,11 +8,11 @@
 *
 ********************************************************************************
 *
-* $Project: Convert-Binary-C $
+* $Project: /Convert-Binary-C $
 * $Author: mhx $
 * $Date: 2003/01/14 21:14:55 +0100 $
 * $Revision: 11 $
-* $Snapshot: /Convert-Binary-C/0.10 $
+* $Snapshot: /Convert-Binary-C/0.11 $
 * $Source: /ctlib/cttype.h $
 *
 ********************************************************************************

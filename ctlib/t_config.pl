@@ -8,11 +8,11 @@
 #
 ################################################################################
 #
-# $Project: Convert-Binary-C $
+# $Project: /Convert-Binary-C $
 # $Author: mhx $
 # $Date: 2003/01/23 19:43:50 +0100 $
 # $Revision: 5 $
-# $Snapshot: /Convert-Binary-C/0.10 $
+# $Snapshot: /Convert-Binary-C/0.11 $
 # $Source: /ctlib/t_config.pl $
 #
 ################################################################################
