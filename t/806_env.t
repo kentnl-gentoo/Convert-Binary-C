@@ -5,7 +5,7 @@
 # $Date: 2003/01/01 12:30:00 +0100 $
 # $Revision: 2 $
 # $Snapshot: /Convert-Binary-C/0.07 $
-# $Source: /t/805_examples.t $
+# $Source: /t/806_env.t $
 #
 ################################################################################
 # 
@@ -16,31 +16,26 @@
 ################################################################################
 
 use Test;
-use Convert::Binary::C @ARGV;
 
 $^W = 1;
 
 BEGIN {
-  @files = <examples/*.pl>;
-  plan tests => 1 + 3*@files;
+  plan tests => 5;
 }
 
-ok( @files > 0 );
+$ENV{CBC_DISABLE_PARSER} = 1;
 
-$perl  = "$^X -w " . join( ' ', map qq["-I$_"], @INC );
+@WARN = ();
+$SIG{__WARN__} = sub { push @WARN, $_[0] };
 
-for my $ex ( @files ) {
-  my $out = '';
-  my $open;
+eval { require Convert::Binary::C };
 
-  print "# checking '$ex'\n";
+ok( $@, '', "could not require Convert::Binary::C" );
+ok( scalar @WARN, 0, "unexpected warning" );
 
-  if( $open = open FILE, "$perl $ex |" ) {
-    $out = do { local $/; <FILE> };
-    close FILE;
-  }
+eval { my $c = new Convert::Binary::C };
 
-  ok( $open );
-  ok( length($out) > 0 );
-  ok( $?, 0 );
-}
+ok( $@, '', "could not create Convert::Binary::C object" );
+ok( scalar @WARN, 1, "wrong number of warnings" );
+ok( $WARN[0], qr/Convert::Binary::C parser is DISABLED/, "wrong warning" );
+

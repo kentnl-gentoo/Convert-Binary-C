@@ -2,10 +2,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2003/01/01 12:30:02 +0100 $
-# $Revision: 3 $
+# $Date: 2003/01/01 12:30:00 +0100 $
+# $Revision: 2 $
 # $Snapshot: /Convert-Binary-C/0.07 $
-# $Source: /t/112_clean.t $
+# $Source: /t/117_preproc.t $
 #
 ################################################################################
 # 
@@ -20,30 +20,24 @@ use Convert::Binary::C @ARGV;
 
 $^W = 1;
 
-BEGIN { plan tests => 6 }
+BEGIN {
+  plan tests => 2;
+}
 
 eval {
-  $c = new Convert::Binary::C;
+  $c = new Convert::Binary::C Define => ['b=a'];
 };
-ok($@,'',"failed to create Convert::Binary::C object");
+ok($@,'',"failed to create Convert::Binary::C::Cached object");
+
+#-------------------
+# check of ucpp bug
+#-------------------
 
 eval {
-  $c->clean;
-};
-ok($@,'',"failed to clean object");
-
-eval {
-  $c->parse( 'typedef struct foo { enum bar { ZERO } baz; } mytype;' );
+  $c->parse( <<'END' );
+#define a int
+b x;
+END
 };
 ok($@,'',"failed to parse code");
 
-eval {
-  $copy = $c->clean;
-};
-ok($@,'',"failed to clean object");
-ok($copy, $c, "clean does not return an object reference");
-
-eval {
-  my $foo = $c->def( 'bar' );
-};
-ok( $@, qr/without parse data/, "parse data check failed" );

@@ -2,16 +2,16 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/11/23 18:31:26 +0100 $
-# $Revision: 10 $
-# $Snapshot: /Convert-Binary-C/0.06 $
+# $Date: 2003/01/01 12:30:03 +0100 $
+# $Revision: 11 $
+# $Snapshot: /Convert-Binary-C/0.07 $
 # $Source: /t/802_threads.t $
 #
 ################################################################################
 # 
-# Copyright (c) 2002 Marcus Holland-Moritz. All rights reserved.
-# This program is free software; you can redistribute it and/or
-# modify it under the same terms as Perl itself.
+# Copyright (c) 2002-2003 Marcus Holland-Moritz. All rights reserved.
+# This program is free software; you can redistribute it and/or modify
+# it under the same terms as Perl itself.
 # 
 ################################################################################
 

@@ -10,10 +10,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2003/01/01 12:29:56 +0100 $
-# $Revision: 3 $
+# $Date: 2003/01/01 12:29:55 +0100 $
+# $Revision: 2 $
 # $Snapshot: /Convert-Binary-C/0.07 $
-# $Source: /ctlib/t_parser.pl $
+# $Source: /ctlib/t_ckeytok.pl $
 #
 ################################################################################
 # 
@@ -26,7 +26,7 @@
 use lib 'ctlib';
 use Tokenizer;
 
-$t = new Tokenizer tokfnc => \&tok_code;
+$t = new Tokenizer tokfnc => \&tok_code, tokstr => 'name';
 
 # keywords only in C99
 @C99 = qw(
@@ -34,37 +34,23 @@ $t = new Tokenizer tokfnc => \&tok_code;
   restrict
 );
 
-# keywords that cannot be disabled
-@ndis = qw(
-  break
-  case char continue
-  default do
-  else
-  for
-  goto
-  if int
-  return
-  sizeof struct switch
-  typedef
-  union
-  while
-);
-
-# put them in a hash
-@NDIS{@ndis} = (1) x @ndis;
-
 # add all tokens except C99
 $t->addtokens( '', qw(
   auto
-  const
-  double
-  enum extern
-  float
+  break
+  case char continue const
+  default do double
+  else enum extern
+  float for
+  goto
+  if int
   long
-  register
-  short signed static
-  unsigned
+  register return
+  sizeof struct switch short signed static
+  typedef
+  union unsigned
   void volatile
+  while
 ), @ndis );
 
 # add C99 keywords
@@ -76,11 +62,8 @@ close OUT;
 
 sub tok_code {
   my $token = shift;
-  if( exists $NDIS{$token} ) {
-    return "return \U$token\E_TOK;\n";
-  }
-  else {
-    return "if( pState->pCPC->keywords & HAS_KEYWORD_\U$token\E )\n"
-         . "  return \U$token\E_TOK;\n";
-  }
+  return <<END
+static const CKeywordToken ckt = { \U$token\E_TOK, "$token" };
+return &ckt;
+END
 };

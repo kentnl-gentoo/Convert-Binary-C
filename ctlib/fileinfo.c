@@ -10,16 +10,16 @@
 *
 * $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2002/11/25 12:29:00 +0100 $
-* $Revision: 1 $
-* $Snapshot: /Convert-Binary-C/0.06 $
+* $Date: 2003/01/01 12:29:56 +0100 $
+* $Revision: 2 $
+* $Snapshot: /Convert-Binary-C/0.07 $
 * $Source: /ctlib/fileinfo.c $
 *
 ********************************************************************************
 *
-* Copyright (c) 2002 Marcus Holland-Moritz. All rights reserved.
-* This program is free software; you can redistribute it and/or
-* modify it under the same terms as Perl itself.
+* Copyright (c) 2002-2003 Marcus Holland-Moritz. All rights reserved.
+* This program is free software; you can redistribute it and/or modify
+* it under the same terms as Perl itself.
 *
 *******************************************************************************/
 

@@ -1,18 +1,24 @@
-#!/usr/bin/perl -w
+use Config;
+$file = shift;
+open OUT, ">$file" or die "Can't create $file: $!";
+print OUT <<"!GROK!THIS!";
+$Config{startperl} -w
+!GROK!THIS!
+print OUT <<'!NO!SUBS!';
 ################################################################################
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/12/11 15:07:11 +0100 $
-# $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.06 $
-# $Source: /examples/perltypes.pl $
+# $Date: 2003/01/03 03:18:58 +0100 $
+# $Revision: 6 $
+# $Snapshot: /Convert-Binary-C/0.07 $
+# $Source: /bin/perltypes.PL $
 #
 ################################################################################
 # 
-# Copyright (c) 2002 Marcus Holland-Moritz. All rights reserved.
-# This program is free software; you can redistribute it and/or
-# modify it under the same terms as Perl itself.
+# Copyright (c) 2002-2003 Marcus Holland-Moritz. All rights reserved.
+# This program is free software; you can redistribute it and/or modify
+# it under the same terms as Perl itself.
 # 
 ################################################################################
 
@@ -27,7 +33,7 @@ use Data::Dumper;
 use strict;
 
 my $base;
--d $_ and $base = "$_/include" for qw( t ../t );
+-d "$_/include" and $base = "$_/include" and last for qw( t ../t );
 defined $base or die <<MSG;
 Please run this script from either the 'examples' directory
 or the distribution base directory.
@@ -87,4 +93,8 @@ print "\n";
 #-----------------------------------------------
 
 print Data::Dumper->Dump( [$c->enum('__socket_type')], ['__socket_type'] );
+!NO!SUBS!
+
+close OUT or die "Can't close $file: $!";
+chmod 0755, $file or die "Can't reset permissions for $file: $!\n";
 
