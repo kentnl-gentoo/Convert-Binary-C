@@ -1,19 +1,19 @@
 ################################################################################
 #
-# PROGRAM: t_parser.pl
+# PROGRAM: t_keywords.pl
 #
 ################################################################################
 #
-# DESCRIPTION: Generate tokenizer code for C parser
+# DESCRIPTION: Generate tokenizer code for disabled keywords parser
 #
 ################################################################################
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/12/11 14:53:58 +0100 $
-# $Revision: 2 $
+# $Date: 2002/12/11 15:02:20 +0100 $
+# $Revision: 1 $
 # $Snapshot: /Convert-Binary-C/0.06 $
-# $Source: /ctlib/t_parser.pl $
+# $Source: /ctlib/t_keywords.pl $
 #
 ################################################################################
 # 
@@ -26,34 +26,8 @@
 use lib 'ctlib';
 use Tokenizer;
 
-$t = new Tokenizer tokfnc => \&tok_code;
+$t = new Tokenizer tokfnc => \&tok_code, tokstr => 'str';
 
-# keywords only in C99
-@C99 = qw(
-  inline
-  restrict
-);
-
-# keywords that cannot be disabled
-@ndis = qw(
-  break
-  case char continue
-  default do
-  else
-  for
-  goto
-  if int
-  return
-  sizeof struct switch
-  typedef
-  union
-  while
-);
-
-# put them in a hash
-@NDIS{@ndis} = (1) x @ndis;
-
-# add all tokens except C99
 $t->addtokens( '', qw(
   auto
   const
@@ -65,10 +39,12 @@ $t->addtokens( '', qw(
   short signed static
   unsigned
   void volatile
-), @ndis );
+) );
 
-# add C99 keywords
-$t->addtokens( 'ANSIC99_EXTENSIONS', @C99 );
+$t->addtokens( 'ANSIC99_EXTENSIONS', qw(
+  inline
+  restrict
+) );
 
 open OUT, ">$ARGV[0]" or die $!;
 print OUT $t->makeswitch;
@@ -76,11 +52,6 @@ close OUT;
 
 sub tok_code {
   my $token = shift;
-  if( exists $NDIS{$token} ) {
-    return "return \U$token\E_TOK;\n";
-  }
-  else {
-    return "if( pState->pCPC->keywords & HAS_KEYWORD_\U$token\E )\n"
-         . "  return \U$token\E_TOK;\n";
-  }
+  return "keywords &= ~HAS_KEYWORD_\U$token\E;\n"
+        ."goto success;\n";
 };

@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2002/11/24 15:36:18 +0100 $
 # $Revision: 2 $
-# $Snapshot: /Convert-Binary-C/0.05 $
+# $Snapshot: /Convert-Binary-C/0.06 $
 # $Source: /t/801_speed.t $
 #
 ################################################################################

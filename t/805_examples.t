@@ -2,10 +2,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/04/15 23:25:15 +0200 $
+# $Date: 2002/12/13 17:07:19 +0100 $
 # $Revision: 1 $
 # $Snapshot: /Convert-Binary-C/0.06 $
-# $Source: /typemap $
+# $Source: /t/805_examples.t $
 #
 ################################################################################
 # 
@@ -15,18 +15,32 @@
 # 
 ################################################################################
 
-TYPEMAP
-CBC *	O_OBJECT
+use Test;
+use Convert::Binary::C @ARGV;
 
-OUTPUT
-O_OBJECT
-	sv_setref_pv( $arg, CLASS, (void *) $var );
+$^W = 1;
 
-INPUT
-O_OBJECT
-	if( sv_isobject( $arg ) && ( SvTYPE( SvRV( $arg ) ) == SVt_PVMG ) )
-	  $var = ($type) CAST_IV_TO_PTRSIZE SvIV( (SV*) SvRV( $arg ) );
-	else {
-	  warn( \"${Package}::$func_name() : $var is not a blessed SV reference\" );
-	  XSRETURN_EMPTY;
-	}
+BEGIN {
+  @files = <examples/*.pl>;
+  plan tests => 1 + 3*@files;
+}
+
+ok( @files > 0 );
+
+$perl  = "$^X -w " . join( ' ', map qq["-I$_"], @INC );
+
+for my $ex ( @files ) {
+  my $out = '';
+  my $open;
+
+  print "# checking '$ex'\n";
+
+  if( $open = open FILE, "$perl $ex |" ) {
+    $out = do { local $/; <FILE> };
+    close FILE;
+  }
+
+  ok( $open );
+  ok( length($out) > 0 );
+  ok( $?, 0 );
+}

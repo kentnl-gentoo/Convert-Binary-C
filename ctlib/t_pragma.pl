@@ -10,9 +10,9 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/04/15 23:26:46 +0200 $
-# $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.05 $
+# $Date: 2002/12/11 14:54:43 +0100 $
+# $Revision: 2 $
+# $Snapshot: /Convert-Binary-C/0.06 $
 # $Source: /ctlib/t_pragma.pl $
 #
 ################################################################################
@@ -35,7 +35,7 @@ $t->addtokens( '', qw(
   pop
 ));
 
-open OUT, ">".shift or die $!;
+open OUT, ">$ARGV[0]" or die $!;
 print OUT $t->makeswitch;
 close OUT;
 

@@ -1,19 +1,19 @@
 ################################################################################
 #
-# PROGRAM: t_parser.pl
+# PROGRAM: t_config.pl
 #
 ################################################################################
 #
-# DESCRIPTION: Generate tokenizer code for C parser
+# DESCRIPTION: Generate tokenizer code for config options
 #
 ################################################################################
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/12/11 14:53:58 +0100 $
-# $Revision: 2 $
+# $Date: 2002/12/11 15:01:43 +0100 $
+# $Revision: 1 $
 # $Snapshot: /Convert-Binary-C/0.06 $
-# $Source: /ctlib/t_parser.pl $
+# $Source: /ctlib/t_config.pl $
 #
 ################################################################################
 # 
@@ -26,48 +26,36 @@
 use lib 'ctlib';
 use Tokenizer;
 
-$t = new Tokenizer tokfnc => \&tok_code;
+$t = new Tokenizer tokfnc => \&tok_code, tokstr => 'option';
 
-# keywords only in C99
 @C99 = qw(
-  inline
-  restrict
+  HasCPPComments
+  HasMacroVAARGS
 );
 
-# keywords that cannot be disabled
-@ndis = qw(
-  break
-  case char continue
-  default do
-  else
-  for
-  goto
-  if int
-  return
-  sizeof struct switch
-  typedef
-  union
-  while
-);
-
-# put them in a hash
-@NDIS{@ndis} = (1) x @ndis;
-
-# add all tokens except C99
 $t->addtokens( '', qw(
-  auto
-  const
-  double
-  enum extern
-  float
-  long
-  register
-  short signed static
-  unsigned
-  void volatile
-), @ndis );
+  UnsignedChars
+  Warnings
+  PointerSize
+  EnumSize
+  IntSize
+  ShortSize
+  LongSize
+  LongLongSize
+  FloatSize
+  DoubleSize
+  LongDoubleSize
+  Alignment
+  Include
+  Define
+  Assert
+  DisabledKeywords
+  ByteOrder
+  EnumType
+));
 
-# add C99 keywords
+# options only with ANSI C99
+
 $t->addtokens( 'ANSIC99_EXTENSIONS', @C99 );
 
 open OUT, ">$ARGV[0]" or die $!;
@@ -76,11 +64,5 @@ close OUT;
 
 sub tok_code {
   my $token = shift;
-  if( exists $NDIS{$token} ) {
-    return "return \U$token\E_TOK;\n";
-  }
-  else {
-    return "if( pState->pCPC->keywords & HAS_KEYWORD_\U$token\E )\n"
-         . "  return \U$token\E_TOK;\n";
-  }
+  return "return OPTION_$token;\n";
 };

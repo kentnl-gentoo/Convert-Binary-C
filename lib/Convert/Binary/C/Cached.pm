@@ -12,7 +12,7 @@
 # $Author: mhx $
 # $Date: 2002/11/28 12:30:58 +0100 $
 # $Revision: 6 $
-# $Snapshot: /Convert-Binary-C/0.05 $
+# $Snapshot: /Convert-Binary-C/0.06 $
 # $Source: /lib/Convert/Binary/C/Cached.pm $
 #
 ################################################################################
