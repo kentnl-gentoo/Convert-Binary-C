@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2003/01/01 12:29:58 +0100 $
 * $Revision: 4 $
-* $Snapshot: /Convert-Binary-C/0.08 $
+* $Snapshot: /Convert-Binary-C/0.09 $
 * $Source: /ctlib/util/memalloc.c $
 *
 ********************************************************************************

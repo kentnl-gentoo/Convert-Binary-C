@@ -11,7 +11,7 @@ print OUT <<'!NO!SUBS!';
 # $Author: mhx $
 # $Date: 2003/01/02 23:31:00 +0100 $
 # $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.08 $
+# $Snapshot: /Convert-Binary-C/0.09 $
 # $Source: /bin/convert.PL $
 #
 ################################################################################
