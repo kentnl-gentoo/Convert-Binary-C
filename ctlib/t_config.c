@@ -11,6 +11,7 @@ typedef enum {
   OPTION_DoubleSize,
   OPTION_LongDoubleSize,
   OPTION_Alignment,
+  OPTION_CompoundAlignment,
   OPTION_Include,
   OPTION_Define,
   OPTION_Assert,
@@ -74,6 +75,30 @@ switch( option[0] )
         option[9] == '\0' )
     {                                             /* ByteOrder  */
       return OPTION_ByteOrder;
+    }
+
+    goto unknown;
+
+  case 'C':
+    if( option[1] == 'o' &&
+        option[2] == 'm' &&
+        option[3] == 'p' &&
+        option[4] == 'o' &&
+        option[5] == 'u' &&
+        option[6] == 'n' &&
+        option[7] == 'd' &&
+        option[8] == 'A' &&
+        option[9] == 'l' &&
+        option[10] == 'i' &&
+        option[11] == 'g' &&
+        option[12] == 'n' &&
+        option[13] == 'm' &&
+        option[14] == 'e' &&
+        option[15] == 'n' &&
+        option[16] == 't' &&
+        option[17] == '\0' )
+    {                                             /* CompoundAlignment */
+      return OPTION_CompoundAlignment;
     }
 
     goto unknown;
