@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/10/30 10:28:00 +0100 $
 # $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.48 $
+# $Snapshot: /Convert-Binary-C/0.49 $
 # $Source: /t/125_magic.t $
 #
 ################################################################################

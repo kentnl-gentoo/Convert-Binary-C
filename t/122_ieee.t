@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/06/23 20:18:12 +0200 $
 # $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.48 $
+# $Snapshot: /Convert-Binary-C/0.49 $
 # $Source: /t/122_ieee.t $
 #
 ################################################################################

@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/06/06 13:34:27 +0200 $
 # $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.48 $
+# $Snapshot: /Convert-Binary-C/0.49 $
 # $Source: /t/121_asm.t $
 #
 ################################################################################

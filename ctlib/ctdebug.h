@@ -10,9 +10,9 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/04/14 20:59:04 +0200 $
-* $Revision: 7 $
-* $Snapshot: /Convert-Binary-C/0.48 $
+* $Date: 2003/11/06 06:49:50 +0100 $
+* $Revision: 8 $
+* $Snapshot: /Convert-Binary-C/0.49 $
 * $Source: /ctlib/ctdebug.h $
 *
 ********************************************************************************
@@ -64,7 +64,7 @@
 
 #else
 
-#define CT_DEBUG( flag, out )
+#define CT_DEBUG( flag, out )   (void) 0
 
 #endif
 
