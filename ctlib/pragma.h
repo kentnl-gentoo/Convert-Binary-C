@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2003/04/12 04:44:14 +0200 $
 * $Revision: 5 $
-* $Snapshot: /Convert-Binary-C/0.42 $
+* $Snapshot: /Convert-Binary-C/0.43 $
 * $Source: /ctlib/pragma.h $
 *
 ********************************************************************************
