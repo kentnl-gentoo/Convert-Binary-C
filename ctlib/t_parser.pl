@@ -10,9 +10,9 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2003/04/17 14:39:04 +0200 $
-# $Revision: 7 $
-# $Snapshot: /Convert-Binary-C/0.40 $
+# $Date: 2003/06/06 13:41:58 +0200 $
+# $Revision: 8 $
+# $Snapshot: /Convert-Binary-C/0.41 $
 # $Source: /ctlib/t_parser.pl $
 #
 ################################################################################
@@ -43,6 +43,7 @@ use Devel::Tokenizer::C;
 
 # keywords that can be disabled
 @disable = qw(
+  asm
   auto
   const
   double

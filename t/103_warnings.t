@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/04/20 05:16:16 +0200 $
 # $Revision: 21 $
-# $Snapshot: /Convert-Binary-C/0.40 $
+# $Snapshot: /Convert-Binary-C/0.41 $
 # $Source: /t/103_warnings.t $
 #
 ################################################################################

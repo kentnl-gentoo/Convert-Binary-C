@@ -1,16 +1,32 @@
 switch( tokstr[0] )
 {
   case 'a':
-    if( tokstr[1] == 'u' &&
-        tokstr[2] == 't' &&
-        tokstr[3] == 'o' &&
-        tokstr[4] == '\0' )
-    {                                             /* auto       */
-      if( pState->pCPC->keywords & HAS_KEYWORD_AUTO )
-        return AUTO_TOK;
-    }
+    switch( tokstr[1] )
+    {
+      case 's':
+        if( tokstr[2] == 'm' &&
+            tokstr[3] == '\0' )
+        {                                         /* asm        */
+          if( pState->pCPC->keywords & HAS_KEYWORD_ASM )
+            return ASM_TOK;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 'u':
+        if( tokstr[2] == 't' &&
+            tokstr[3] == 'o' &&
+            tokstr[4] == '\0' )
+        {                                         /* auto       */
+          if( pState->pCPC->keywords & HAS_KEYWORD_AUTO )
+            return AUTO_TOK;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'b':
     if( tokstr[1] == 'r' &&

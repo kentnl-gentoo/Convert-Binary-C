@@ -1,16 +1,32 @@
 switch( str[0] )
 {
   case 'a':
-    if( str[1] == 'u' &&
-        str[2] == 't' &&
-        str[3] == 'o' &&
-        str[4] == '\0' )
-    {                                             /* auto       */
-      keywords &= ~HAS_KEYWORD_AUTO;
-      goto success;
-    }
+    switch( str[1] )
+    {
+      case 's':
+        if( str[2] == 'm' &&
+            str[3] == '\0' )
+        {                                         /* asm        */
+          keywords &= ~HAS_KEYWORD_ASM;
+          goto success;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 'u':
+        if( str[2] == 't' &&
+            str[3] == 'o' &&
+            str[4] == '\0' )
+        {                                         /* auto       */
+          keywords &= ~HAS_KEYWORD_AUTO;
+          goto success;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'c':
     if( str[1] == 'o' &&

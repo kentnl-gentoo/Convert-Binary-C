@@ -1,16 +1,32 @@
 switch( name[0] )
 {
   case 'a':
-    if( name[1] == 'u' &&
-        name[2] == 't' &&
-        name[3] == 'o' &&
-        name[4] == '\0' )
-    {                                             /* auto       */
-      static const CKeywordToken ckt = { AUTO_TOK, "auto" };
-      return &ckt;
-    }
+    switch( name[1] )
+    {
+      case 's':
+        if( name[2] == 'm' &&
+            name[3] == '\0' )
+        {                                         /* asm        */
+          static const CKeywordToken ckt = { ASM_TOK, "asm" };
+          return &ckt;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 'u':
+        if( name[2] == 't' &&
+            name[3] == 'o' &&
+            name[4] == '\0' )
+        {                                         /* auto       */
+          static const CKeywordToken ckt = { AUTO_TOK, "auto" };
+          return &ckt;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'b':
     if( name[1] == 'r' &&
