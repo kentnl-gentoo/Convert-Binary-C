@@ -10,9 +10,9 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/01/01 12:29:56 +0100 $
-* $Revision: 3 $
-* $Snapshot: /Convert-Binary-C/0.12 $
+* $Date: 2003/04/12 04:44:11 +0200 $
+* $Revision: 4 $
+* $Snapshot: /Convert-Binary-C/0.13 $
 * $Source: /ctlib/byteorder.h $
 *
 ********************************************************************************
@@ -57,9 +57,11 @@ typedef struct {
 
 /*===== FUNCTION PROTOTYPES ==================================================*/
 
+#define fetch_integer CTlib_fetch_integer
 void fetch_integer( unsigned size, unsigned sign, const void *src,
                     const ArchSpecs *pAS, IntValue *pIV );
 
+#define store_integer CTlib_store_integer
 void store_integer( unsigned size, void *dest,
                     const ArchSpecs *pAS, IntValue *pIV );
 

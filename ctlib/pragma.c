@@ -91,9 +91,9 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/01/23 20:53:51 +0100 $
-* $Revision: 6 $
-* $Snapshot: /Convert-Binary-C/0.12 $
+* $Date: 2003/04/17 14:39:04 +0200 $
+* $Revision: 7 $
+* $Snapshot: /Convert-Binary-C/0.13 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
@@ -1172,7 +1172,7 @@ yyreduce:
     {
 	    if( VALID_PACK( yyvsp[0].ival ) ) {
 	      PSTATE->pack.current = yyvsp[0].ival;
-            }
+	    }
 	  ;}
     break;
 
@@ -1181,22 +1181,22 @@ yyreduce:
     {
 	    if( VALID_PACK( yyvsp[0].ival ) ) {
 	      LL_push( PSTATE->pack.stack, packelem_new( PSTATE->pack.current ) );
-              PSTATE->pack.current = yyvsp[0].ival;
-            }
+	      PSTATE->pack.current = yyvsp[0].ival;
+	    }
 	  ;}
     break;
 
   case 8:
 #line 230 "ctlib/pragma.y"
     {
-            PackElement *pPack = LL_pop( PSTATE->pack.stack );
-            if( pPack ) {
-              PSTATE->pack.current = pPack->size;
-              packelem_delete( pPack );
-            }
-            else {
-              PSTATE->pack.current = 0;
-            }
+	    PackElement *pPack = LL_pop( PSTATE->pack.stack );
+	    if( pPack ) {
+	      PSTATE->pack.current = pPack->size;
+	      packelem_delete( pPack );
+	    }
+	    else {
+	      PSTATE->pack.current = 0;
+	    }
 	  ;}
     break;
 
