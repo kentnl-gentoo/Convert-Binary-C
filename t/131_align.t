@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2004/05/20 21:23:48 +0200 $
 # $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.53 $
+# $Snapshot: /Convert-Binary-C/0.54 $
 # $Source: /t/131_align.t $
 #
 ################################################################################

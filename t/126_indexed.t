@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2004/05/25 20:03:56 +0200 $
 # $Revision: 3 $
-# $Snapshot: /Convert-Binary-C/0.53 $
+# $Snapshot: /Convert-Binary-C/0.54 $
 # $Source: /t/126_indexed.t $
 #
 ################################################################################

@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2004/03/22 20:38:03 +0100 $
 # $Revision: 8 $
-# $Snapshot: /Convert-Binary-C/0.53 $
+# $Snapshot: /Convert-Binary-C/0.54 $
 # $Source: /t/118_member.t $
 #
 ################################################################################
