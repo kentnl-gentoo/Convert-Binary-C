@@ -4,6 +4,7 @@ typedef enum {
   OPTION_PointerSize,
   OPTION_EnumSize,
   OPTION_IntSize,
+  OPTION_CharSize,
   OPTION_ShortSize,
   OPTION_LongSize,
   OPTION_LongLongSize,
@@ -80,28 +81,48 @@ switch( option[0] )
     goto unknown;
 
   case 'C':
-    if( option[1] == 'o' &&
-        option[2] == 'm' &&
-        option[3] == 'p' &&
-        option[4] == 'o' &&
-        option[5] == 'u' &&
-        option[6] == 'n' &&
-        option[7] == 'd' &&
-        option[8] == 'A' &&
-        option[9] == 'l' &&
-        option[10] == 'i' &&
-        option[11] == 'g' &&
-        option[12] == 'n' &&
-        option[13] == 'm' &&
-        option[14] == 'e' &&
-        option[15] == 'n' &&
-        option[16] == 't' &&
-        option[17] == '\0' )
-    {                                             /* CompoundAlignment */
-      return OPTION_CompoundAlignment;
-    }
+    switch( option[1] )
+    {
+      case 'h':
+        if( option[2] == 'a' &&
+            option[3] == 'r' &&
+            option[4] == 'S' &&
+            option[5] == 'i' &&
+            option[6] == 'z' &&
+            option[7] == 'e' &&
+            option[8] == '\0' )
+        {                                         /* CharSize   */
+          return OPTION_CharSize;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 'o':
+        if( option[2] == 'm' &&
+            option[3] == 'p' &&
+            option[4] == 'o' &&
+            option[5] == 'u' &&
+            option[6] == 'n' &&
+            option[7] == 'd' &&
+            option[8] == 'A' &&
+            option[9] == 'l' &&
+            option[10] == 'i' &&
+            option[11] == 'g' &&
+            option[12] == 'n' &&
+            option[13] == 'm' &&
+            option[14] == 'e' &&
+            option[15] == 'n' &&
+            option[16] == 't' &&
+            option[17] == '\0' )
+        {                                         /* CompoundAlignment */
+          return OPTION_CompoundAlignment;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'D':
     switch( option[1] )

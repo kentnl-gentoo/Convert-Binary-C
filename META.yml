@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: Convert-Binary-C
-version: 0.56
+version: 0.57
 license: perl
 distribution_type: module
 generated_by: Convert::Binary::C Makefile.PL

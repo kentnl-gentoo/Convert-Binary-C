@@ -2,9 +2,9 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2004/09/18 22:21:28 +0200 $
-# $Revision: 10 $
-# $Snapshot: /Convert-Binary-C/0.56 $
+# $Date: 2004/09/19 19:31:59 +0200 $
+# $Revision: 11 $
+# $Snapshot: /Convert-Binary-C/0.57 $
 # $Source: /t/116_language.t $
 #
 ################################################################################
@@ -20,7 +20,7 @@ use Convert::Binary::C @ARGV;
 
 $^W = 1;
 
-BEGIN { plan tests => 31 }
+BEGIN { plan tests => 37 }
 
 eval {
   $c = new Convert::Binary::C;
@@ -147,6 +147,8 @@ for my $code (
                "typedef struct { } test;",
                "union test { };",
                "typedef union { } test;",
+               "struct test { } s = { };",
+               "union test { } u = { };",
              )
 {
   my $s = -1;
