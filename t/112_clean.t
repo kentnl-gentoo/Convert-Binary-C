@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/04/17 14:39:08 +0200 $
 # $Revision: 5 $
-# $Snapshot: /Convert-Binary-C/0.45 $
+# $Snapshot: /Convert-Binary-C/0.46 $
 # $Source: /t/112_clean.t $
 #
 ################################################################################
