@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2004/03/22 20:37:57 +0100 $
 * $Revision: 11 $
-* $Snapshot: /Convert-Binary-C/0.54 $
+* $Snapshot: /Convert-Binary-C/0.55 $
 * $Source: /ctlib/parser.h $
 *
 ********************************************************************************

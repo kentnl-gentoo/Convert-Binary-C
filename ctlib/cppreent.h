@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2004/03/22 20:37:56 +0100 $
 * $Revision: 3 $
-* $Snapshot: /Convert-Binary-C/0.54 $
+* $Snapshot: /Convert-Binary-C/0.55 $
 * $Source: /ctlib/cppreent.h $
 *
 ********************************************************************************
