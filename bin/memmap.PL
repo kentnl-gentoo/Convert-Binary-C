@@ -9,9 +9,8 @@ print OUT <<'!NO!SUBS!';
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2004/08/21 13:15:29 +0200 $
-# $Revision: 6 $
-# $Snapshot: /Convert-Binary-C/0.57 $
+# $Date: 2004/12/24 17:15:00 +0100 $
+# $Revision: 8 $
 # $Source: /bin/memmap.PL $
 #
 ################################################################################
