@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2002/06/03 17:41:15 +0200 $
 # $Revision: 3 $
-# $Snapshot: /Convert-Binary-C/0.02 $
+# $Snapshot: /Convert-Binary-C/0.03 $
 # $Source: /t/e_enum.t $
 #
 ################################################################################
