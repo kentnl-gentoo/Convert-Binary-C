@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2002/08/16 22:58:46 +0200 $
 # $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.01 $
+# $Snapshot: /Convert-Binary-C/0.02 $
 # $Source: /t/z_memory.t $
 #
 ################################################################################
