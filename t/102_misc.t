@@ -2,10 +2,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/09/25 22:25:55 +0200 $
-# $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.03 $
-# $Source: /t/c_misc.t $
+# $Date: 2002/11/24 15:34:22 +0100 $
+# $Revision: 7 $
+# $Snapshot: /Convert-Binary-C/0.04 $
+# $Source: /t/102_misc.t $
 #
 ################################################################################
 # 
@@ -303,20 +303,20 @@ sub reccmp
 {
   my($ref, $val) = @_;
 
-  unless( ref $ref ) {
+  my $id = ref $ref;
+
+  unless( $id ) {
     ok( $ref, $val );
     return;
   }
 
-  my $id = substr $ref, 0, 1;
-
-  if( $id eq 'A' ) {
+  if( $id eq 'ARRAY' ) {
     ok( @$ref == @$val );
     for( 0..$#$ref ) {
       reccmp( $ref->[$_], $val->[$_] );
     }
   }
-  elsif( $id eq 'H' ) {
+  elsif( $id eq 'HASH' ) {
     ok( @{[keys %$ref]} == @{[keys %$val]} );
     for( keys %$ref ) {
       reccmp( $ref->{$_}, $val->{$_} );

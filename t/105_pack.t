@@ -2,10 +2,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/20 18:46:42 +0200 $
-# $Revision: 4 $
-# $Snapshot: /Convert-Binary-C/0.03 $
-# $Source: /t/f_pack.t $
+# $Date: 2002/10/13 14:45:48 +0200 $
+# $Revision: 6 $
+# $Snapshot: /Convert-Binary-C/0.04 $
+# $Source: /t/105_pack.t $
 #
 ################################################################################
 # 

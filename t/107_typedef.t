@@ -2,10 +2,10 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/03 17:41:15 +0200 $
-# $Revision: 3 $
-# $Snapshot: /Convert-Binary-C/0.03 $
-# $Source: /t/e_enum.t $
+# $Date: 2002/11/24 15:27:57 +0100 $
+# $Revision: 4 $
+# $Snapshot: /Convert-Binary-C/0.04 $
+# $Source: /t/107_typedef.t $
 #
 ################################################################################
 # 
@@ -28,13 +28,15 @@ ok($@,'',"failed to create Convert::Binary::C object");
 eval {
 $p->parse(<<'EOF');
 /* just some C stuff */
-typedef int foo, *bar, baz[2][3];
 typedef struct car truck, mobile[3], *vehicle;
 typedef enum { MONDAY, JANUARY, Y2K } day, month[4][5], *year;
 struct car {
   int wheel;
   int gear;
 };
+/* the only way to execute the default_declaring_list */
+/* rule is some strange construct like this...        */
+typedef const foo, *bar, baz[2][3];
 EOF
 };
 ok($@,'',"parse() failed");
@@ -65,5 +67,3 @@ ok( scalar @defs,  $n_defs,  "typedef array/scalar mismatch" );
 
 ok( scalar @warn, 0, "unexpected warnings" );
 
-use Data::Dumper;
-print Dumper( \@defs );
