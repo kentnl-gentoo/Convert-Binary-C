@@ -10,9 +10,9 @@
 *
 * $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/01/01 12:29:58 +0100 $
-* $Revision: 4 $
-* $Snapshot: /Convert-Binary-C/0.09 $
+* $Date: 2003/01/23 19:45:52 +0100 $
+* $Revision: 5 $
+* $Snapshot: /Convert-Binary-C/0.10 $
 * $Source: /ctlib/util/memalloc.h $
 *
 ********************************************************************************
@@ -86,8 +86,8 @@
  *  bytes in size, respectively, and there were no memory leaks detected.
  *
  */
-#ifndef _MEMALLOC_H
-#define _MEMALLOC_H
+#ifndef _UTIL_MEMALLOC_H
+#define _UTIL_MEMALLOC_H
 
 #define DB_MEMALLOC_TRACE    0x00000001
 #define DB_MEMALLOC_ASSERT   0x00000002

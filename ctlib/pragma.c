@@ -91,9 +91,9 @@
 *
 * $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/01/03 14:12:35 +0100 $
-* $Revision: 5 $
-* $Snapshot: /Convert-Binary-C/0.09 $
+* $Date: 2003/01/23 20:53:51 +0100 $
+* $Revision: 6 $
+* $Snapshot: /Convert-Binary-C/0.10 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
@@ -116,6 +116,7 @@
 #include "ctdebug.h"
 #include "pragma.h"
 
+#include "util/ccattr.h"
 #include "util/memalloc.h"
 #include "util/list.h"
 
@@ -161,10 +162,10 @@ typedef struct {
 
 /*===== STATIC FUNCTION PROTOTYPES ===========================================*/
 
-static int pragma_lex( void *pYYLVAL, PragmaState *pState );
+static inline int          pragma_lex( void *pYYLVAL, PragmaState *pState );
 
-static PackElement *packelem_new( unsigned size );
-static void packelem_delete( PackElement *pPack );
+static        PackElement *packelem_new( unsigned size );
+static        void         packelem_delete( PackElement *pPack );
 
 
 /*===== EXTERNAL VARIABLES ===================================================*/
@@ -276,12 +277,12 @@ static const int tokentab[] = {
 #endif
 
 #if ! defined (YYSTYPE) && ! defined (YYSTYPE_IS_DECLARED)
-#line 187 "ctlib/pragma.y"
+#line 188 "ctlib/pragma.y"
 typedef union YYSTYPE {
   int ival;
 } YYSTYPE;
 /* Line 191 of yacc.c.  */
-#line 284 "ctlib/pragma.c"
+#line 285 "ctlib/pragma.c"
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 # define YYSTYPE_IS_TRIVIAL 1
@@ -293,7 +294,7 @@ typedef union YYSTYPE {
 
 
 /* Line 214 of yacc.c.  */
-#line 296 "ctlib/pragma.c"
+#line 297 "ctlib/pragma.c"
 
 #if ! defined (yyoverflow) || YYERROR_VERBOSE
 
@@ -461,7 +462,7 @@ static const yysigned_char yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const unsigned char yyrline[] =
 {
-       0,   203,   203,   207,   209,   211,   215,   221,   228
+       0,   204,   204,   208,   210,   212,   216,   222,   229
 };
 #endif
 
@@ -1157,17 +1158,17 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 208 "ctlib/pragma.y"
+#line 209 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 4:
-#line 210 "ctlib/pragma.y"
+#line 211 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 6:
-#line 216 "ctlib/pragma.y"
+#line 217 "ctlib/pragma.y"
     {
 	    if( VALID_PACK( yyvsp[0].ival ) ) {
 	      PSTATE->pack.current = yyvsp[0].ival;
@@ -1176,7 +1177,7 @@ yyreduce:
     break;
 
   case 7:
-#line 222 "ctlib/pragma.y"
+#line 223 "ctlib/pragma.y"
     {
 	    if( VALID_PACK( yyvsp[0].ival ) ) {
 	      LL_push( PSTATE->pack.stack, packelem_new( PSTATE->pack.current ) );
@@ -1186,7 +1187,7 @@ yyreduce:
     break;
 
   case 8:
-#line 229 "ctlib/pragma.y"
+#line 230 "ctlib/pragma.y"
     {
             PackElement *pPack = LL_pop( PSTATE->pack.stack );
             if( pPack ) {
@@ -1203,7 +1204,7 @@ yyreduce:
     }
 
 /* Line 991 of yacc.c.  */
-#line 1206 "ctlib/pragma.c"
+#line 1207 "ctlib/pragma.c"
 
   yyvsp -= yylen;
   yyssp -= yylen;
@@ -1412,7 +1413,7 @@ yyreturn:
 }
 
 
-#line 241 "ctlib/pragma.y"
+#line 242 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTIONS =====================================================*/
@@ -1485,7 +1486,7 @@ static void packelem_delete( PackElement *pPack )
 *
 *******************************************************************************/
 
-static int pragma_lex( void *pYYLVAL, PragmaState *pState )
+static inline int pragma_lex( void *pYYLVAL, PragmaState *pState )
 {
   YYSTYPE *plval = (YYSTYPE *) pYYLVAL;
   int token, rval;
