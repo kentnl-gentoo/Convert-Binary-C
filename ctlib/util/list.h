@@ -10,9 +10,9 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/04/17 14:39:05 +0200 $
-* $Revision: 7 $
-* $Snapshot: /Convert-Binary-C/0.47 $
+* $Date: 2003/09/26 12:57:03 +0200 $
+* $Revision: 8 $
+* $Snapshot: /Convert-Binary-C/0.48 $
 * $Source: /ctlib/util/list.h $
 *
 ********************************************************************************
@@ -55,7 +55,7 @@
 /**
  *  Linked List Handle
  */
-typedef struct _LinkedList * LinkedList;
+typedef struct _linkedList * LinkedList;
 
 /**
  *  Destructor Function Pointer

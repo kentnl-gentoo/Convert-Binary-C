@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/08/18 11:20:31 +0200 $
 # $Revision: 9 $
-# $Snapshot: /Convert-Binary-C/0.47 $
+# $Snapshot: /Convert-Binary-C/0.48 $
 # $Source: /t/109_sourcify.t $
 #
 ################################################################################

@@ -20,6 +20,7 @@ typedef enum {
   OPTION_EnumType,
   OPTION_HasCPPComments,
   OPTION_HasMacroVAARGS,
+  OPTION_OrderMembers,
   INVALID_OPTION
 } ConfigOption;
 
@@ -382,6 +383,25 @@ switch( option[0] )
       default:
         goto unknown;
     }
+
+  case 'O':
+    if( option[1] == 'r' &&
+        option[2] == 'd' &&
+        option[3] == 'e' &&
+        option[4] == 'r' &&
+        option[5] == 'M' &&
+        option[6] == 'e' &&
+        option[7] == 'm' &&
+        option[8] == 'b' &&
+        option[9] == 'e' &&
+        option[10] == 'r' &&
+        option[11] == 's' &&
+        option[12] == '\0' )
+    {                                             /* OrderMembers */
+      return OPTION_OrderMembers;
+    }
+
+    goto unknown;
 
   case 'P':
     if( option[1] == 'o' &&

@@ -4,7 +4,7 @@
 # $Author: mhx $
 # $Date: 2003/08/03 14:22:32 +0200 $
 # $Revision: 8 $
-# $Snapshot: /Convert-Binary-C/0.47 $
+# $Snapshot: /Convert-Binary-C/0.48 $
 # $Source: /t/111_clone.t $
 #
 ################################################################################
