@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/08/30 11:03:00 +0100 $
+# $Date: 2002/08/30 12:03:00 +0200 $
 # $Revision: 10 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /Makefile.PL $

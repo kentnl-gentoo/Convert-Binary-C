@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/20 17:46:42 +0100 $
+# $Date: 2002/06/20 18:46:42 +0200 $
 # $Revision: 4 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /t/f_pack.t $

@@ -8,9 +8,9 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
+* $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2002/08/18 17:07:48 +0100 $
+* $Date: 2002/08/18 18:07:48 +0200 $
 * $Revision: 3 $
 * $Snapshot: /Convert-Binary-C/0.01 $
 * $Source: /ctlib/ctparse.h $

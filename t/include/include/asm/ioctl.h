@@ -1,4 +1,4 @@
-/* $Id: ioctl.h 1 2002/04/15 22:26:26 +0100 mhx $
+/* $Id: ioctl.h 1 2002/04/15 23:26:26 +0200 mhx $
  *
  * linux/ioctl.h for Linux by H.H. Bergman.
  */

@@ -9,9 +9,9 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
+* $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2002/05/22 13:30:40 +0100 $
+* $Date: 2002/05/22 14:30:40 +0200 $
 * $Revision: 3 $
 * $Snapshot: /Convert-Binary-C/0.01 $
 * $Source: /ctlib/parser.y $

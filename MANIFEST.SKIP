@@ -1,9 +1,0 @@
-^MANIFEST\.
-^Makefile$
-~$
-\.old(?:\..*)?$
-\.swp$
-\.cache\.cm$
-^blib
-^ctlib/util/doc
-^devel

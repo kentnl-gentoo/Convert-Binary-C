@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/08/16 21:58:46 +0100 $
+# $Date: 2002/08/16 22:58:46 +0200 $
 # $Revision: 4 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /t/z_memory.t $

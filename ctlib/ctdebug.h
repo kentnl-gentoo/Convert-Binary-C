@@ -8,9 +8,9 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
+* $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2002/05/22 16:38:46 +0100 $
+* $Date: 2002/05/22 17:38:46 +0200 $
 * $Revision: 2 $
 * $Snapshot: /Convert-Binary-C/0.01 $
 * $Source: /ctlib/ctdebug.h $

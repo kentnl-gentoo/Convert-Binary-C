@@ -8,9 +8,9 @@
 #
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/08/21 14:58:23 +0100 $
+# $Date: 2002/08/21 15:58:23 +0200 $
 # $Revision: 9 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /lib/Convert/Binary/C.pm $

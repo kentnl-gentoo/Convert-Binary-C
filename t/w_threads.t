@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/08/21 15:30:24 +0100 $
+# $Date: 2002/08/21 16:30:24 +0200 $
 # $Revision: 5 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /t/w_threads.t $

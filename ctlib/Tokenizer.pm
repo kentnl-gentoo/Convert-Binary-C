@@ -8,9 +8,9 @@
 #
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/20 17:46:40 +0100 $
+# $Date: 2002/06/20 18:46:40 +0200 $
 # $Revision: 2 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /ctlib/Tokenizer.pm $

@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/03 16:41:15 +0100 $
+# $Date: 2002/06/03 17:41:15 +0200 $
 # $Revision: 3 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /t/e_enum.t $

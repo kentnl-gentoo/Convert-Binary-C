@@ -8,9 +8,9 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
+* $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2002/05/22 16:39:00 +0100 $
+* $Date: 2002/05/22 17:39:00 +0200 $
 * $Revision: 4 $
 * $Snapshot: /Convert-Binary-C/0.01 $
 * $Source: /ctlib/util/hash.c $

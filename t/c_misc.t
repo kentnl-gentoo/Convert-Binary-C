@@ -1,8 +1,8 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
+# $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2002/06/03 16:41:14 +0100 $
+# $Date: 2002/06/03 17:41:14 +0200 $
 # $Revision: 3 $
 # $Snapshot: /Convert-Binary-C/0.01 $
 # $Source: /t/c_misc.t $
