@@ -12,7 +12,7 @@
 * $Author: mhx $
 * $Date: 2003/01/23 19:47:29 +0100 $
 * $Revision: 14 $
-* $Snapshot: /Convert-Binary-C/0.11 $
+* $Snapshot: /Convert-Binary-C/0.12 $
 * $Source: /ctlib/util/hash.c $
 *
 ********************************************************************************

@@ -11,7 +11,7 @@ print OUT <<'!NO!SUBS!';
 # $Author: mhx $
 # $Date: 2003/01/08 19:57:05 +0100 $
 # $Revision: 1 $
-# $Snapshot: /Convert-Binary-C/0.11 $
+# $Snapshot: /Convert-Binary-C/0.12 $
 # $Source: /bin/memmap.PL $
 #
 ################################################################################
