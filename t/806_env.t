@@ -2,9 +2,9 @@
 #
 # $Project: Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2003/01/01 12:30:00 +0100 $
-# $Revision: 2 $
-# $Snapshot: /Convert-Binary-C/0.07 $
+# $Date: 2003/01/14 18:30:27 +0100 $
+# $Revision: 4 $
+# $Snapshot: /Convert-Binary-C/0.08 $
 # $Source: /t/806_env.t $
 #
 ################################################################################

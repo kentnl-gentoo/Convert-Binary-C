@@ -10,9 +10,9 @@
 *
 * $Project: Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2003/01/08 20:40:13 +0100 $
-* $Revision: 15 $
-* $Snapshot: /Convert-Binary-C/0.07 $
+* $Date: 2003/01/10 23:26:46 +0100 $
+* $Revision: 16 $
+* $Snapshot: /Convert-Binary-C/0.08 $
 * $Source: /ctlib/ctparse.h $
 *
 ********************************************************************************
@@ -82,10 +82,8 @@ typedef struct {
 #define CHARS_ARE_UNSIGNED   0x00000001U
 #define ISSUE_WARNINGS       0x00000002U
 
-#ifdef ANSIC99_EXTENSIONS
 #define HAS_CPP_COMMENTS     0x00010000U
 #define HAS_MACRO_VAARGS     0x00020000U
-#endif
 
 #define DISABLE_PARSER       0x80000000U
 
