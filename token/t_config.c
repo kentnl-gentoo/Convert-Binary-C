@@ -23,6 +23,7 @@ typedef enum {
   OPTION_HasCPPComments,
   OPTION_HasMacroVAARGS,
   OPTION_OrderMembers,
+  OPTION_Bitfields,
   INVALID_OPTION
 } ConfigOption;
 
@@ -65,20 +66,41 @@ switch( option[0] )
     }
 
   case 'B':
-    if( option[1] == 'y' &&
-        option[2] == 't' &&
-        option[3] == 'e' &&
-        option[4] == 'O' &&
-        option[5] == 'r' &&
-        option[6] == 'd' &&
-        option[7] == 'e' &&
-        option[8] == 'r' &&
-        option[9] == '\0' )
-    {                                             /* ByteOrder  */
-      return OPTION_ByteOrder;
-    }
+    switch( option[1] )
+    {
+      case 'i':
+        if( option[2] == 't' &&
+            option[3] == 'f' &&
+            option[4] == 'i' &&
+            option[5] == 'e' &&
+            option[6] == 'l' &&
+            option[7] == 'd' &&
+            option[8] == 's' &&
+            option[9] == '\0' )
+        {                                         /* Bitfields  */
+          return OPTION_Bitfields;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 'y':
+        if( option[2] == 't' &&
+            option[3] == 'e' &&
+            option[4] == 'O' &&
+            option[5] == 'r' &&
+            option[6] == 'd' &&
+            option[7] == 'e' &&
+            option[8] == 'r' &&
+            option[9] == '\0' )
+        {                                         /* ByteOrder  */
+          return OPTION_ByteOrder;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'C':
     switch( option[1] )

@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2005/02/07 19:05:24 +0100 $
-# $Revision: 9 $
+# $Date: 2005/05/06 00:16:38 +0200 $
+# $Revision: 10 $
 # $Source: /t/128_hooks.t $
 #
 ################################################################################
@@ -606,4 +606,6 @@ sub string_pack {
 sub string_unpack {
   pack "c$_[0]->{len}", @{$_[0]->{buf}}
 }
+
+####### TODO: test what happens when hooks die #######
 

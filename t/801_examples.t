@@ -2,9 +2,9 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2005/01/23 12:49:32 +0100 $
-# $Revision: 6 $
-# $Source: /t/805_examples.t $
+# $Date: 2005/05/23 11:18:02 +0200 $
+# $Revision: 7 $
+# $Source: /t/801_examples.t $
 #
 ################################################################################
 #

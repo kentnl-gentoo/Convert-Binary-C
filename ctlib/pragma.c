@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 2.0.  */
+/* A Bison parser, made by GNU Bison 2.0a.  */
 
 /* Skeleton parser for Yacc-like parsing with Bison,
    Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004 Free Software Foundation, Inc.
@@ -90,8 +90,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2005/01/23 12:49:41 +0100 $
-* $Revision: 14 $
+* $Date: 2005/05/02 18:59:50 +0200 $
+* $Revision: 15 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
@@ -156,14 +156,6 @@
 typedef struct {
   unsigned size;
 } PackElement;
-
-
-/*===== STATIC FUNCTION PROTOTYPES ===========================================*/
-
-static inline int          pragma_lex( void *pYYLVAL, PragmaState *pState );
-
-static        PackElement *packelem_new( unsigned size );
-static        void         packelem_delete( PackElement *pPack );
 
 
 /*===== EXTERNAL VARIABLES ===================================================*/
@@ -275,12 +267,12 @@ static const int tokentab[] = {
 #endif
 
 #if ! defined (YYSTYPE) && ! defined (YYSTYPE_IS_DECLARED)
-#line 187 "ctlib/pragma.y"
+#line 179 "ctlib/pragma.y"
 typedef union YYSTYPE {
   int ival;
 } YYSTYPE;
-/* Line 190 of yacc.c.  */
-#line 284 "ctlib/pragma.c"
+/* Line 191 of yacc.c.  */
+#line 276 "ctlib/pragma.c"
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 # define YYSTYPE_IS_TRIVIAL 1
@@ -289,10 +281,20 @@ typedef union YYSTYPE {
 
 
 /* Copy the second part of user declarations.  */
+#line 183 "ctlib/pragma.y"
 
 
-/* Line 213 of yacc.c.  */
-#line 296 "ctlib/pragma.c"
+/*===== STATIC FUNCTION PROTOTYPES ===========================================*/
+
+static inline int          pragma_lex(YYSTYPE *plval, PragmaState *pState);
+
+static        PackElement *packelem_new(unsigned size);
+static        void         packelem_delete(PackElement *pPack);
+
+
+
+/* Line 214 of yacc.c.  */
+#line 298 "ctlib/pragma.c"
 
 #if ! defined (yyoverflow) || YYERROR_VERBOSE
 
@@ -318,13 +320,25 @@ typedef union YYSTYPE {
 # ifdef YYSTACK_ALLOC
    /* Pacify GCC's `empty if-body' warning. */
 #  define YYSTACK_FREE(Ptr) do { /* empty */; } while (0)
+#  ifndef YYSTACK_ALLOC_MAXIMUM
+    /* The OS might guarantee only one guard page at the bottom of the stack,
+       and a page size can be as small as 4096 bytes.  So we cannot safely
+       invoke alloca (N) if N exceeds 4096.  Use a slightly smaller number
+       to allow for a few compiler-allocated temporary stack slots.  */
+#   define YYSTACK_ALLOC_MAXIMUM 4032 /* reasonable circa 2005 */
+#  endif
 # else
 #  if defined (__STDC__) || defined (__cplusplus)
 #   include <stdlib.h> /* INFRINGES ON USER NAME SPACE */
 #   define YYSIZE_T size_t
+#  else
+#   define YYSIZE_T unsigned long int
 #  endif
 #  define YYSTACK_ALLOC YYMALLOC
 #  define YYSTACK_FREE YYFREE
+#  ifndef YYSTACK_ALLOC_MAXIMUM
+#   define YYSTACK_ALLOC_MAXIMUM ((YYSIZE_T) -1)
+#  endif
 # endif
 #endif /* ! defined (yyoverflow) || YYERROR_VERBOSE */
 
@@ -359,7 +373,7 @@ union yyalloc
 #   define YYCOPY(To, From, Count)		\
       do					\
 	{					\
-	  register YYSIZE_T yyi;		\
+	  YYSIZE_T yyi;				\
 	  for (yyi = 0; yyi < (Count); yyi++)	\
 	    (To)[yyi] = (From)[yyi];		\
 	}					\
@@ -463,7 +477,7 @@ static const yysigned_char yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const unsigned char yyrline[] =
 {
-       0,   203,   203,   207,   209,   211,   215,   221,   228
+       0,   206,   206,   210,   212,   214,   218,   223,   231
 };
 #endif
 
@@ -476,6 +490,11 @@ static const char *const yytname[] =
   "POP_TOK", "'('", "')'", "','", "$accept", "pragma", "pragma_pack",
   "pragma_pack_args", 0
 };
+#endif
+
+/* INFRINGES ON USER NAME SPACE */
+#ifndef _
+# define _(msgid) msgid
 #endif
 
 # ifdef YYPRINT
@@ -598,7 +617,7 @@ do								\
     }								\
   else								\
     { 								\
-      yyerror ("syntax error: cannot back up");\
+      yyerror (_("syntax error: cannot back up")); \
       YYERROR;							\
     }								\
 while (0)
@@ -698,7 +717,7 @@ yy_stack_print (bottom, top)
     short int *top;
 #endif
 {
-  YYFPRINTF (stderr, "Stack now");
+  YYFPRINTF (stderr, _("Stack now"));
   for (/* Nothing. */; bottom <= top; ++bottom)
     YYFPRINTF (stderr, " %d", *bottom);
   YYFPRINTF (stderr, "\n");
@@ -726,7 +745,7 @@ yy_reduce_print (yyrule)
 {
   int yyi;
   unsigned int yylno = yyrline[yyrule];
-  YYFPRINTF (stderr, "Reducing stack by rule %d (line %u), ",
+  YYFPRINTF (stderr, _("Reducing stack by rule %d (line %u), "),
              yyrule - 1, yylno);
   /* Print the symbols being reduced, and their result.  */
   for (yyi = yyprhs[yyrule]; 0 <= yyrhs[yyi]; yyi++)
@@ -760,7 +779,7 @@ int yydebug;
    if the built-in stack extension method is used).
 
    Do not make this value too large; the results are undefined if
-   SIZE_MAX < YYSTACK_BYTES (YYMAXDEPTH)
+   YYSTACK_ALLOC_MAXIMUM < YYSTACK_BYTES (YYMAXDEPTH)
    evaluated with infinite-precision integer arithmetic.  */
 
 #ifndef YYMAXDEPTH
@@ -784,7 +803,7 @@ yystrlen (yystr)
      const char *yystr;
 #   endif
 {
-  register const char *yys = yystr;
+  const char *yys = yystr;
 
   while (*yys++ != '\0')
     continue;
@@ -809,8 +828,8 @@ yystpcpy (yydest, yysrc)
      const char *yysrc;
 #   endif
 {
-  register char *yyd = yydest;
-  register const char *yys = yysrc;
+  char *yyd = yydest;
+  const char *yys = yysrc;
 
   while ((*yyd++ = *yys++) != '\0')
     continue;
@@ -945,8 +964,8 @@ YYSTYPE yylval;
 /* Number of syntax errors so far.  */
 int yynerrs;
 
-  register int yystate;
-  register int yyn;
+  int yystate;
+  int yyn;
   int yyresult;
   /* Number of tokens to shift before error messages enabled.  */
   int yyerrstatus;
@@ -964,12 +983,12 @@ int yynerrs;
   /* The state stack.  */
   short int yyssa[YYINITDEPTH];
   short int *yyss = yyssa;
-  register short int *yyssp;
+  short int *yyssp;
 
   /* The semantic value stack.  */
   YYSTYPE yyvsa[YYINITDEPTH];
   YYSTYPE *yyvs = yyvsa;
-  register YYSTYPE *yyvsp;
+  YYSTYPE *yyvsp;
 
 
 
@@ -1036,7 +1055,7 @@ int yynerrs;
 	   data in use in that stack, in bytes.  This used to be a
 	   conditional around just the two extra args, but that might
 	   be undefined if yyoverflow is a macro.  */
-	yyoverflow ("parser stack overflow",
+	yyoverflow (_("parser stack overflow"),
 		    &yyss1, yysize * sizeof (*yyssp),
 		    &yyvs1, yysize * sizeof (*yyvsp),
 
@@ -1076,14 +1095,14 @@ int yynerrs;
       yyvsp = yyvs + yysize - 1;
 
 
-      YYDPRINTF ((stderr, "Stack size increased to %lu\n",
+      YYDPRINTF ((stderr, _("Stack size increased to %lu\n"),
 		  (unsigned long int) yystacksize));
 
       if (yyss + yystacksize - 1 <= yyssp)
 	YYABORT;
     }
 
-  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
+  YYDPRINTF ((stderr, _("Entering state %d\n"), yystate));
 
   goto yybackup;
 
@@ -1107,19 +1126,19 @@ yybackup:
   /* YYCHAR is either YYEMPTY or YYEOF or a valid look-ahead symbol.  */
   if (yychar == YYEMPTY)
     {
-      YYDPRINTF ((stderr, "Reading a token: "));
+      YYDPRINTF ((stderr, _("Reading a token: ")));
       yychar = YYLEX;
     }
 
   if (yychar <= YYEOF)
     {
       yychar = yytoken = YYEOF;
-      YYDPRINTF ((stderr, "Now at end of input.\n"));
+      YYDPRINTF ((stderr, _("Now at end of input.\n")));
     }
   else
     {
       yytoken = YYTRANSLATE (yychar);
-      YY_SYMBOL_PRINT ("Next token is", yytoken, &yylval, &yylloc);
+      YY_SYMBOL_PRINT (_("Next token is"), yytoken, &yylval, &yylloc);
     }
 
   /* If the proper action on seeing token YYTOKEN is to reduce or to
@@ -1140,7 +1159,7 @@ yybackup:
     YYACCEPT;
 
   /* Shift the look-ahead token.  */
-  YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
+  YY_SYMBOL_PRINT (_("Shifting"), yytoken, &yylval, &yylloc);
 
   /* Discard the token being shifted unless it is eof.  */
   if (yychar != YYEOF)
@@ -1190,53 +1209,54 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 208 "ctlib/pragma.y"
+#line 211 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 4:
-#line 210 "ctlib/pragma.y"
+#line 213 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 6:
-#line 216 "ctlib/pragma.y"
+#line 219 "ctlib/pragma.y"
     {
-	    if( VALID_PACK( (yyvsp[0].ival) ) ) {
+	    if (VALID_PACK((yyvsp[0].ival)))
 	      PSTATE->pack.current = (yyvsp[0].ival);
-	    }
 	  ;}
     break;
 
   case 7:
-#line 222 "ctlib/pragma.y"
+#line 224 "ctlib/pragma.y"
     {
-	    if( VALID_PACK( (yyvsp[0].ival) ) ) {
-	      LL_push( PSTATE->pack.stack, packelem_new( PSTATE->pack.current ) );
+	    if (VALID_PACK((yyvsp[0].ival)))
+	    {
+	      LL_push(PSTATE->pack.stack, packelem_new(PSTATE->pack.current));
 	      PSTATE->pack.current = (yyvsp[0].ival);
 	    }
 	  ;}
     break;
 
   case 8:
-#line 229 "ctlib/pragma.y"
+#line 232 "ctlib/pragma.y"
     {
-	    PackElement *pPack = LL_pop( PSTATE->pack.stack );
-	    if( pPack ) {
+	    PackElement *pPack = LL_pop(PSTATE->pack.stack);
+	    if (pPack)
+	    {
 	      PSTATE->pack.current = pPack->size;
-	      packelem_delete( pPack );
+	      packelem_delete(pPack);
 	    }
-	    else {
+	    else
 	      PSTATE->pack.current = 0;
-	    }
 	  ;}
     break;
 
 
+      default: break;
     }
 
-/* Line 1037 of yacc.c.  */
-#line 1240 "ctlib/pragma.c"
+/* Line 1056 of yacc.c.  */
+#line 1260 "ctlib/pragma.c"
 
   yyvsp -= yylen;
   yyssp -= yylen;
@@ -1275,11 +1295,35 @@ yyerrlab:
 
       if (YYPACT_NINF < yyn && yyn < YYLAST)
 	{
-	  YYSIZE_T yysize = 0;
 	  int yytype = YYTRANSLATE (yychar);
-	  const char* yyprefix;
-	  char *yymsg;
+	  YYSIZE_T yysize0 = yystrlen (yytname[yytype]);
+	  YYSIZE_T yysize = yysize0;
+	  YYSIZE_T yysize1;
+	  int yysize_overflow = 0;
+	  char *yymsg = 0;
+#	  define YYERROR_VERBOSE_ARGS_MAXIMUM 5
+	  char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
 	  int yyx;
+
+#if 0
+	  /* This is so xgettext sees the translatable formats that are
+	     constructed on the fly.  */
+	  _("syntax error, unexpected %s");
+	  _("syntax error, unexpected %s, expecting %s");
+	  _("syntax error, unexpected %s, expecting %s or %s");
+	  _("syntax error, unexpected %s, expecting %s or %s or %s");
+	  _("syntax error, unexpected %s, expecting %s or %s or %s or %s");
+#endif
+	  char *yyfmt;
+	  char const *yyf;
+	  static char const yyunexpected[] = "syntax error, unexpected %s";
+	  static char const yyexpecting[] = ", expecting %s";
+	  static char const yyor[] = " or %s";
+	  char yyformat[sizeof yyunexpected
+			+ sizeof yyexpecting - 1
+			+ ((YYERROR_VERBOSE_ARGS_MAXIMUM - 2)
+			   * (sizeof yyor - 1))];
+	  char const *yyprefix = yyexpecting;
 
 	  /* Start YYX at -YYN if negative to avoid negative indexes in
 	     YYCHECK.  */
@@ -1288,48 +1332,65 @@ yyerrlab:
 	  /* Stay within bounds of both yycheck and yytname.  */
 	  int yychecklim = YYLAST - yyn;
 	  int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
-	  int yycount = 0;
+	  int yycount = 1;
 
-	  yyprefix = ", expecting ";
+	  yyarg[0] = yytname[yytype];
+	  yyfmt = yystpcpy (yyformat, yyunexpected);
+
 	  for (yyx = yyxbegin; yyx < yyxend; ++yyx)
 	    if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
 	      {
-		yysize += yystrlen (yyprefix) + yystrlen (yytname [yyx]);
-		yycount += 1;
-		if (yycount == 5)
+		if (yycount == YYERROR_VERBOSE_ARGS_MAXIMUM)
 		  {
-		    yysize = 0;
+		    yycount = 1;
+		    yysize = yysize0;
+		    yyformat[sizeof yyunexpected - 1] = '\0';
 		    break;
 		  }
+		yyarg[yycount++] = yytname[yyx];
+		yysize1 = yysize + yystrlen (yytname[yyx]);
+		yysize_overflow |= yysize1 < yysize;
+		yysize = yysize1;
+		yyfmt = yystpcpy (yyfmt, yyprefix);
+		yyprefix = yyor;
 	      }
-	  yysize += (sizeof ("syntax error, unexpected ")
-		     + yystrlen (yytname[yytype]));
-	  yymsg = (char *) YYSTACK_ALLOC (yysize);
-	  if (yymsg != 0)
-	    {
-	      char *yyp = yystpcpy (yymsg, "syntax error, unexpected ");
-	      yyp = yystpcpy (yyp, yytname[yytype]);
 
-	      if (yycount < 5)
+	  yyf = _(yyformat);
+	  yysize1 = yysize + strlen (yyf);
+	  yysize_overflow |= yysize1 < yysize;
+	  yysize = yysize1;
+
+	  if (!yysize_overflow && yysize <= YYSTACK_ALLOC_MAXIMUM)
+	    yymsg = (char *) YYSTACK_ALLOC (yysize);
+	  if (yymsg)
+	    {
+	      /* Avoid sprintf, as that infringes on the user's name space.
+		 Don't have undefined behavior even if the translation
+		 produced a string with the wrong number of "%s"s.  */
+	      char *yyp = yymsg;
+	      int yyi = 0;
+	      while ((*yyp = *yyf))
 		{
-		  yyprefix = ", expecting ";
-		  for (yyx = yyxbegin; yyx < yyxend; ++yyx)
-		    if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
-		      {
-			yyp = yystpcpy (yyp, yyprefix);
-			yyp = yystpcpy (yyp, yytname[yyx]);
-			yyprefix = " or ";
-		      }
+		  if (*yyp == '%' && yyf[1] == 's' && yyi < yycount)
+		    {
+		      yyp = yystpcpy (yyp, yyarg[yyi++]);
+		      yyf += 2;
+		    }
+		  else
+		    {
+		      yyp++;
+		      yyf++;
+		    }
 		}
 	      yyerror (yymsg);
 	      YYSTACK_FREE (yymsg);
 	    }
 	  else
-	    yyerror ("syntax error; also virtual memory exhausted");
+	    yyerror (_("syntax error; also memory exhausted"));
 	}
       else
 #endif /* YYERROR_VERBOSE */
-	yyerror ("syntax error");
+	yyerror (_("syntax error"));
     }
 
 
@@ -1344,19 +1405,11 @@ yyerrlab:
           /* If at end of input, pop the error token,
 	     then the rest of the stack, then return failure.  */
 	  if (yychar == YYEOF)
-	     for (;;)
-	       {
-
-		 YYPOPSTACK;
-		 if (yyssp == yyss)
-		   YYABORT;
-		 yydestruct ("Error: popping",
-                             yystos[*yyssp], yyvsp);
-	       }
+	    YYABORT;
         }
       else
 	{
-	  yydestruct ("Error: discarding", yytoken, &yylval);
+	  yydestruct (_("Error: discarding"), yytoken, &yylval);
 	  yychar = YYEMPTY;
 	}
     }
@@ -1371,12 +1424,11 @@ yyerrlab:
 `---------------------------------------------------*/
 yyerrorlab:
 
-#ifdef __GNUC__
-  /* Pacify GCC when the user code never invokes YYERROR and the label
-     yyerrorlab therefore never appears in user code.  */
+  /* Pacify compilers like GCC when the user code never invokes
+     YYERROR and the label yyerrorlab therefore never appears in user
+     code.  */
   if (0)
      goto yyerrorlab;
-#endif
 
 yyvsp -= yylen;
   yyssp -= yylen;
@@ -1409,7 +1461,7 @@ yyerrlab1:
 	YYABORT;
 
 
-      yydestruct ("Error: popping", yystos[yystate], yyvsp);
+      yydestruct (_("Error: popping"), yystos[yystate], yyvsp);
       YYPOPSTACK;
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
@@ -1422,7 +1474,7 @@ yyerrlab1:
 
 
   /* Shift the error token. */
-  YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
+  YY_SYMBOL_PRINT (_("Shifting"), yystos[yyn], yyvsp, yylsp);
 
   yystate = yyn;
   goto yynewstate;
@@ -1439,7 +1491,7 @@ yyacceptlab:
 | yyabortlab -- YYABORT comes here.  |
 `-----------------------------------*/
 yyabortlab:
-  yydestruct ("Error: discarding lookahead",
+  yydestruct (_("Error: discarding lookahead"),
               yytoken, &yylval);
   yychar = YYEMPTY;
   yyresult = 1;
@@ -1450,12 +1502,24 @@ yyabortlab:
 | yyoverflowlab -- parser overflow comes here.  |
 `----------------------------------------------*/
 yyoverflowlab:
-  yyerror ("parser stack overflow");
+  yyerror (_("parser stack overflow"));
+  yydestruct (_("Error: discarding lookahead"),
+	      yytoken, &yylval);
   yyresult = 2;
   /* Fall through.  */
 #endif
 
 yyreturn:
+  if (yyssp != yyss)
+    for (;;)
+      {
+
+	YYPOPSTACK;
+	if (yyssp == yyss)
+	  break;
+	yydestruct (_("Error: popping"),
+		    yystos[*yyssp], yyvsp);
+      }
 #ifndef yyoverflow
   if (yyss != yyssa)
     YYSTACK_FREE (yyss);
@@ -1464,7 +1528,7 @@ yyreturn:
 }
 
 
-#line 241 "ctlib/pragma.y"
+#line 244 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTIONS =====================================================*/
@@ -1490,7 +1554,7 @@ static PackElement *packelem_new( unsigned size )
 {
   PackElement *pPack;
 
-  AllocF( PackElement *, pPack, sizeof( PackElement ) );
+  AllocF(PackElement *, pPack, sizeof(PackElement));
 
   pPack->size = size;
 
@@ -1514,10 +1578,10 @@ static PackElement *packelem_new( unsigned size )
 *
 *******************************************************************************/
 
-static void packelem_delete( PackElement *pPack )
+static void packelem_delete(PackElement *pPack)
 {
-  if( pPack )
-    Free( pPack );
+  if (pPack)
+    Free(pPack);
 }
 
 /*******************************************************************************
@@ -1537,23 +1601,24 @@ static void packelem_delete( PackElement *pPack )
 *
 *******************************************************************************/
 
-static inline int pragma_lex( void *pYYLVAL, PragmaState *pState )
+static inline int pragma_lex(YYSTYPE *plval, PragmaState *pState)
 {
-  YYSTYPE *plval = (YYSTYPE *) pYYLVAL;
   int token, rval;
 
   CT_DEBUG( PRAGMA, ("pragma_lex()"));
 
-  while( (token = (int) *pState->str++) != 0 ) {
-    switch( token ) {
+  while ((token = (int) *pState->str++) != 0)
+  {
+    switch (token)
+    {
       case NUMBER:
         {
           char *num = pState->str;
 
-          pState->str = strchr( num, PRAGMA_TOKEN_END ) + 1;
-          plval->ival = strtol( num, NULL, 0 );
+          pState->str = strchr(num, PRAGMA_TOKEN_END) + 1;
+          plval->ival = strtol(num, NULL, 0);
 
-          CT_DEBUG( PRAGMA, ("pragma - constant: %d", plval->ival) );
+          CT_DEBUG(PRAGMA, ("pragma - constant: %d", plval->ival));
 
           return CONSTANT;
         }
@@ -1574,7 +1639,7 @@ static inline int pragma_lex( void *pYYLVAL, PragmaState *pState )
         }
 
       default:
-        if( (rval = tokentab[token]) != 0 )
+        if ((rval = tokentab[token]) != 0)
           return rval;
 
         break;
@@ -1604,9 +1669,9 @@ static inline int pragma_lex( void *pYYLVAL, PragmaState *pState )
 *
 *******************************************************************************/
 
-void pragma_init( PragmaState *pPragma )
+void pragma_init(PragmaState *pPragma)
 {
-  CT_DEBUG( PRAGMA, ("pragma_init") );
+  CT_DEBUG(PRAGMA, ("pragma_init"));
   pPragma->pack.stack   = LL_new();
   pPragma->pack.current = 0;
 }
@@ -1628,11 +1693,12 @@ void pragma_init( PragmaState *pPragma )
 *
 *******************************************************************************/
 
-void pragma_free( PragmaState *pPragma )
+void pragma_free(PragmaState *pPragma)
 {
-  if( pPragma ) {
-    CT_DEBUG( PRAGMA, ("pragma_free") );
-    LL_destroy( pPragma->pack.stack, (LLDestroyFunc) packelem_delete );
+  if (pPragma)
+  {
+    CT_DEBUG(PRAGMA, ("pragma_free"));
+    LL_destroy(pPragma->pack.stack, (LLDestroyFunc) packelem_delete);
   }
 }
 
