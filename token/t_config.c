@@ -1,4 +1,5 @@
 typedef enum {
+  OPTION_UnsignedBitfields,
   OPTION_UnsignedChars,
   OPTION_Warnings,
   OPTION_PointerSize,
@@ -506,24 +507,88 @@ switch( option[0] )
     goto unknown;
 
   case 'U':
-    if( option[1] == 'n' &&
-        option[2] == 's' &&
-        option[3] == 'i' &&
-        option[4] == 'g' &&
-        option[5] == 'n' &&
-        option[6] == 'e' &&
-        option[7] == 'd' &&
-        option[8] == 'C' &&
-        option[9] == 'h' &&
-        option[10] == 'a' &&
-        option[11] == 'r' &&
-        option[12] == 's' &&
-        option[13] == '\0' )
-    {                                             /* UnsignedChars */
-      return OPTION_UnsignedChars;
-    }
+    switch( option[1] )
+    {
+      case 'n':
+        switch( option[2] )
+        {
+          case 's':
+            switch( option[3] )
+            {
+              case 'i':
+                switch( option[4] )
+                {
+                  case 'g':
+                    switch( option[5] )
+                    {
+                      case 'n':
+                        switch( option[6] )
+                        {
+                          case 'e':
+                            switch( option[7] )
+                            {
+                              case 'd':
+                                switch( option[8] )
+                                {
+                                  case 'B':
+                                    if( option[9] == 'i' &&
+                                        option[10] == 't' &&
+                                        option[11] == 'f' &&
+                                        option[12] == 'i' &&
+                                        option[13] == 'e' &&
+                                        option[14] == 'l' &&
+                                        option[15] == 'd' &&
+                                        option[16] == 's' &&
+                                        option[17] == '\0' )
+                                    {             /* UnsignedBitfields */
+                                      return OPTION_UnsignedBitfields;
+                                    }
 
-    goto unknown;
+                                    goto unknown;
+
+                                  case 'C':
+                                    if( option[9] == 'h' &&
+                                        option[10] == 'a' &&
+                                        option[11] == 'r' &&
+                                        option[12] == 's' &&
+                                        option[13] == '\0' )
+                                    {             /* UnsignedChars */
+                                      return OPTION_UnsignedChars;
+                                    }
+
+                                    goto unknown;
+
+                                  default:
+                                    goto unknown;
+                                }
+
+                              default:
+                                goto unknown;
+                            }
+
+                          default:
+                            goto unknown;
+                        }
+
+                      default:
+                        goto unknown;
+                    }
+
+                  default:
+                    goto unknown;
+                }
+
+              default:
+                goto unknown;
+            }
+
+          default:
+            goto unknown;
+        }
+
+      default:
+        goto unknown;
+    }
 
   case 'W':
     if( option[1] == 'a' &&

@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2005/05/23 16:31:21 +0200 $
-# $Revision: 1 $
+# $Date: 2005/05/26 11:19:32 +0200 $
+# $Revision: 2 $
 # $Source: /t/502_bfmicrosoft.t $
 #
 ################################################################################
@@ -22,9 +22,6 @@ $^W = 1;
 BEGIN { plan tests => 9031 }
 
 $BIN = $] < 5.006 ? '%x' : '%08b';
-
-# TODO: only as long as we're implementing bitfields
-$SIG{__WARN__} = sub { $_[0] =~ /Bitfields are unsupported/ or print STDERR $_[0] };
 
 my @compiler = (
   {

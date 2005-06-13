@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2005/05/23 11:02:51 +0200 $
-* $Revision: 3 $
+* $Date: 2005/06/10 14:26:55 +0200 $
+* $Revision: 4 $
 * $Source: /ctlib/bitfields.h $
 *
 ********************************************************************************
@@ -47,7 +47,8 @@ struct BLClass;
 
 enum BLError {
   BLE_NO_ERROR,
-  BLE_INVALID_PROPERTY
+  BLE_INVALID_PROPERTY,
+  BLE_BITFIELD_TOO_WIDE
 };
 
 typedef signed long BLPropValInt;
