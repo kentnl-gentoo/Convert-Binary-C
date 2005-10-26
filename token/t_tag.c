@@ -62,15 +62,15 @@ static const struct {
 
 static enum CbcTagId get_tag_id(const char *tag)
 {
-  switch( tag[0] )
+  switch (tag[0])
   {
     case 'F':
-      if( tag[1] == 'o' &&
+      if (tag[1] == 'o' &&
           tag[2] == 'r' &&
           tag[3] == 'm' &&
           tag[4] == 'a' &&
           tag[5] == 't' &&
-          tag[6] == '\0' )
+          tag[6] == '\0')
       {                                             /* Format     */
         return CBC_TAG_FORMAT;
       }
@@ -78,11 +78,11 @@ static enum CbcTagId get_tag_id(const char *tag)
       goto unknown;
   
     case 'H':
-      if( tag[1] == 'o' &&
+      if (tag[1] == 'o' &&
           tag[2] == 'o' &&
           tag[3] == 'k' &&
           tag[4] == 's' &&
-          tag[5] == '\0' )
+          tag[5] == '\0')
       {                                             /* Hooks      */
         return CBC_TAG_HOOKS;
       }
@@ -105,15 +105,15 @@ unknown:
 
 static enum CbcTagFormat GetTagFormat(const char *t)
 {
-  switch( t[0] )
+  switch (t[0])
   {
     case 'B':
-      if( t[1] == 'i' &&
+      if (t[1] == 'i' &&
           t[2] == 'n' &&
           t[3] == 'a' &&
           t[4] == 'r' &&
           t[5] == 'y' &&
-          t[6] == '\0' )
+          t[6] == '\0')
       {                                             /* Binary     */
         return CBC_TAG_FORMAT_BINARY;
       }
@@ -121,12 +121,12 @@ static enum CbcTagFormat GetTagFormat(const char *t)
       goto unknown;
   
     case 'S':
-      if( t[1] == 't' &&
+      if (t[1] == 't' &&
           t[2] == 'r' &&
           t[3] == 'i' &&
           t[4] == 'n' &&
           t[5] == 'g' &&
-          t[6] == '\0' )
+          t[6] == '\0')
       {                                             /* String     */
         return CBC_TAG_FORMAT_STRING;
       }

@@ -30,20 +30,20 @@ typedef enum {
 
 static ConfigOption get_config_option( const char *option )
 {
-switch( option[0] )
+switch (option[0])
 {
   case 'A':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'l':
-        if( option[2] == 'i' &&
+        if (option[2] == 'i' &&
             option[3] == 'g' &&
             option[4] == 'n' &&
             option[5] == 'm' &&
             option[6] == 'e' &&
             option[7] == 'n' &&
             option[8] == 't' &&
-            option[9] == '\0' )
+            option[9] == '\0')
         {                                         /* Alignment  */
           return OPTION_Alignment;
         }
@@ -51,11 +51,11 @@ switch( option[0] )
         goto unknown;
 
       case 's':
-        if( option[2] == 's' &&
+        if (option[2] == 's' &&
             option[3] == 'e' &&
             option[4] == 'r' &&
             option[5] == 't' &&
-            option[6] == '\0' )
+            option[6] == '\0')
         {                                         /* Assert     */
           return OPTION_Assert;
         }
@@ -67,17 +67,17 @@ switch( option[0] )
     }
 
   case 'B':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'i':
-        if( option[2] == 't' &&
+        if (option[2] == 't' &&
             option[3] == 'f' &&
             option[4] == 'i' &&
             option[5] == 'e' &&
             option[6] == 'l' &&
             option[7] == 'd' &&
             option[8] == 's' &&
-            option[9] == '\0' )
+            option[9] == '\0')
         {                                         /* Bitfields  */
           return OPTION_Bitfields;
         }
@@ -85,14 +85,14 @@ switch( option[0] )
         goto unknown;
 
       case 'y':
-        if( option[2] == 't' &&
+        if (option[2] == 't' &&
             option[3] == 'e' &&
             option[4] == 'O' &&
             option[5] == 'r' &&
             option[6] == 'd' &&
             option[7] == 'e' &&
             option[8] == 'r' &&
-            option[9] == '\0' )
+            option[9] == '\0')
         {                                         /* ByteOrder  */
           return OPTION_ByteOrder;
         }
@@ -104,16 +104,16 @@ switch( option[0] )
     }
 
   case 'C':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'h':
-        if( option[2] == 'a' &&
+        if (option[2] == 'a' &&
             option[3] == 'r' &&
             option[4] == 'S' &&
             option[5] == 'i' &&
             option[6] == 'z' &&
             option[7] == 'e' &&
-            option[8] == '\0' )
+            option[8] == '\0')
         {                                         /* CharSize   */
           return OPTION_CharSize;
         }
@@ -121,7 +121,7 @@ switch( option[0] )
         goto unknown;
 
       case 'o':
-        if( option[2] == 'm' &&
+        if (option[2] == 'm' &&
             option[3] == 'p' &&
             option[4] == 'o' &&
             option[5] == 'u' &&
@@ -136,7 +136,7 @@ switch( option[0] )
             option[14] == 'e' &&
             option[15] == 'n' &&
             option[16] == 't' &&
-            option[17] == '\0' )
+            option[17] == '\0')
         {                                         /* CompoundAlignment */
           return OPTION_CompoundAlignment;
         }
@@ -148,14 +148,14 @@ switch( option[0] )
     }
 
   case 'D':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'e':
-        if( option[2] == 'f' &&
+        if (option[2] == 'f' &&
             option[3] == 'i' &&
             option[4] == 'n' &&
             option[5] == 'e' &&
-            option[6] == '\0' )
+            option[6] == '\0')
         {                                         /* Define     */
           return OPTION_Define;
         }
@@ -163,7 +163,7 @@ switch( option[0] )
         goto unknown;
 
       case 'i':
-        if( option[2] == 's' &&
+        if (option[2] == 's' &&
             option[3] == 'a' &&
             option[4] == 'b' &&
             option[5] == 'l' &&
@@ -177,7 +177,7 @@ switch( option[0] )
             option[13] == 'r' &&
             option[14] == 'd' &&
             option[15] == 's' &&
-            option[16] == '\0' )
+            option[16] == '\0')
         {                                         /* DisabledKeywords */
           return OPTION_DisabledKeywords;
         }
@@ -185,7 +185,7 @@ switch( option[0] )
         goto unknown;
 
       case 'o':
-        if( option[2] == 'u' &&
+        if (option[2] == 'u' &&
             option[3] == 'b' &&
             option[4] == 'l' &&
             option[5] == 'e' &&
@@ -193,7 +193,7 @@ switch( option[0] )
             option[7] == 'i' &&
             option[8] == 'z' &&
             option[9] == 'e' &&
-            option[10] == '\0' )
+            option[10] == '\0')
         {                                         /* DoubleSize */
           return OPTION_DoubleSize;
         }
@@ -205,22 +205,22 @@ switch( option[0] )
     }
 
   case 'E':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'n':
-        switch( option[2] )
+        switch (option[2])
         {
           case 'u':
-            switch( option[3] )
+            switch (option[3])
             {
               case 'm':
-                switch( option[4] )
+                switch (option[4])
                 {
                   case 'S':
-                    if( option[5] == 'i' &&
+                    if (option[5] == 'i' &&
                         option[6] == 'z' &&
                         option[7] == 'e' &&
-                        option[8] == '\0' )
+                        option[8] == '\0')
                     {                             /* EnumSize   */
                       return OPTION_EnumSize;
                     }
@@ -228,10 +228,10 @@ switch( option[0] )
                     goto unknown;
 
                   case 'T':
-                    if( option[5] == 'y' &&
+                    if (option[5] == 'y' &&
                         option[6] == 'p' &&
                         option[7] == 'e' &&
-                        option[8] == '\0' )
+                        option[8] == '\0')
                     {                             /* EnumType   */
                       return OPTION_EnumType;
                     }
@@ -255,7 +255,7 @@ switch( option[0] )
     }
 
   case 'F':
-    if( option[1] == 'l' &&
+    if (option[1] == 'l' &&
         option[2] == 'o' &&
         option[3] == 'a' &&
         option[4] == 't' &&
@@ -263,7 +263,7 @@ switch( option[0] )
         option[6] == 'i' &&
         option[7] == 'z' &&
         option[8] == 'e' &&
-        option[9] == '\0' )
+        option[9] == '\0')
     {                                             /* FloatSize  */
       return OPTION_FloatSize;
     }
@@ -271,16 +271,16 @@ switch( option[0] )
     goto unknown;
 
   case 'H':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'a':
-        switch( option[2] )
+        switch (option[2])
         {
           case 's':
-            switch( option[3] )
+            switch (option[3])
             {
               case 'C':
-                if( option[4] == 'P' &&
+                if (option[4] == 'P' &&
                     option[5] == 'P' &&
                     option[6] == 'C' &&
                     option[7] == 'o' &&
@@ -290,7 +290,7 @@ switch( option[0] )
                     option[11] == 'n' &&
                     option[12] == 't' &&
                     option[13] == 's' &&
-                    option[14] == '\0' )
+                    option[14] == '\0')
                 {                                 /* HasCPPComments */
                   return OPTION_HasCPPComments;
                 }
@@ -298,7 +298,7 @@ switch( option[0] )
                 goto unknown;
 
               case 'M':
-                if( option[4] == 'a' &&
+                if (option[4] == 'a' &&
                     option[5] == 'c' &&
                     option[6] == 'r' &&
                     option[7] == 'o' &&
@@ -308,7 +308,7 @@ switch( option[0] )
                     option[11] == 'R' &&
                     option[12] == 'G' &&
                     option[13] == 'S' &&
-                    option[14] == '\0' )
+                    option[14] == '\0')
                 {                                 /* HasMacroVAARGS */
                   return OPTION_HasMacroVAARGS;
                 }
@@ -328,17 +328,17 @@ switch( option[0] )
     }
 
   case 'I':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'n':
-        switch( option[2] )
+        switch (option[2])
         {
           case 'c':
-            if( option[3] == 'l' &&
+            if (option[3] == 'l' &&
                 option[4] == 'u' &&
                 option[5] == 'd' &&
                 option[6] == 'e' &&
-                option[7] == '\0' )
+                option[7] == '\0')
             {                                     /* Include    */
               return OPTION_Include;
             }
@@ -346,11 +346,11 @@ switch( option[0] )
             goto unknown;
 
           case 't':
-            if( option[3] == 'S' &&
+            if (option[3] == 'S' &&
                 option[4] == 'i' &&
                 option[5] == 'z' &&
                 option[6] == 'e' &&
-                option[7] == '\0' )
+                option[7] == '\0')
             {                                     /* IntSize    */
               return OPTION_IntSize;
             }
@@ -366,7 +366,7 @@ switch( option[0] )
     }
 
   case 'K':
-    if( option[1] == 'e' &&
+    if (option[1] == 'e' &&
         option[2] == 'y' &&
         option[3] == 'w' &&
         option[4] == 'o' &&
@@ -375,7 +375,7 @@ switch( option[0] )
         option[7] == 'M' &&
         option[8] == 'a' &&
         option[9] == 'p' &&
-        option[10] == '\0' )
+        option[10] == '\0')
     {                                             /* KeywordMap */
       return OPTION_KeywordMap;
     }
@@ -383,19 +383,19 @@ switch( option[0] )
     goto unknown;
 
   case 'L':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'o':
-        switch( option[2] )
+        switch (option[2])
         {
           case 'n':
-            switch( option[3] )
+            switch (option[3])
             {
               case 'g':
-                switch( option[4] )
+                switch (option[4])
                 {
                   case 'D':
-                    if( option[5] == 'o' &&
+                    if (option[5] == 'o' &&
                         option[6] == 'u' &&
                         option[7] == 'b' &&
                         option[8] == 'l' &&
@@ -404,7 +404,7 @@ switch( option[0] )
                         option[11] == 'i' &&
                         option[12] == 'z' &&
                         option[13] == 'e' &&
-                        option[14] == '\0' )
+                        option[14] == '\0')
                     {                             /* LongDoubleSize */
                       return OPTION_LongDoubleSize;
                     }
@@ -412,14 +412,14 @@ switch( option[0] )
                     goto unknown;
 
                   case 'L':
-                    if( option[5] == 'o' &&
+                    if (option[5] == 'o' &&
                         option[6] == 'n' &&
                         option[7] == 'g' &&
                         option[8] == 'S' &&
                         option[9] == 'i' &&
                         option[10] == 'z' &&
                         option[11] == 'e' &&
-                        option[12] == '\0' )
+                        option[12] == '\0')
                     {                             /* LongLongSize */
                       return OPTION_LongLongSize;
                     }
@@ -427,10 +427,10 @@ switch( option[0] )
                     goto unknown;
 
                   case 'S':
-                    if( option[5] == 'i' &&
+                    if (option[5] == 'i' &&
                         option[6] == 'z' &&
                         option[7] == 'e' &&
-                        option[8] == '\0' )
+                        option[8] == '\0')
                     {                             /* LongSize   */
                       return OPTION_LongSize;
                     }
@@ -454,7 +454,7 @@ switch( option[0] )
     }
 
   case 'O':
-    if( option[1] == 'r' &&
+    if (option[1] == 'r' &&
         option[2] == 'd' &&
         option[3] == 'e' &&
         option[4] == 'r' &&
@@ -465,7 +465,7 @@ switch( option[0] )
         option[9] == 'e' &&
         option[10] == 'r' &&
         option[11] == 's' &&
-        option[12] == '\0' )
+        option[12] == '\0')
     {                                             /* OrderMembers */
       return OPTION_OrderMembers;
     }
@@ -473,7 +473,7 @@ switch( option[0] )
     goto unknown;
 
   case 'P':
-    if( option[1] == 'o' &&
+    if (option[1] == 'o' &&
         option[2] == 'i' &&
         option[3] == 'n' &&
         option[4] == 't' &&
@@ -483,7 +483,7 @@ switch( option[0] )
         option[8] == 'i' &&
         option[9] == 'z' &&
         option[10] == 'e' &&
-        option[11] == '\0' )
+        option[11] == '\0')
     {                                             /* PointerSize */
       return OPTION_PointerSize;
     }
@@ -491,7 +491,7 @@ switch( option[0] )
     goto unknown;
 
   case 'S':
-    if( option[1] == 'h' &&
+    if (option[1] == 'h' &&
         option[2] == 'o' &&
         option[3] == 'r' &&
         option[4] == 't' &&
@@ -499,7 +499,7 @@ switch( option[0] )
         option[6] == 'i' &&
         option[7] == 'z' &&
         option[8] == 'e' &&
-        option[9] == '\0' )
+        option[9] == '\0')
     {                                             /* ShortSize  */
       return OPTION_ShortSize;
     }
@@ -507,31 +507,31 @@ switch( option[0] )
     goto unknown;
 
   case 'U':
-    switch( option[1] )
+    switch (option[1])
     {
       case 'n':
-        switch( option[2] )
+        switch (option[2])
         {
           case 's':
-            switch( option[3] )
+            switch (option[3])
             {
               case 'i':
-                switch( option[4] )
+                switch (option[4])
                 {
                   case 'g':
-                    switch( option[5] )
+                    switch (option[5])
                     {
                       case 'n':
-                        switch( option[6] )
+                        switch (option[6])
                         {
                           case 'e':
-                            switch( option[7] )
+                            switch (option[7])
                             {
                               case 'd':
-                                switch( option[8] )
+                                switch (option[8])
                                 {
                                   case 'B':
-                                    if( option[9] == 'i' &&
+                                    if (option[9] == 'i' &&
                                         option[10] == 't' &&
                                         option[11] == 'f' &&
                                         option[12] == 'i' &&
@@ -539,7 +539,7 @@ switch( option[0] )
                                         option[14] == 'l' &&
                                         option[15] == 'd' &&
                                         option[16] == 's' &&
-                                        option[17] == '\0' )
+                                        option[17] == '\0')
                                     {             /* UnsignedBitfields */
                                       return OPTION_UnsignedBitfields;
                                     }
@@ -547,11 +547,11 @@ switch( option[0] )
                                     goto unknown;
 
                                   case 'C':
-                                    if( option[9] == 'h' &&
+                                    if (option[9] == 'h' &&
                                         option[10] == 'a' &&
                                         option[11] == 'r' &&
                                         option[12] == 's' &&
-                                        option[13] == '\0' )
+                                        option[13] == '\0')
                                     {             /* UnsignedChars */
                                       return OPTION_UnsignedChars;
                                     }
@@ -591,14 +591,14 @@ switch( option[0] )
     }
 
   case 'W':
-    if( option[1] == 'a' &&
+    if (option[1] == 'a' &&
         option[2] == 'r' &&
         option[3] == 'n' &&
         option[4] == 'i' &&
         option[5] == 'n' &&
         option[6] == 'g' &&
         option[7] == 's' &&
-        option[8] == '\0' )
+        option[8] == '\0')
     {                                             /* Warnings   */
       return OPTION_Warnings;
     }

@@ -223,7 +223,7 @@ static enum BLError Simple_set(aSELF, BLProperty prop, const BLPropValue *value)
 static const BLOption *Simple_options(aSELF, int *count)
 {
   static const BLOption options[] = {
-    { BLP_BLOCK_SIZE, BLPVT_INT, 0 }
+    { BLP_BLOCK_SIZE, BLPVT_INT, 0, 0 }
   };
 
   assert(count != NULL);
@@ -233,88 +233,88 @@ static const BLOption *Simple_options(aSELF, int *count)
 
 BLProperty bl_property(const char *property)
 {
-switch( property[0] )
-{
-  case 'A':
-    if( property[1] == 'l' &&
-        property[2] == 'i' &&
-        property[3] == 'g' &&
-        property[4] == 'n' &&
-        property[5] == '\0' )
-    {                                             /* Align      */
-      return BLP_ALIGN;
-    }
+  switch (property[0])
+  {
+    case 'A':
+      if (property[1] == 'l' &&
+          property[2] == 'i' &&
+          property[3] == 'g' &&
+          property[4] == 'n' &&
+          property[5] == '\0')
+      {                                           /* Align      */
+        return BLP_ALIGN;
+      }
 
-    goto unknown;
+      goto unknown;
 
-  case 'B':
-    switch( property[1] )
-    {
-      case 'l':
-        if( property[2] == 'o' &&
-            property[3] == 'c' &&
-            property[4] == 'k' &&
-            property[5] == 'S' &&
-            property[6] == 'i' &&
-            property[7] == 'z' &&
-            property[8] == 'e' &&
-            property[9] == '\0' )
-        {                                         /* BlockSize  */
-          return BLP_BLOCK_SIZE;
-        }
+    case 'B':
+      switch (property[1])
+      {
+        case 'l':
+          if (property[2] == 'o' &&
+              property[3] == 'c' &&
+              property[4] == 'k' &&
+              property[5] == 'S' &&
+              property[6] == 'i' &&
+              property[7] == 'z' &&
+              property[8] == 'e' &&
+              property[9] == '\0')
+          {                                       /* BlockSize  */
+            return BLP_BLOCK_SIZE;
+          }
 
-        goto unknown;
+          goto unknown;
 
-      case 'y':
-        if( property[2] == 't' &&
-            property[3] == 'e' &&
-            property[4] == 'O' &&
-            property[5] == 'r' &&
-            property[6] == 'd' &&
-            property[7] == 'e' &&
-            property[8] == 'r' &&
-            property[9] == '\0' )
-        {                                         /* ByteOrder  */
-          return BLP_BYTE_ORDER;
-        }
+        case 'y':
+          if (property[2] == 't' &&
+              property[3] == 'e' &&
+              property[4] == 'O' &&
+              property[5] == 'r' &&
+              property[6] == 'd' &&
+              property[7] == 'e' &&
+              property[8] == 'r' &&
+              property[9] == '\0')
+          {                                       /* ByteOrder  */
+            return BLP_BYTE_ORDER;
+          }
 
-        goto unknown;
+          goto unknown;
 
-      default:
-        goto unknown;
-    }
+        default:
+          goto unknown;
+      }
 
-  case 'M':
-    if( property[1] == 'a' &&
-        property[2] == 'x' &&
-        property[3] == 'A' &&
-        property[4] == 'l' &&
-        property[5] == 'i' &&
-        property[6] == 'g' &&
-        property[7] == 'n' &&
-        property[8] == '\0' )
-    {                                             /* MaxAlign   */
-      return BLP_MAX_ALIGN;
-    }
+    case 'M':
+      if (property[1] == 'a' &&
+          property[2] == 'x' &&
+          property[3] == 'A' &&
+          property[4] == 'l' &&
+          property[5] == 'i' &&
+          property[6] == 'g' &&
+          property[7] == 'n' &&
+          property[8] == '\0')
+      {                                           /* MaxAlign   */
+        return BLP_MAX_ALIGN;
+      }
 
-    goto unknown;
+      goto unknown;
 
-  case 'O':
-    if( property[1] == 'f' &&
-        property[2] == 'f' &&
-        property[3] == 's' &&
-        property[4] == 'e' &&
-        property[5] == 't' &&
-        property[6] == '\0' )
-    {                                             /* Offset     */
-      return BLP_OFFSET;
-    }
+    case 'O':
+      if (property[1] == 'f' &&
+          property[2] == 'f' &&
+          property[3] == 's' &&
+          property[4] == 'e' &&
+          property[5] == 't' &&
+          property[6] == '\0')
+      {                                           /* Offset     */
+        return BLP_OFFSET;
+      }
 
-    goto unknown;
+      goto unknown;
 
-  default:
-    goto unknown;
-}
+    default:
+      goto unknown;
+  }
 
 unknown:
   return INVALID_BLPROPERTY;
@@ -322,46 +322,46 @@ unknown:
 
 BLPropValStr bl_propval(const char *propval)
 {
-switch( propval[0] )
-{
-  case 'B':
-    if( propval[1] == 'i' &&
-        propval[2] == 'g' &&
-        propval[3] == 'E' &&
-        propval[4] == 'n' &&
-        propval[5] == 'd' &&
-        propval[6] == 'i' &&
-        propval[7] == 'a' &&
-        propval[8] == 'n' &&
-        propval[9] == '\0' )
-    {                                             /* BigEndian  */
-      return BLPV_BIG_ENDIAN;
-    }
+  switch (propval[0])
+  {
+    case 'B':
+      if (propval[1] == 'i' &&
+          propval[2] == 'g' &&
+          propval[3] == 'E' &&
+          propval[4] == 'n' &&
+          propval[5] == 'd' &&
+          propval[6] == 'i' &&
+          propval[7] == 'a' &&
+          propval[8] == 'n' &&
+          propval[9] == '\0')
+      {                                           /* BigEndian  */
+        return BLPV_BIG_ENDIAN;
+      }
 
-    goto unknown;
+      goto unknown;
 
-  case 'L':
-    if( propval[1] == 'i' &&
-        propval[2] == 't' &&
-        propval[3] == 't' &&
-        propval[4] == 'l' &&
-        propval[5] == 'e' &&
-        propval[6] == 'E' &&
-        propval[7] == 'n' &&
-        propval[8] == 'd' &&
-        propval[9] == 'i' &&
-        propval[10] == 'a' &&
-        propval[11] == 'n' &&
-        propval[12] == '\0' )
-    {                                             /* LittleEndian */
-      return BLPV_LITTLE_ENDIAN;
-    }
+    case 'L':
+      if (propval[1] == 'i' &&
+          propval[2] == 't' &&
+          propval[3] == 't' &&
+          propval[4] == 'l' &&
+          propval[5] == 'e' &&
+          propval[6] == 'E' &&
+          propval[7] == 'n' &&
+          propval[8] == 'd' &&
+          propval[9] == 'i' &&
+          propval[10] == 'a' &&
+          propval[11] == 'n' &&
+          propval[12] == '\0')
+      {                                           /* LittleEndian */
+        return BLPV_LITTLE_ENDIAN;
+      }
 
-    goto unknown;
+      goto unknown;
 
-  default:
-    goto unknown;
-}
+    default:
+      goto unknown;
+  }
 
 unknown:
   return INVALID_BLPROPVAL;
@@ -377,7 +377,7 @@ const char *bl_property_string(BLProperty property)
     "BlockSize"
   };
 
-  if (property >= 0 && property < sizeof properties / sizeof properties[0])
+  if (property < sizeof properties / sizeof properties[0])
     return properties[property];
 
   return NULL;
@@ -390,7 +390,7 @@ const char *bl_propval_string(BLPropValStr propval)
     "LittleEndian"
   };
 
-  if (propval >= 0 && propval < sizeof propvalues / sizeof propvalues[0])
+  if (propval < sizeof propvalues / sizeof propvalues[0])
     return propvalues[propval];
 
   return NULL;
