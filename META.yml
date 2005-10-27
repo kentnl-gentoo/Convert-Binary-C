@@ -1,10 +1,15 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Convert-Binary-C
-version:      0.60
-version_from: lib/Convert/Binary/C.pm
-installdirs:  site
-requires:
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+--- #YAML:1.0
+name:                Convert-Binary-C
+version:             0.61
+abstract:            Binary Data Conversion using C Types
+license:             perl
+generated_by:        ExtUtils::MakeMaker version 6.30_01
+author:              Marcus Holland-Moritz <mhx@cpan.org>
+distribution_type:   module
+requires:     
+meta-spec:
+    url: <http://module-build.sourceforge.net/META-spec-new.html>;
+    version: 1.1
+no_index:
+    dir:
+        - support

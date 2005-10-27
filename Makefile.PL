@@ -3,8 +3,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2005/10/25 19:35:39 +0200 $
-# $Revision: 79 $
+# $Date: 2005/10/27 18:38:52 +0200 $
+# $Revision: 80 $
 # $Source: /Makefile.PL $
 #
 ################################################################################
@@ -335,6 +335,11 @@ sub configure
   if (eval $ExtUtils::MakeMaker::VERSION >= 6.30_01) {
     print "Setting license tag...\n";
     $config->{'LICENSE'} = 'perl';
+    $config->{'EXTRA_META'} = <<'META';
+no_index:
+    dir:
+        - support
+META
   }
 
   $config;
