@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2005/05/29 10:23:00 +0200 $
-* $Revision: 14 $
+* $Date: 2005/12/26 12:27:22 +0100 $
+* $Revision: 15 $
 * $Source: /cbc/cbc.h $
 *
 ********************************************************************************
@@ -315,7 +315,7 @@ typedef struct {
 
   CParseConfig  cfg;
   CParseInfo    cpi;
-  ArchSpecs     as;
+  CByteOrder    byteOrder;
 
   enum {
     ET_INTEGER, ET_STRING, ET_BOTH
