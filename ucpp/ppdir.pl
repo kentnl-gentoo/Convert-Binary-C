@@ -10,13 +10,13 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2004/12/12 18:28:27 +0100 $
-# $Revision: 1 $
+# $Date: 2006/01/01 10:38:25 +0100 $
+# $Revision: 2 $
 # $Source: /ucpp/ppdir.pl $
 #
 ################################################################################
 #
-# Copyright (c) 2004 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2004-2006 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #

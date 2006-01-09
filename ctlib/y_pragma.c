@@ -90,13 +90,13 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2005/05/02 18:59:50 +0200 $
-* $Revision: 15 $
+* $Date: 2006/01/01 10:38:06 +0100 $
+* $Revision: 16 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
 *
-* Copyright (c) 2002-2005 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2006 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -272,7 +272,7 @@ typedef union YYSTYPE {
   int ival;
 } YYSTYPE;
 /* Line 191 of yacc.c.  */
-#line 276 "ctlib/pragma.c"
+#line 276 "ctlib/y_pragma.c"
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 # define YYSTYPE_IS_TRIVIAL 1
@@ -294,7 +294,7 @@ static        void         packelem_delete(PackElement *pPack);
 
 
 /* Line 214 of yacc.c.  */
-#line 298 "ctlib/pragma.c"
+#line 298 "ctlib/y_pragma.c"
 
 #if ! defined (yyoverflow) || YYERROR_VERBOSE
 
@@ -1256,7 +1256,7 @@ yyreduce:
     }
 
 /* Line 1056 of yacc.c.  */
-#line 1260 "ctlib/pragma.c"
+#line 1260 "ctlib/y_pragma.c"
 
   yyvsp -= yylen;
   yyssp -= yylen;
