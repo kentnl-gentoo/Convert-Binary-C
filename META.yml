@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Convert-Binary-C
-version:             0.63_01
+version:             0.64
 abstract:            Binary Data Conversion using C Types
 license:             perl
 generated_by:        ExtUtils::MakeMaker version 6.30_01
@@ -13,3 +13,5 @@ meta-spec:
 no_index:
     directory:
         - support
+    file:
+        - bin/elf.PL
