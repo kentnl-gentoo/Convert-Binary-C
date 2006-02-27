@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/01/01 10:37:59 +0100 $
-* $Revision: 3 $
+* $Date: 2006/02/24 22:51:38 +0100 $
+* $Revision: 4 $
 * $Source: /cbc/sourcify.h $
 *
 ********************************************************************************
@@ -40,6 +40,7 @@
 
 typedef struct {
   int      context;
+  int      defines;
 } SourcifyConfig;
 
 

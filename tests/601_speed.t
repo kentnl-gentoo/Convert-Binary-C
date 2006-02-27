@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/01 10:38:20 +0100 $
-# $Revision: 12 $
+# $Date: 2006/02/05 23:05:06 +0100 $
+# $Revision: 13 $
 # $Source: /tests/601_speed.t $
 #
 ################################################################################
@@ -32,7 +32,7 @@ if( $Data_Dumper or $IO_File ) {
   $req = 'IO::File' if $IO_File;
   $req = 'Data::Dumper' if $Data_Dumper;
   $req = 'Data::Dumper and IO::File' if $Data_Dumper && $IO_File;
-  skip( "skip: caching requires $req", 0 ) for 1 .. 11;
+  skip( "caching requires $req", 0 ) for 1 .. 11;
   exit;
 }
 else { ok(1) }

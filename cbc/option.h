@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/01/04 18:20:48 +0100 $
-* $Revision: 7 $
+* $Date: 2006/02/20 10:31:05 +0100 $
+* $Revision: 8 $
 * $Source: /cbc/option.h $
 *
 ********************************************************************************
@@ -42,6 +42,7 @@
 typedef struct {
   unsigned option_modified : 1;
   unsigned impacts_layout  : 1;
+  unsigned impacts_preproc : 1;
 } HandleOptionResult;
 
 

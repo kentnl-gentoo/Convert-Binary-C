@@ -9,8 +9,8 @@ print OUT <<'!NO!SUBS!';
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/01 10:36:16 +0100 $
-# $Revision: 1 $
+# $Date: 2006/02/10 06:56:36 +0100 $
+# $Revision: 2 $
 # $Source: /bin/elf.PL $
 #
 ################################################################################
@@ -37,7 +37,7 @@ Getopt::Long::Configure('bundling');
 unless (GetOptions(\%opt, qw( list|l info|i debug section|s=s symbols ))) {
   eval q{
     require Pod::Usage;
-    pod2usage(2);
+    Pod::Usage::pod2usage(2);
   };
   print "Cannot show help, please consider installing Pod::Usage.\n";
   exit;

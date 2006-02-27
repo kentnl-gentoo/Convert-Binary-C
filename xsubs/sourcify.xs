@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/01 10:38:32 +0100 $
-# $Revision: 3 $
+# $Date: 2006/02/24 22:53:54 +0100 $
+# $Revision: 4 $
 # $Source: /xsubs/sourcify.xs $
 #
 ################################################################################
@@ -38,6 +38,7 @@ CBC::sourcify(...)
 
     /* preset with defaults */
     sc.context = 0;
+    sc.defines = 0;
 
     if (items == 2 && SvROK(ST(1)))
     {

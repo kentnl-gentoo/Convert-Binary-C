@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/01/01 10:38:05 +0100 $
-* $Revision: 14 $
+* $Date: 2006/02/04 07:55:53 +0100 $
+* $Revision: 15 $
 * $Source: /ctlib/parser.h $
 *
 ********************************************************************************
@@ -45,9 +45,6 @@ typedef struct {
 } CKeywordToken;
 
 struct lexer_state;
-#ifdef UCPP_REENTRANT
-struct CPP;
-#endif
 
 
 /*===== FUNCTION PROTOTYPES ==================================================*/

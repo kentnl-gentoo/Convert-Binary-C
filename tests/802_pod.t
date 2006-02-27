@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/01 10:38:22 +0100 $
-# $Revision: 7 $
+# $Date: 2006/02/05 23:05:06 +0100 $
+# $Revision: 8 $
 # $Source: /tests/802_pod.t $
 #
 ################################################################################
@@ -53,6 +53,6 @@ for my $pod (@pods) {
     pod_file_ok($pod);
   }
   else {
-    skip("skip: testing pod requires Test::Pod", 0);
+    skip("testing pod requires Test::Pod", 0);
   }
 }
