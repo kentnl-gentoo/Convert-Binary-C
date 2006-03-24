@@ -10,8 +10,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/04 13:44:18 +0100 $
-# $Revision: 14 $
+# $Date: 2006/03/11 14:49:14 +0100 $
+# $Revision: 15 $
 # $Source: /token/tag.pl $
 #
 ################################################################################
@@ -37,7 +37,11 @@ my %tags = (
   ByteOrder => {
                  strval => [qw( BigEndian LittleEndian )],
                  verify => 1,
-               }
+               },
+  Dimension => {
+                 vtable => 1,
+                 verify => 1,
+               },
 );
 
 my @tags = sort keys %tags;

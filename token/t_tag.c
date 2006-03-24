@@ -9,6 +9,12 @@ static TAG_SET(ByteOrder);
 static TAG_GET(ByteOrder);
 static TAG_VERIFY(ByteOrder);
 static enum CbcTagByteOrder GetTagByteOrder(const char *t);
+static TAG_INIT(Dimension);
+static TAG_CLONE(Dimension);
+static TAG_FREE(Dimension);
+static TAG_SET(Dimension);
+static TAG_GET(Dimension);
+static TAG_VERIFY(Dimension);
 static TAG_SET(Format);
 static TAG_GET(Format);
 static TAG_VERIFY(Format);
@@ -27,9 +33,22 @@ static TAG_GET(Hooks);
 
 static const char *gs_TagIdStr[] = {
   "ByteOrder",
+  "Dimension",
   "Format",
   "Hooks",
   "<<INVALID>>"
+};
+
+/**********************************************************************
+ *
+ *  Dimension Vtable
+ *
+ **********************************************************************/
+
+static CtTagVtable gs_Dimension_vtable = {
+  Dimension_Init,
+  Dimension_Clone,
+  Dimension_Free
 };
 
 /**********************************************************************
@@ -57,6 +76,7 @@ static const struct tag_tbl_ent {
   CtTagVtable *vtbl;
 } gs_TagTbl[] = {
   { ByteOrder_Set, ByteOrder_Get, ByteOrder_Verify, NULL },
+  { Dimension_Set, Dimension_Get, Dimension_Verify, &gs_Dimension_vtable },
   { Format_Set, Format_Get, Format_Verify, NULL },
   { Hooks_Set, Hooks_Get, NULL, &gs_Hooks_vtable },
   {NULL, NULL, NULL, NULL}
@@ -84,6 +104,22 @@ static enum CbcTagId get_tag_id(const char *tag)
           tag[9] == '\0')
       {                                             /* ByteOrder  */
         return CBC_TAG_BYTE_ORDER;
+      }
+  
+      goto unknown;
+  
+    case 'D':
+      if (tag[1] == 'i' &&
+          tag[2] == 'm' &&
+          tag[3] == 'e' &&
+          tag[4] == 'n' &&
+          tag[5] == 's' &&
+          tag[6] == 'i' &&
+          tag[7] == 'o' &&
+          tag[8] == 'n' &&
+          tag[9] == '\0')
+      {                                             /* Dimension  */
+        return CBC_TAG_DIMENSION;
       }
   
       goto unknown;

@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/04 23:44:07 +0100 $
-# $Revision: 6 $
+# $Date: 2006/03/12 12:10:51 +0100 $
+# $Revision: 7 $
 # $Source: /xsubs/enum.xs $
 #
 ################################################################################
@@ -97,7 +97,7 @@ CBC::enum(...)
             isSPACE(name[4]))
           name += 5;
 
-        while (*name && isSPACE(*name))
+        while (isSPACE(*name))
           name++;
 
         pEnumSpec = HT_get(THIS->cpi.htEnums, name, 0, 0);

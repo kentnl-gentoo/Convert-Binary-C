@@ -10,8 +10,8 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/02/20 10:31:03 +0100 $
-* $Revision: 21 $
+* $Date: 2006/03/12 12:10:51 +0100 $
+* $Revision: 22 $
 * $Source: /cbc/option.c $
 *
 ********************************************************************************
@@ -367,8 +367,8 @@ static void keyword_map(pTHX_ HashTable *current, SV *sv, SV **rval)
           if (*c == '\0')
             FAIL_CLEAN((aTHX_ "Cannot use empty string as a keyword"));
 
-          if (*c == '_' || isALPHA(*c))
-            do c++; while (*c && (*c == '_' || isALNUM(*c)));
+          while (*c == '_' || isALPHA(*c))
+            c++;
 
           if (*c != '\0')
             FAIL_CLEAN((aTHX_ "Cannot use '%s' as a keyword", key));

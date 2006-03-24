@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/02/26 22:57:24 +0100 $
-# $Revision: 2 $
+# $Date: 2006/03/04 20:54:30 +0100 $
+# $Revision: 3 $
 # $Source: /tests/803_pod_coverage.t $
 #
 ################################################################################
@@ -16,8 +16,11 @@
 
 use Test::More;
 
-eval "use Test::Pod::Coverage";
-plan skip_all => "testing pod coverage requires Test::Pod::Coverage" if $@;
+eval 'use Pod::Coverage 0.10';
+plan skip_all => "testing pod coverage requires Pod::Coverage 0.10" if $@;
+
+eval 'use Test::Pod::Coverage 1.08';
+plan skip_all => "testing pod coverage requires Test::Pod::Coverage 1.08" if $@;
 
 plan tests => 2;
 
