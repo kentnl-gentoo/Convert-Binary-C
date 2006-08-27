@@ -3,8 +3,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/03/11 14:41:28 +0100 $
-# $Revision: 98 $
+# $Date: 2006/08/26 17:43:10 +0200 $
+# $Revision: 99 $
 # $Source: /Makefile.PL $
 #
 ################################################################################
@@ -151,7 +151,7 @@ $^O eq 'aix' and push @DEFINE, qw( POSIX_JMP );
 %FEATURES = (
   debug   => {
                enabled => $Config{ccflags} =~ /-DDEBUGGING\b/ ? 1 : 0,
-               e_flags => [qw( CBC_DEBUGGING CTLIB_DEBUGGING DEBUG_MEMALLOC DEBUG_HASH YYDEBUG=1 )],
+               e_flags => [qw( CBC_DEBUGGING CTLIB_DEBUGGING DEBUG_MEMALLOC DEBUG_UTIL_HASH DEBUG_UTIL_LIST YYDEBUG=1 )],
                d_flags => [qw( NDEBUG )],
              },
   ieeefp  => {
