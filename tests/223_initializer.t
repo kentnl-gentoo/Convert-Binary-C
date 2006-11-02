@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/01/23 22:00:56 +0100 $
-# $Revision: 15 $
+# $Date: 2006/11/02 12:59:02 +0100 $
+# $Revision: 16 $
 # $Source: /tests/223_initializer.t $
 #
 ################################################################################
@@ -21,8 +21,9 @@ $^W = 1;
 
 BEGIN { plan tests => 27 }
 
-$c = eval { new Convert::Binary::C Include => ['tests/include/perlinc',
-                                               'tests/include/include'] };
+my $CCCFG = require 'tests/include/config.pl';
+
+$c = eval { new Convert::Binary::C %$CCCFG };
 ok($@,'',"failed to create Convert::Binary::C objects");
 
 eval { $c->parse_file( 'tests/include/include.c' ) };
