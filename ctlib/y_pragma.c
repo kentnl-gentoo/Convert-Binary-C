@@ -104,13 +104,13 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/01/01 10:38:06 +0100 $
-* $Revision: 16 $
+* $Date: 2007/06/24 00:58:13 +0200 $
+* $Revision: 18 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
 *
-* Copyright (c) 2002-2006 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2007 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -126,6 +126,7 @@
 /*===== LOCAL INCLUDES =======================================================*/
 
 #include "ctdebug.h"
+#include "cterror.h"
 #include "pragma.h"
 
 #include "util/ccattr.h"
@@ -153,12 +154,15 @@
 #define pragma_error( msg )     \
         CT_DEBUG( PRAGMA, ("pragma_error(): %s", msg) )
 
+#define pragma_parse            CTlib_pragma_parse
+
 /* MACROS */
 
 #define PSTATE                  ((PragmaState *) pState)
 
 #define VALID_PACK( value )     \
-         (   (value) ==  1      \
+         (   (value) ==  0      \
+          || (value) ==  1      \
           || (value) ==  2      \
           || (value) ==  4      \
           || (value) ==  8      \
@@ -166,6 +170,20 @@
 
 
 /*===== TYPEDEFS =============================================================*/
+
+struct _pragmaState {
+
+  CParseInfo  *pCPI;
+  const char  *file;
+  long int     line;
+  const char  *code;
+
+  struct {
+    LinkedList stack;
+    unsigned   current;
+  }            pack;
+
+};
 
 typedef struct {
   unsigned size;
@@ -287,12 +305,12 @@ static const int tokentab[] = {
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 179 "ctlib/pragma.y"
+#line 197 "ctlib/pragma.y"
 {
   int ival;
 }
-/* Line 193 of yacc.c.  */
-#line 296 "ctlib/y_pragma.c"
+/* Line 187 of yacc.c.  */
+#line 314 "ctlib/y_pragma.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -302,10 +320,12 @@ typedef union YYSTYPE
 
 
 /* Copy the second part of user declarations.  */
-#line 183 "ctlib/pragma.y"
+#line 201 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTION PROTOTYPES ===========================================*/
+
+static        int          is_valid_pack_arg(PragmaState *pState, int arg);
 
 static inline int          pragma_lex(YYSTYPE *plval, PragmaState *pState);
 
@@ -315,7 +335,7 @@ static        void         packelem_delete(PackElement *pPack);
 
 
 /* Line 216 of yacc.c.  */
-#line 319 "ctlib/y_pragma.c"
+#line 339 "ctlib/y_pragma.c"
 
 #ifdef short
 # undef short
@@ -599,7 +619,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,   206,   206,   210,   212,   214,   218,   223,   231
+       0,   226,   226,   230,   232,   234,   238,   245,   253
 };
 #endif
 
@@ -1500,27 +1520,29 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 211 "ctlib/pragma.y"
+#line 231 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 4:
-#line 213 "ctlib/pragma.y"
+#line 233 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 6:
-#line 219 "ctlib/pragma.y"
+#line 239 "ctlib/pragma.y"
     {
-	    if (VALID_PACK((yyvsp[(1) - (1)].ival)))
+	    if (is_valid_pack_arg(PSTATE, (yyvsp[(1) - (1)].ival)))
+	    {
 	      PSTATE->pack.current = (yyvsp[(1) - (1)].ival);
+	    }
 	  ;}
     break;
 
   case 7:
-#line 224 "ctlib/pragma.y"
+#line 246 "ctlib/pragma.y"
     {
-	    if (VALID_PACK((yyvsp[(3) - (3)].ival)))
+	    if (is_valid_pack_arg(PSTATE, (yyvsp[(3) - (3)].ival)))
 	    {
 	      LL_push(PSTATE->pack.stack, packelem_new(PSTATE->pack.current));
 	      PSTATE->pack.current = (yyvsp[(3) - (3)].ival);
@@ -1529,9 +1551,10 @@ yyreduce:
     break;
 
   case 8:
-#line 232 "ctlib/pragma.y"
+#line 254 "ctlib/pragma.y"
     {
 	    PackElement *pPack = LL_pop(PSTATE->pack.stack);
+
 	    if (pPack)
 	    {
 	      PSTATE->pack.current = pPack->size;
@@ -1544,7 +1567,7 @@ yyreduce:
 
 
 /* Line 1267 of yacc.c.  */
-#line 1548 "ctlib/y_pragma.c"
+#line 1571 "ctlib/y_pragma.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1758,10 +1781,38 @@ yyreturn:
 }
 
 
-#line 244 "ctlib/pragma.y"
+#line 267 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTIONS =====================================================*/
+
+/*******************************************************************************
+*
+*   ROUTINE: is_valid_pack_arg
+*
+*   WRITTEN BY: Marcus Holland-Moritz             ON: Jun 2007
+*   CHANGED BY:                                   ON:
+*
+********************************************************************************
+*
+* DESCRIPTION: Pack element constructor.
+*
+*   ARGUMENTS:
+*
+*     RETURNS:
+*
+*******************************************************************************/
+
+static int is_valid_pack_arg(PragmaState *pState, int arg)
+{
+  if (VALID_PACK(arg))
+    return 1;
+
+  push_error(pState->pCPI, "%s, line %ld: invalid argument %d to #pragma pack",
+             pState->file, pState->line, arg);
+
+  return 0;
+}
 
 /*******************************************************************************
 *
@@ -1780,7 +1831,7 @@ yyreturn:
 *
 *******************************************************************************/
 
-static PackElement *packelem_new( unsigned size )
+static PackElement *packelem_new(unsigned size)
 {
   PackElement *pPack;
 
@@ -1837,15 +1888,15 @@ static inline int pragma_lex(YYSTYPE *plval, PragmaState *pState)
 
   CT_DEBUG( PRAGMA, ("pragma_lex()"));
 
-  while ((token = (int) *pState->str++) != 0)
+  while ((token = (int) *pState->code++) != 0)
   {
     switch (token)
     {
       case NUMBER:
         {
-          char *num = pState->str;
+          const char *num = pState->code;
 
-          pState->str = strchr(num, PRAGMA_TOKEN_END) + 1;
+          pState->code = strchr(num, PRAGMA_TOKEN_END) + 1;
           plval->ival = strtol(num, NULL, 0);
 
           CT_DEBUG(PRAGMA, ("pragma - constant: %d", plval->ival));
@@ -1855,13 +1906,13 @@ static inline int pragma_lex(YYSTYPE *plval, PragmaState *pState)
 
       case NAME:
         {
-          char *tokstr = pState->str;
-          int   toklen, tokval;
+          const char *tokstr = pState->code;
+          int toklen, tokval;
 
 #include "token/t_pragma.c"
 
         success:
-          pState->str += toklen+1;
+          pState->code += toklen + 1;
           return tokval;
 
         unknown:
@@ -1884,9 +1935,9 @@ static inline int pragma_lex(YYSTYPE *plval, PragmaState *pState)
 
 /*******************************************************************************
 *
-*   ROUTINE: pragma_init
+*   ROUTINE: pragma_parser_parse
 *
-*   WRITTEN BY: Marcus Holland-Moritz             ON: Jan 2002
+*   WRITTEN BY: Marcus Holland-Moritz             ON: Jun 2007
 *   CHANGED BY:                                   ON:
 *
 ********************************************************************************
@@ -1899,16 +1950,14 @@ static inline int pragma_lex(YYSTYPE *plval, PragmaState *pState)
 *
 *******************************************************************************/
 
-void pragma_init(PragmaState *pPragma)
+int pragma_parser_parse(PragmaState *pPragma)
 {
-  CT_DEBUG(PRAGMA, ("pragma_init"));
-  pPragma->pack.stack   = LL_new();
-  pPragma->pack.current = 0;
+  return pragma_parse(pPragma);
 }
 
 /*******************************************************************************
 *
-*   ROUTINE: pragma_free
+*   ROUTINE: pragma_parser_new
 *
 *   WRITTEN BY: Marcus Holland-Moritz             ON: Jan 2002
 *   CHANGED BY:                                   ON:
@@ -1923,13 +1972,95 @@ void pragma_init(PragmaState *pPragma)
 *
 *******************************************************************************/
 
-void pragma_free(PragmaState *pPragma)
+PragmaState *pragma_parser_new(CParseInfo *pCPI)
+{
+  PragmaState *pState;
+
+  CT_DEBUG(PRAGMA, ("pragma_parser_new"));
+
+  AllocF(PragmaState *, pState, sizeof(PragmaState));
+
+  pState->pCPI = pCPI;
+  pState->file = 0;
+  pState->line = 0;
+  pState->code = 0;
+  pState->pack.stack = LL_new();
+  pState->pack.current = 0;
+
+  return pState;
+}
+
+/*******************************************************************************
+*
+*   ROUTINE: pragma_parser_delete
+*
+*   WRITTEN BY: Marcus Holland-Moritz             ON: Jan 2002
+*   CHANGED BY:                                   ON:
+*
+********************************************************************************
+*
+* DESCRIPTION:
+*
+*   ARGUMENTS:
+*
+*     RETURNS:
+*
+*******************************************************************************/
+
+void pragma_parser_delete(PragmaState *pPragma)
 {
   if (pPragma)
   {
-    CT_DEBUG(PRAGMA, ("pragma_free"));
+    CT_DEBUG(PRAGMA, ("pragma_parser_delete"));
     LL_destroy(pPragma->pack.stack, (LLDestroyFunc) packelem_delete);
+    Free(pPragma);
   }
+}
+
+/*******************************************************************************
+*
+*   ROUTINE: pragma_parser_set_context
+*
+*   WRITTEN BY: Marcus Holland-Moritz             ON: Jun 2007
+*   CHANGED BY:                                   ON:
+*
+********************************************************************************
+*
+* DESCRIPTION:
+*
+*   ARGUMENTS:
+*
+*     RETURNS:
+*
+*******************************************************************************/
+
+void pragma_parser_set_context(PragmaState *pPragma, const char *file, long int line, const char *code)
+{
+  pPragma->file = file;
+  pPragma->line = line;
+  pPragma->code = code;
+}
+
+/*******************************************************************************
+*
+*   ROUTINE: pragma_parser_get_pack
+*
+*   WRITTEN BY: Marcus Holland-Moritz             ON: Jun 2007
+*   CHANGED BY:                                   ON:
+*
+********************************************************************************
+*
+* DESCRIPTION:
+*
+*   ARGUMENTS:
+*
+*     RETURNS:
+*
+*******************************************************************************/
+
+unsigned pragma_parser_get_pack(PragmaState *pPragma)
+{
+  return pPragma->pack.current;
 }
 
 

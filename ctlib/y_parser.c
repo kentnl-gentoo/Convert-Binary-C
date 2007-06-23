@@ -220,13 +220,13 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2006/11/01 18:58:55 +0100 $
-* $Revision: 86 $
+* $Date: 2007/06/24 00:58:12 +0200 $
+* $Revision: 90 $
 * $Source: /ctlib/parser.y $
 *
 ********************************************************************************
 *
-* Copyright (c) 2002-2006 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2007 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -401,7 +401,7 @@ struct _parserState {
 
   CParseInfo         *pCPI;
 
-  PragmaState         pragma;
+  PragmaState        *pragma;
 
   struct CPP         *pp;
   struct lexer_state *pLexer;
@@ -543,7 +543,7 @@ typedef union YYSTYPE
   u_32               uval;
   char               oper;
 }
-/* Line 193 of yacc.c.  */
+/* Line 187 of yacc.c.  */
 #line 548 "ctlib/y_parser.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -4044,7 +4044,7 @@ yyreduce:
 	    else
 	    {
 	      Struct *pStruct;
-	      pStruct = struct_new(NULL, 0, (yyvsp[(1) - (4)].context).uval, PSTATE->pragma.pack.current, (yyvsp[(3) - (4)].list));
+	      pStruct = struct_new(NULL, 0, (yyvsp[(1) - (4)].context).uval, pragma_parser_get_pack(PSTATE->pragma), (yyvsp[(3) - (4)].list));
 	      pStruct->context = (yyvsp[(1) - (4)].context).ctx;
 	      LL_push(PSTATE->pCPI->structs, pStruct);
 	      (yyval.tspec).tflags = (yyvsp[(1) - (4)].context).uval;
@@ -4068,7 +4068,7 @@ yyreduce:
 
 	      if (pStruct == NULL)
 	      {
-	        pStruct = struct_new((yyvsp[(2) - (5)].identifier)->key, (yyvsp[(2) - (5)].identifier)->keylen, (yyvsp[(1) - (5)].context).uval, PSTATE->pragma.pack.current, (yyvsp[(4) - (5)].list));
+	        pStruct = struct_new((yyvsp[(2) - (5)].identifier)->key, (yyvsp[(2) - (5)].identifier)->keylen, (yyvsp[(1) - (5)].context).uval, pragma_parser_get_pack(PSTATE->pragma), (yyvsp[(4) - (5)].list));
 	        pStruct->context = (yyvsp[(1) - (5)].context).ctx;
 	        LL_push(PSTATE->pCPI->structs, pStruct);
 	        HT_storenode(PSTATE->pCPI->htStructs, (yyvsp[(2) - (5)].identifier), pStruct);
@@ -4081,7 +4081,7 @@ yyreduce:
 	        {
 	          pStruct->context      = (yyvsp[(1) - (5)].context).ctx;
 	          pStruct->declarations = (yyvsp[(4) - (5)].list);
-	          pStruct->pack         = PSTATE->pragma.pack.current;
+	          pStruct->pack         = pragma_parser_get_pack(PSTATE->pragma);
 	        }
 	        else
 	          LL_destroy((yyvsp[(4) - (5)].list), (LLDestroyFunc) structdecl_delete);
@@ -5467,10 +5467,11 @@ static inline int c_lex(YYSTYPE *plval, ParserState *pState)
         CT_DEBUG(CLEXER, ("token-type => PRAGMA"));
         CT_DEBUG(CLEXER, ("line %ld: <#pragma>", pLexer->line));
 
-        pState->pragma.str = pLexer->ctok->name;
-        pragma_parse( &pState->pragma );
+        pragma_parser_set_context(pState->pragma, pState->pFI ? pState->pFI->name : "unknown",
+                                                  pLexer->line - 1, pLexer->ctok->name);
+        pragma_parser_parse(pState->pragma);
 
-        CT_DEBUG(CLEXER, ("current packing: %d\n", pState->pragma.pack.current));
+        CT_DEBUG(CLEXER, ("current packing: %d\n", pragma_parser_get_pack(pState->pragma)));
         break;
 
       case NAME:
@@ -5759,15 +5760,15 @@ ParserState *c_parser_new(const CParseConfig *pCPC, CParseInfo *pCPI,
 
   AllocF(ParserState *, pState, sizeof(ParserState));
 
-  pState->pCPI                = pCPI;
-  pState->pCPC                = pCPC;
-  pState->pLexer              = pLexer;
-  pState->pp                  = aUCPP;
+  pState->pCPI = pCPI;
+  pState->pCPC = pCPC;
+  pState->pLexer = pLexer;
+  pState->pp = aUCPP;
 
-  pState->flags               = 0;
-  pState->pFI                 = NULL;
+  pState->flags = 0;
+  pState->pFI = NULL;
 
-  pragma_init(&pState->pragma);
+  pState->pragma = pragma_parser_new(pCPI);
 
   return pState;
 }
@@ -5816,7 +5817,7 @@ void c_parser_delete(ParserState *pState)
   if (pState == NULL)
     return;
 
-  pragma_free(&pState->pragma);
+  pragma_parser_delete(pState->pragma);
 
   Free(pState);
 }

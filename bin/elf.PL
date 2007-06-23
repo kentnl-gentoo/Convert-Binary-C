@@ -9,13 +9,13 @@ print OUT <<'!NO!SUBS!';
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2006/02/10 06:56:36 +0100 $
-# $Revision: 2 $
+# $Date: 2007/06/11 20:59:50 +0200 $
+# $Revision: 3 $
 # $Source: /bin/elf.PL $
 #
 ################################################################################
 #
-# Copyright (c) 2005-2006 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2005-2007 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
