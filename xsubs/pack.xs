@@ -2,8 +2,8 @@
 #
 # $Project: /Convert-Binary-C $
 # $Author: mhx $
-# $Date: 2007/06/11 20:59:34 +0200 $
-# $Revision: 15 $
+# $Date: 2007/12/06 22:35:21 +0100 $
+# $Revision: 17 $
 # $Source: /xsubs/pack.xs $
 #
 ################################################################################
@@ -229,6 +229,10 @@ CBC::unpack(type, string)
 
         XCPT_RETHROW;
       }
+
+      /* A hook may have moved our stack */
+      SPAGAIN;
+      SP -= items;
 
       EXTEND(SP, count);
 
