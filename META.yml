@@ -1,11 +1,11 @@
 --- #YAML:1.0
 name:                Convert-Binary-C
-version:             0.70
+version:             0.71
 abstract:            Binary Data Conversion using C Types
 license:             perl
 author:              
     - Marcus Holland-Moritz <mhx@cpan.org>
-generated_by:        ExtUtils::MakeMaker version 6.42
+generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
 meta-spec:

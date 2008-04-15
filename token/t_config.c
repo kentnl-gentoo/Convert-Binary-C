@@ -25,6 +25,8 @@ typedef enum {
   OPTION_HasMacroVAARGS,
   OPTION_OrderMembers,
   OPTION_Bitfields,
+  OPTION_StdCVersion,
+  OPTION_HostedC,
   INVALID_OPTION
 } ConfigOption;
 
@@ -323,6 +325,19 @@ switch (option[0])
             goto unknown;
         }
 
+      case 'o':
+        if (option[2] == 's' &&
+            option[3] == 't' &&
+            option[4] == 'e' &&
+            option[5] == 'd' &&
+            option[6] == 'C' &&
+            option[7] == '\0')
+        {                                         /* HostedC    */
+          return OPTION_HostedC;
+        }
+
+        goto unknown;
+
       default:
         goto unknown;
     }
@@ -491,20 +506,43 @@ switch (option[0])
     goto unknown;
 
   case 'S':
-    if (option[1] == 'h' &&
-        option[2] == 'o' &&
-        option[3] == 'r' &&
-        option[4] == 't' &&
-        option[5] == 'S' &&
-        option[6] == 'i' &&
-        option[7] == 'z' &&
-        option[8] == 'e' &&
-        option[9] == '\0')
-    {                                             /* ShortSize  */
-      return OPTION_ShortSize;
-    }
+    switch (option[1])
+    {
+      case 'h':
+        if (option[2] == 'o' &&
+            option[3] == 'r' &&
+            option[4] == 't' &&
+            option[5] == 'S' &&
+            option[6] == 'i' &&
+            option[7] == 'z' &&
+            option[8] == 'e' &&
+            option[9] == '\0')
+        {                                         /* ShortSize  */
+          return OPTION_ShortSize;
+        }
 
-    goto unknown;
+        goto unknown;
+
+      case 't':
+        if (option[2] == 'd' &&
+            option[3] == 'C' &&
+            option[4] == 'V' &&
+            option[5] == 'e' &&
+            option[6] == 'r' &&
+            option[7] == 's' &&
+            option[8] == 'i' &&
+            option[9] == 'o' &&
+            option[10] == 'n' &&
+            option[11] == '\0')
+        {                                         /* StdCVersion */
+          return OPTION_StdCVersion;
+        }
+
+        goto unknown;
+
+      default:
+        goto unknown;
+    }
 
   case 'U':
     switch (option[1])
