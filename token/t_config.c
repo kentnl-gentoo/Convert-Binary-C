@@ -46,7 +46,7 @@ switch (option[0])
             option[7] == 'n' &&
             option[8] == 't' &&
             option[9] == '\0')
-        {                                         /* Alignment  */
+        {                                         /* Alignment         */
           return OPTION_Alignment;
         }
 
@@ -58,7 +58,7 @@ switch (option[0])
             option[4] == 'r' &&
             option[5] == 't' &&
             option[6] == '\0')
-        {                                         /* Assert     */
+        {                                         /* Assert            */
           return OPTION_Assert;
         }
 
@@ -80,7 +80,7 @@ switch (option[0])
             option[7] == 'd' &&
             option[8] == 's' &&
             option[9] == '\0')
-        {                                         /* Bitfields  */
+        {                                         /* Bitfields         */
           return OPTION_Bitfields;
         }
 
@@ -95,7 +95,7 @@ switch (option[0])
             option[7] == 'e' &&
             option[8] == 'r' &&
             option[9] == '\0')
-        {                                         /* ByteOrder  */
+        {                                         /* ByteOrder         */
           return OPTION_ByteOrder;
         }
 
@@ -116,7 +116,7 @@ switch (option[0])
             option[6] == 'z' &&
             option[7] == 'e' &&
             option[8] == '\0')
-        {                                         /* CharSize   */
+        {                                         /* CharSize          */
           return OPTION_CharSize;
         }
 
@@ -158,7 +158,7 @@ switch (option[0])
             option[4] == 'n' &&
             option[5] == 'e' &&
             option[6] == '\0')
-        {                                         /* Define     */
+        {                                         /* Define            */
           return OPTION_Define;
         }
 
@@ -180,7 +180,7 @@ switch (option[0])
             option[14] == 'd' &&
             option[15] == 's' &&
             option[16] == '\0')
-        {                                         /* DisabledKeywords */
+        {                                         /* DisabledKeywords  */
           return OPTION_DisabledKeywords;
         }
 
@@ -196,7 +196,7 @@ switch (option[0])
             option[8] == 'z' &&
             option[9] == 'e' &&
             option[10] == '\0')
-        {                                         /* DoubleSize */
+        {                                         /* DoubleSize        */
           return OPTION_DoubleSize;
         }
 
@@ -223,7 +223,7 @@ switch (option[0])
                         option[6] == 'z' &&
                         option[7] == 'e' &&
                         option[8] == '\0')
-                    {                             /* EnumSize   */
+                    {                             /* EnumSize          */
                       return OPTION_EnumSize;
                     }
 
@@ -234,7 +234,7 @@ switch (option[0])
                         option[6] == 'p' &&
                         option[7] == 'e' &&
                         option[8] == '\0')
-                    {                             /* EnumType   */
+                    {                             /* EnumType          */
                       return OPTION_EnumType;
                     }
 
@@ -266,7 +266,7 @@ switch (option[0])
         option[7] == 'z' &&
         option[8] == 'e' &&
         option[9] == '\0')
-    {                                             /* FloatSize  */
+    {                                             /* FloatSize         */
       return OPTION_FloatSize;
     }
 
@@ -293,7 +293,7 @@ switch (option[0])
                     option[12] == 't' &&
                     option[13] == 's' &&
                     option[14] == '\0')
-                {                                 /* HasCPPComments */
+                {                                 /* HasCPPComments    */
                   return OPTION_HasCPPComments;
                 }
 
@@ -311,7 +311,7 @@ switch (option[0])
                     option[12] == 'G' &&
                     option[13] == 'S' &&
                     option[14] == '\0')
-                {                                 /* HasMacroVAARGS */
+                {                                 /* HasMacroVAARGS    */
                   return OPTION_HasMacroVAARGS;
                 }
 
@@ -332,7 +332,7 @@ switch (option[0])
             option[5] == 'd' &&
             option[6] == 'C' &&
             option[7] == '\0')
-        {                                         /* HostedC    */
+        {                                         /* HostedC           */
           return OPTION_HostedC;
         }
 
@@ -354,7 +354,7 @@ switch (option[0])
                 option[5] == 'd' &&
                 option[6] == 'e' &&
                 option[7] == '\0')
-            {                                     /* Include    */
+            {                                     /* Include           */
               return OPTION_Include;
             }
 
@@ -366,7 +366,7 @@ switch (option[0])
                 option[5] == 'z' &&
                 option[6] == 'e' &&
                 option[7] == '\0')
-            {                                     /* IntSize    */
+            {                                     /* IntSize           */
               return OPTION_IntSize;
             }
 
@@ -391,7 +391,7 @@ switch (option[0])
         option[8] == 'a' &&
         option[9] == 'p' &&
         option[10] == '\0')
-    {                                             /* KeywordMap */
+    {                                             /* KeywordMap        */
       return OPTION_KeywordMap;
     }
 
@@ -420,7 +420,7 @@ switch (option[0])
                         option[12] == 'z' &&
                         option[13] == 'e' &&
                         option[14] == '\0')
-                    {                             /* LongDoubleSize */
+                    {                             /* LongDoubleSize    */
                       return OPTION_LongDoubleSize;
                     }
 
@@ -435,7 +435,7 @@ switch (option[0])
                         option[10] == 'z' &&
                         option[11] == 'e' &&
                         option[12] == '\0')
-                    {                             /* LongLongSize */
+                    {                             /* LongLongSize      */
                       return OPTION_LongLongSize;
                     }
 
@@ -446,7 +446,7 @@ switch (option[0])
                         option[6] == 'z' &&
                         option[7] == 'e' &&
                         option[8] == '\0')
-                    {                             /* LongSize   */
+                    {                             /* LongSize          */
                       return OPTION_LongSize;
                     }
 
@@ -481,7 +481,7 @@ switch (option[0])
         option[10] == 'r' &&
         option[11] == 's' &&
         option[12] == '\0')
-    {                                             /* OrderMembers */
+    {                                             /* OrderMembers      */
       return OPTION_OrderMembers;
     }
 
@@ -499,7 +499,7 @@ switch (option[0])
         option[9] == 'z' &&
         option[10] == 'e' &&
         option[11] == '\0')
-    {                                             /* PointerSize */
+    {                                             /* PointerSize       */
       return OPTION_PointerSize;
     }
 
@@ -517,7 +517,7 @@ switch (option[0])
             option[7] == 'z' &&
             option[8] == 'e' &&
             option[9] == '\0')
-        {                                         /* ShortSize  */
+        {                                         /* ShortSize         */
           return OPTION_ShortSize;
         }
 
@@ -534,7 +534,7 @@ switch (option[0])
             option[9] == 'o' &&
             option[10] == 'n' &&
             option[11] == '\0')
-        {                                         /* StdCVersion */
+        {                                         /* StdCVersion       */
           return OPTION_StdCVersion;
         }
 
@@ -590,7 +590,7 @@ switch (option[0])
                                         option[11] == 'r' &&
                                         option[12] == 's' &&
                                         option[13] == '\0')
-                                    {             /* UnsignedChars */
+                                    {             /* UnsignedChars     */
                                       return OPTION_UnsignedChars;
                                     }
 
@@ -637,7 +637,7 @@ switch (option[0])
         option[6] == 'g' &&
         option[7] == 's' &&
         option[8] == '\0')
-    {                                             /* Warnings   */
+    {                                             /* Warnings          */
       return OPTION_Warnings;
     }
 

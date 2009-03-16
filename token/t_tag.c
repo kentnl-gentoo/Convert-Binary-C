@@ -102,7 +102,7 @@ static enum CbcTagId get_tag_id(const char *tag)
           tag[7] == 'e' &&
           tag[8] == 'r' &&
           tag[9] == '\0')
-      {                                             /* ByteOrder  */
+      {                                             /* ByteOrder */
         return CBC_TAG_BYTE_ORDER;
       }
   
@@ -118,7 +118,7 @@ static enum CbcTagId get_tag_id(const char *tag)
           tag[7] == 'o' &&
           tag[8] == 'n' &&
           tag[9] == '\0')
-      {                                             /* Dimension  */
+      {                                             /* Dimension */
         return CBC_TAG_DIMENSION;
       }
   
@@ -131,7 +131,7 @@ static enum CbcTagId get_tag_id(const char *tag)
           tag[4] == 'a' &&
           tag[5] == 't' &&
           tag[6] == '\0')
-      {                                             /* Format     */
+      {                                             /* Format    */
         return CBC_TAG_FORMAT;
       }
   
@@ -143,7 +143,7 @@ static enum CbcTagId get_tag_id(const char *tag)
           tag[3] == 'k' &&
           tag[4] == 's' &&
           tag[5] == '\0')
-      {                                             /* Hooks      */
+      {                                             /* Hooks     */
         return CBC_TAG_HOOKS;
       }
   
@@ -177,7 +177,7 @@ static enum CbcTagByteOrder GetTagByteOrder(const char *t)
           t[7] == 'a' &&
           t[8] == 'n' &&
           t[9] == '\0')
-      {                                             /* BigEndian  */
+      {                                             /* BigEndian    */
         return CBC_TAG_BYTE_ORDER_BIG_ENDIAN;
       }
   
@@ -227,7 +227,7 @@ static enum CbcTagFormat GetTagFormat(const char *t)
           t[4] == 'r' &&
           t[5] == 'y' &&
           t[6] == '\0')
-      {                                             /* Binary     */
+      {                                             /* Binary */
         return CBC_TAG_FORMAT_BINARY;
       }
   
@@ -240,7 +240,7 @@ static enum CbcTagFormat GetTagFormat(const char *t)
           t[4] == 'n' &&
           t[5] == 'g' &&
           t[6] == '\0')
-      {                                             /* String     */
+      {                                             /* String */
         return CBC_TAG_FORMAT_STRING;
       }
   

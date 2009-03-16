@@ -6,7 +6,7 @@ switch (name[0])
       case 's':
         if (name[2] == 'm' &&
             name[3] == '\0')
-        {                                         /* asm        */
+        {                                         /* asm      */
           static const CKeywordToken ckt = { ASM_TOK, "asm" };
           return &ckt;
         }
@@ -17,7 +17,7 @@ switch (name[0])
         if (name[2] == 't' &&
             name[3] == 'o' &&
             name[4] == '\0')
-        {                                         /* auto       */
+        {                                         /* auto     */
           static const CKeywordToken ckt = { AUTO_TOK, "auto" };
           return &ckt;
         }
@@ -34,7 +34,7 @@ switch (name[0])
         name[3] == 'a' &&
         name[4] == 'k' &&
         name[5] == '\0')
-    {                                             /* break      */
+    {                                             /* break    */
       static const CKeywordToken ckt = { BREAK_TOK, "break" };
       return &ckt;
     }
@@ -48,7 +48,7 @@ switch (name[0])
         if (name[2] == 's' &&
             name[3] == 'e' &&
             name[4] == '\0')
-        {                                         /* case       */
+        {                                         /* case     */
           static const CKeywordToken ckt = { CASE_TOK, "case" };
           return &ckt;
         }
@@ -59,7 +59,7 @@ switch (name[0])
         if (name[2] == 'a' &&
             name[3] == 'r' &&
             name[4] == '\0')
-        {                                         /* char       */
+        {                                         /* char     */
           static const CKeywordToken ckt = { CHAR_TOK, "char" };
           return &ckt;
         }
@@ -75,7 +75,7 @@ switch (name[0])
               case 's':
                 if (name[4] == 't' &&
                     name[5] == '\0')
-                {                                 /* const      */
+                {                                 /* const    */
                   static const CKeywordToken ckt = { CONST_TOK, "const" };
                   return &ckt;
                 }
@@ -88,7 +88,7 @@ switch (name[0])
                     name[6] == 'u' &&
                     name[7] == 'e' &&
                     name[8] == '\0')
-                {                                 /* continue   */
+                {                                 /* continue */
                   static const CKeywordToken ckt = { CONTINUE_TOK, "continue" };
                   return &ckt;
                 }
@@ -117,7 +117,7 @@ switch (name[0])
             name[5] == 'l' &&
             name[6] == 't' &&
             name[7] == '\0')
-        {                                         /* default    */
+        {                                         /* default  */
           static const CKeywordToken ckt = { DEFAULT_TOK, "default" };
           return &ckt;
         }
@@ -128,7 +128,7 @@ switch (name[0])
         switch (name[2])
         {
           case '\0':
-            {                                     /* do         */
+            {                                     /* do       */
               static const CKeywordToken ckt = { DO_TOK, "do" };
               return &ckt;
             }
@@ -138,7 +138,7 @@ switch (name[0])
                 name[4] == 'l' &&
                 name[5] == 'e' &&
                 name[6] == '\0')
-            {                                     /* double     */
+            {                                     /* double   */
               static const CKeywordToken ckt = { DOUBLE_TOK, "double" };
               return &ckt;
             }
@@ -160,7 +160,7 @@ switch (name[0])
         if (name[2] == 's' &&
             name[3] == 'e' &&
             name[4] == '\0')
-        {                                         /* else       */
+        {                                         /* else     */
           static const CKeywordToken ckt = { ELSE_TOK, "else" };
           return &ckt;
         }
@@ -171,7 +171,7 @@ switch (name[0])
         if (name[2] == 'u' &&
             name[3] == 'm' &&
             name[4] == '\0')
-        {                                         /* enum       */
+        {                                         /* enum     */
           static const CKeywordToken ckt = { ENUM_TOK, "enum" };
           return &ckt;
         }
@@ -184,7 +184,7 @@ switch (name[0])
             name[4] == 'r' &&
             name[5] == 'n' &&
             name[6] == '\0')
-        {                                         /* extern     */
+        {                                         /* extern   */
           static const CKeywordToken ckt = { EXTERN_TOK, "extern" };
           return &ckt;
         }
@@ -203,7 +203,7 @@ switch (name[0])
             name[3] == 'a' &&
             name[4] == 't' &&
             name[5] == '\0')
-        {                                         /* float      */
+        {                                         /* float    */
           static const CKeywordToken ckt = { FLOAT_TOK, "float" };
           return &ckt;
         }
@@ -213,7 +213,7 @@ switch (name[0])
       case 'o':
         if (name[2] == 'r' &&
             name[3] == '\0')
-        {                                         /* for        */
+        {                                         /* for      */
           static const CKeywordToken ckt = { FOR_TOK, "for" };
           return &ckt;
         }
@@ -229,7 +229,7 @@ switch (name[0])
         name[2] == 't' &&
         name[3] == 'o' &&
         name[4] == '\0')
-    {                                             /* goto       */
+    {                                             /* goto     */
       static const CKeywordToken ckt = { GOTO_TOK, "goto" };
       return &ckt;
     }
@@ -241,7 +241,7 @@ switch (name[0])
     {
       case 'f':
         if (name[2] == '\0')
-        {                                         /* if         */
+        {                                         /* if       */
           static const CKeywordToken ckt = { IF_TOK, "if" };
           return &ckt;
         }
@@ -256,7 +256,7 @@ switch (name[0])
                 name[4] == 'n' &&
                 name[5] == 'e' &&
                 name[6] == '\0')
-            {                                     /* inline     */
+            {                                     /* inline   */
               static const CKeywordToken ckt = { INLINE_TOK, "inline" };
               return &ckt;
             }
@@ -265,7 +265,7 @@ switch (name[0])
 
           case 't':
             if (name[3] == '\0')
-            {                                     /* int        */
+            {                                     /* int      */
               static const CKeywordToken ckt = { INT_TOK, "int" };
               return &ckt;
             }
@@ -285,7 +285,7 @@ switch (name[0])
         name[2] == 'n' &&
         name[3] == 'g' &&
         name[4] == '\0')
-    {                                             /* long       */
+    {                                             /* long     */
       static const CKeywordToken ckt = { LONG_TOK, "long" };
       return &ckt;
     }
@@ -305,7 +305,7 @@ switch (name[0])
                 name[6] == 'e' &&
                 name[7] == 'r' &&
                 name[8] == '\0')
-            {                                     /* register   */
+            {                                     /* register */
               static const CKeywordToken ckt = { REGISTER_TOK, "register" };
               return &ckt;
             }
@@ -319,7 +319,7 @@ switch (name[0])
                 name[6] == 'c' &&
                 name[7] == 't' &&
                 name[8] == '\0')
-            {                                     /* restrict   */
+            {                                     /* restrict */
               static const CKeywordToken ckt = { RESTRICT_TOK, "restrict" };
               return &ckt;
             }
@@ -331,7 +331,7 @@ switch (name[0])
                 name[4] == 'r' &&
                 name[5] == 'n' &&
                 name[6] == '\0')
-            {                                     /* return     */
+            {                                     /* return   */
               static const CKeywordToken ckt = { RETURN_TOK, "return" };
               return &ckt;
             }
@@ -354,7 +354,7 @@ switch (name[0])
             name[3] == 'r' &&
             name[4] == 't' &&
             name[5] == '\0')
-        {                                         /* short      */
+        {                                         /* short    */
           static const CKeywordToken ckt = { SHORT_TOK, "short" };
           return &ckt;
         }
@@ -369,7 +369,7 @@ switch (name[0])
                 name[4] == 'e' &&
                 name[5] == 'd' &&
                 name[6] == '\0')
-            {                                     /* signed     */
+            {                                     /* signed   */
               static const CKeywordToken ckt = { SIGNED_TOK, "signed" };
               return &ckt;
             }
@@ -381,7 +381,7 @@ switch (name[0])
                 name[4] == 'o' &&
                 name[5] == 'f' &&
                 name[6] == '\0')
-            {                                     /* sizeof     */
+            {                                     /* sizeof   */
               static const CKeywordToken ckt = { SIZEOF_TOK, "sizeof" };
               return &ckt;
             }
@@ -400,7 +400,7 @@ switch (name[0])
                 name[4] == 'i' &&
                 name[5] == 'c' &&
                 name[6] == '\0')
-            {                                     /* static     */
+            {                                     /* static   */
               static const CKeywordToken ckt = { STATIC_TOK, "static" };
               return &ckt;
             }
@@ -412,7 +412,7 @@ switch (name[0])
                 name[4] == 'c' &&
                 name[5] == 't' &&
                 name[6] == '\0')
-            {                                     /* struct     */
+            {                                     /* struct   */
               static const CKeywordToken ckt = { STRUCT_TOK, "struct" };
               return &ckt;
             }
@@ -429,7 +429,7 @@ switch (name[0])
             name[4] == 'c' &&
             name[5] == 'h' &&
             name[6] == '\0')
-        {                                         /* switch     */
+        {                                         /* switch   */
           static const CKeywordToken ckt = { SWITCH_TOK, "switch" };
           return &ckt;
         }
@@ -448,7 +448,7 @@ switch (name[0])
         name[5] == 'e' &&
         name[6] == 'f' &&
         name[7] == '\0')
-    {                                             /* typedef    */
+    {                                             /* typedef  */
       static const CKeywordToken ckt = { TYPEDEF_TOK, "typedef" };
       return &ckt;
     }
@@ -465,7 +465,7 @@ switch (name[0])
             if (name[3] == 'o' &&
                 name[4] == 'n' &&
                 name[5] == '\0')
-            {                                     /* union      */
+            {                                     /* union    */
               static const CKeywordToken ckt = { UNION_TOK, "union" };
               return &ckt;
             }
@@ -479,7 +479,7 @@ switch (name[0])
                 name[6] == 'e' &&
                 name[7] == 'd' &&
                 name[8] == '\0')
-            {                                     /* unsigned   */
+            {                                     /* unsigned */
               static const CKeywordToken ckt = { UNSIGNED_TOK, "unsigned" };
               return &ckt;
             }
@@ -503,7 +503,7 @@ switch (name[0])
           case 'i':
             if (name[3] == 'd' &&
                 name[4] == '\0')
-            {                                     /* void       */
+            {                                     /* void     */
               static const CKeywordToken ckt = { VOID_TOK, "void" };
               return &ckt;
             }
@@ -517,7 +517,7 @@ switch (name[0])
                 name[6] == 'l' &&
                 name[7] == 'e' &&
                 name[8] == '\0')
-            {                                     /* volatile   */
+            {                                     /* volatile */
               static const CKeywordToken ckt = { VOLATILE_TOK, "volatile" };
               return &ckt;
             }
@@ -538,7 +538,7 @@ switch (name[0])
         name[3] == 'l' &&
         name[4] == 'e' &&
         name[5] == '\0')
-    {                                             /* while      */
+    {                                             /* while    */
       static const CKeywordToken ckt = { WHILE_TOK, "while" };
       return &ckt;
     }

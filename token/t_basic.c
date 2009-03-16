@@ -5,7 +5,7 @@ switch (c[0])
         c[2] == 'a' &&
         c[3] == 'r' &&
         c[4] == *name)
-    {                                             /* char       */
+    {                                             /* char     */
       tflags |= T_CHAR;
       goto success;
     }
@@ -19,7 +19,7 @@ switch (c[0])
         c[4] == 'l' &&
         c[5] == 'e' &&
         c[6] == *name)
-    {                                             /* double     */
+    {                                             /* double   */
       tflags |= T_DOUBLE;
       goto success;
     }
@@ -32,7 +32,7 @@ switch (c[0])
         c[3] == 'a' &&
         c[4] == 't' &&
         c[5] == *name)
-    {                                             /* float      */
+    {                                             /* float    */
       tflags |= T_FLOAT;
       goto success;
     }
@@ -43,7 +43,7 @@ switch (c[0])
     if (c[1] == 'n' &&
         c[2] == 't' &&
         c[3] == *name)
-    {                                             /* int        */
+    {                                             /* int      */
       tflags |= T_INT;
       goto success;
     }
@@ -55,7 +55,7 @@ switch (c[0])
         c[2] == 'n' &&
         c[3] == 'g' &&
         c[4] == *name)
-    {                                             /* long       */
+    {                                             /* long     */
       tflags |= tflags & T_LONG ? T_LONGLONG : T_LONG;
       goto success;
     }
@@ -70,7 +70,7 @@ switch (c[0])
             c[3] == 'r' &&
             c[4] == 't' &&
             c[5] == *name)
-        {                                         /* short      */
+        {                                         /* short    */
           tflags |= T_SHORT;
           goto success;
         }
@@ -83,7 +83,7 @@ switch (c[0])
             c[4] == 'e' &&
             c[5] == 'd' &&
             c[6] == *name)
-        {                                         /* signed     */
+        {                                         /* signed   */
           tflags |= T_SIGNED;
           goto success;
         }
@@ -103,7 +103,7 @@ switch (c[0])
         c[6] == 'e' &&
         c[7] == 'd' &&
         c[8] == *name)
-    {                                             /* unsigned   */
+    {                                             /* unsigned */
       tflags |= T_UNSIGNED;
       goto success;
     }

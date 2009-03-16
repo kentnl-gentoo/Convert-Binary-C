@@ -7,7 +7,7 @@ switch (tokstr[0])
         if (tokstr[2] == 'c' &&
             tokstr[3] == 'k' &&
             tokstr[4] == PRAGMA_TOKEN_END)
-        {                                         /* pack       */
+        {                                         /* pack */
           toklen = 4;
           tokval = PACK_TOK;
           goto success;
@@ -18,7 +18,7 @@ switch (tokstr[0])
       case 'o':
         if (tokstr[2] == 'p' &&
             tokstr[3] == PRAGMA_TOKEN_END)
-        {                                         /* pop        */
+        {                                         /* pop  */
           toklen = 3;
           tokval = POP_TOK;
           goto success;
@@ -30,7 +30,7 @@ switch (tokstr[0])
         if (tokstr[2] == 's' &&
             tokstr[3] == 'h' &&
             tokstr[4] == PRAGMA_TOKEN_END)
-        {                                         /* push       */
+        {                                         /* push */
           toklen = 4;
           tokval = PUSH_TOK;
           goto success;

@@ -241,7 +241,7 @@ BLProperty bl_property(const char *property)
           property[3] == 'g' &&
           property[4] == 'n' &&
           property[5] == '\0')
-      {                                           /* Align      */
+      {                                           /* Align     */
         return BLP_ALIGN;
       }
 
@@ -259,7 +259,7 @@ BLProperty bl_property(const char *property)
               property[7] == 'z' &&
               property[8] == 'e' &&
               property[9] == '\0')
-          {                                       /* BlockSize  */
+          {                                       /* BlockSize */
             return BLP_BLOCK_SIZE;
           }
 
@@ -274,7 +274,7 @@ BLProperty bl_property(const char *property)
               property[7] == 'e' &&
               property[8] == 'r' &&
               property[9] == '\0')
-          {                                       /* ByteOrder  */
+          {                                       /* ByteOrder */
             return BLP_BYTE_ORDER;
           }
 
@@ -293,7 +293,7 @@ BLProperty bl_property(const char *property)
           property[6] == 'g' &&
           property[7] == 'n' &&
           property[8] == '\0')
-      {                                           /* MaxAlign   */
+      {                                           /* MaxAlign  */
         return BLP_MAX_ALIGN;
       }
 
@@ -306,7 +306,7 @@ BLProperty bl_property(const char *property)
           property[4] == 'e' &&
           property[5] == 't' &&
           property[6] == '\0')
-      {                                           /* Offset     */
+      {                                           /* Offset    */
         return BLP_OFFSET;
       }
 
@@ -334,7 +334,7 @@ BLPropValStr bl_propval(const char *propval)
           propval[7] == 'a' &&
           propval[8] == 'n' &&
           propval[9] == '\0')
-      {                                           /* BigEndian  */
+      {                                           /* BigEndian    */
         return BLPV_BIG_ENDIAN;
       }
 

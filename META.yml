@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Convert-Binary-C
-version:            0.72
+version:            0.73
 abstract:           Binary Data Conversion using C Types
 author:
     - Marcus Holland-Moritz <mhx@cpan.org>
@@ -11,10 +11,18 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:  {}
+resources:
+    bugtracker:   http://rt.cpan.org/NoAuth/Bugs.html?Dist=Convert-Binary-C
+    homepage:     http://search.cpan.org/~mhx/Convert-Binary-C/
+    license:      http://dev.perl.org/licenses/
+    MailingList:  convert-binary-c@yahoogroups.com
 no_index:
     directory:
         - t
         - inc
+        - support
+    file:
+        - bin/elf.PL
 generated_by:       ExtUtils::MakeMaker version 6.49_01
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html

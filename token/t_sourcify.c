@@ -16,7 +16,7 @@ switch (option[0])
         option[5] == 'x' &&
         option[6] == 't' &&
         option[7] == '\0')
-    {                                             /* Context    */
+    {                                             /* Context */
       return SOURCIFY_OPTION_Context;
     }
 
@@ -30,7 +30,7 @@ switch (option[0])
         option[5] == 'e' &&
         option[6] == 's' &&
         option[7] == '\0')
-    {                                             /* Defines    */
+    {                                             /* Defines */
       return SOURCIFY_OPTION_Defines;
     }
 

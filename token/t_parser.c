@@ -6,7 +6,7 @@ switch (tokstr[0])
       case 's':
         if (tokstr[2] == 'm' &&
             tokstr[3] == '\0')
-        {                                         /* asm        */
+        {                                         /* asm      */
           if( pState->pCPC->keywords & HAS_KEYWORD_ASM )
             return ASM_TOK;
         }
@@ -17,7 +17,7 @@ switch (tokstr[0])
         if (tokstr[2] == 't' &&
             tokstr[3] == 'o' &&
             tokstr[4] == '\0')
-        {                                         /* auto       */
+        {                                         /* auto     */
           if( pState->pCPC->keywords & HAS_KEYWORD_AUTO )
             return AUTO_TOK;
         }
@@ -34,7 +34,7 @@ switch (tokstr[0])
         tokstr[3] == 'a' &&
         tokstr[4] == 'k' &&
         tokstr[5] == '\0')
-    {                                             /* break      */
+    {                                             /* break    */
       return BREAK_TOK;
     }
 
@@ -47,7 +47,7 @@ switch (tokstr[0])
         if (tokstr[2] == 's' &&
             tokstr[3] == 'e' &&
             tokstr[4] == '\0')
-        {                                         /* case       */
+        {                                         /* case     */
           return CASE_TOK;
         }
 
@@ -57,7 +57,7 @@ switch (tokstr[0])
         if (tokstr[2] == 'a' &&
             tokstr[3] == 'r' &&
             tokstr[4] == '\0')
-        {                                         /* char       */
+        {                                         /* char     */
           return CHAR_TOK;
         }
 
@@ -72,7 +72,7 @@ switch (tokstr[0])
               case 's':
                 if (tokstr[4] == 't' &&
                     tokstr[5] == '\0')
-                {                                 /* const      */
+                {                                 /* const    */
                   if( pState->pCPC->keywords & HAS_KEYWORD_CONST )
                     return CONST_TOK;
                 }
@@ -85,7 +85,7 @@ switch (tokstr[0])
                     tokstr[6] == 'u' &&
                     tokstr[7] == 'e' &&
                     tokstr[8] == '\0')
-                {                                 /* continue   */
+                {                                 /* continue */
                   return CONTINUE_TOK;
                 }
 
@@ -113,7 +113,7 @@ switch (tokstr[0])
             tokstr[5] == 'l' &&
             tokstr[6] == 't' &&
             tokstr[7] == '\0')
-        {                                         /* default    */
+        {                                         /* default  */
           return DEFAULT_TOK;
         }
 
@@ -123,7 +123,7 @@ switch (tokstr[0])
         switch (tokstr[2])
         {
           case '\0':
-            {                                     /* do         */
+            {                                     /* do       */
               return DO_TOK;
             }
 
@@ -132,7 +132,7 @@ switch (tokstr[0])
                 tokstr[4] == 'l' &&
                 tokstr[5] == 'e' &&
                 tokstr[6] == '\0')
-            {                                     /* double     */
+            {                                     /* double   */
               if( pState->pCPC->keywords & HAS_KEYWORD_DOUBLE )
                 return DOUBLE_TOK;
             }
@@ -154,7 +154,7 @@ switch (tokstr[0])
         if (tokstr[2] == 's' &&
             tokstr[3] == 'e' &&
             tokstr[4] == '\0')
-        {                                         /* else       */
+        {                                         /* else     */
           return ELSE_TOK;
         }
 
@@ -164,7 +164,7 @@ switch (tokstr[0])
         if (tokstr[2] == 'u' &&
             tokstr[3] == 'm' &&
             tokstr[4] == '\0')
-        {                                         /* enum       */
+        {                                         /* enum     */
           if( pState->pCPC->keywords & HAS_KEYWORD_ENUM )
             return ENUM_TOK;
         }
@@ -177,7 +177,7 @@ switch (tokstr[0])
             tokstr[4] == 'r' &&
             tokstr[5] == 'n' &&
             tokstr[6] == '\0')
-        {                                         /* extern     */
+        {                                         /* extern   */
           if( pState->pCPC->keywords & HAS_KEYWORD_EXTERN )
             return EXTERN_TOK;
         }
@@ -196,7 +196,7 @@ switch (tokstr[0])
             tokstr[3] == 'a' &&
             tokstr[4] == 't' &&
             tokstr[5] == '\0')
-        {                                         /* float      */
+        {                                         /* float    */
           if( pState->pCPC->keywords & HAS_KEYWORD_FLOAT )
             return FLOAT_TOK;
         }
@@ -206,7 +206,7 @@ switch (tokstr[0])
       case 'o':
         if (tokstr[2] == 'r' &&
             tokstr[3] == '\0')
-        {                                         /* for        */
+        {                                         /* for      */
           return FOR_TOK;
         }
 
@@ -221,7 +221,7 @@ switch (tokstr[0])
         tokstr[2] == 't' &&
         tokstr[3] == 'o' &&
         tokstr[4] == '\0')
-    {                                             /* goto       */
+    {                                             /* goto     */
       return GOTO_TOK;
     }
 
@@ -232,7 +232,7 @@ switch (tokstr[0])
     {
       case 'f':
         if (tokstr[2] == '\0')
-        {                                         /* if         */
+        {                                         /* if       */
           return IF_TOK;
         }
 
@@ -246,7 +246,7 @@ switch (tokstr[0])
                 tokstr[4] == 'n' &&
                 tokstr[5] == 'e' &&
                 tokstr[6] == '\0')
-            {                                     /* inline     */
+            {                                     /* inline   */
               if( pState->pCPC->keywords & HAS_KEYWORD_INLINE )
                 return INLINE_TOK;
             }
@@ -255,7 +255,7 @@ switch (tokstr[0])
 
           case 't':
             if (tokstr[3] == '\0')
-            {                                     /* int        */
+            {                                     /* int      */
               return INT_TOK;
             }
 
@@ -274,7 +274,7 @@ switch (tokstr[0])
         tokstr[2] == 'n' &&
         tokstr[3] == 'g' &&
         tokstr[4] == '\0')
-    {                                             /* long       */
+    {                                             /* long     */
       if( pState->pCPC->keywords & HAS_KEYWORD_LONG )
         return LONG_TOK;
     }
@@ -294,7 +294,7 @@ switch (tokstr[0])
                 tokstr[6] == 'e' &&
                 tokstr[7] == 'r' &&
                 tokstr[8] == '\0')
-            {                                     /* register   */
+            {                                     /* register */
               if( pState->pCPC->keywords & HAS_KEYWORD_REGISTER )
                 return REGISTER_TOK;
             }
@@ -308,7 +308,7 @@ switch (tokstr[0])
                 tokstr[6] == 'c' &&
                 tokstr[7] == 't' &&
                 tokstr[8] == '\0')
-            {                                     /* restrict   */
+            {                                     /* restrict */
               if( pState->pCPC->keywords & HAS_KEYWORD_RESTRICT )
                 return RESTRICT_TOK;
             }
@@ -320,7 +320,7 @@ switch (tokstr[0])
                 tokstr[4] == 'r' &&
                 tokstr[5] == 'n' &&
                 tokstr[6] == '\0')
-            {                                     /* return     */
+            {                                     /* return   */
               return RETURN_TOK;
             }
 
@@ -342,7 +342,7 @@ switch (tokstr[0])
             tokstr[3] == 'r' &&
             tokstr[4] == 't' &&
             tokstr[5] == '\0')
-        {                                         /* short      */
+        {                                         /* short    */
           if( pState->pCPC->keywords & HAS_KEYWORD_SHORT )
             return SHORT_TOK;
         }
@@ -357,7 +357,7 @@ switch (tokstr[0])
                 tokstr[4] == 'e' &&
                 tokstr[5] == 'd' &&
                 tokstr[6] == '\0')
-            {                                     /* signed     */
+            {                                     /* signed   */
               if( pState->pCPC->keywords & HAS_KEYWORD_SIGNED )
                 return SIGNED_TOK;
             }
@@ -369,7 +369,7 @@ switch (tokstr[0])
                 tokstr[4] == 'o' &&
                 tokstr[5] == 'f' &&
                 tokstr[6] == '\0')
-            {                                     /* sizeof     */
+            {                                     /* sizeof   */
               return SIZEOF_TOK;
             }
 
@@ -387,7 +387,7 @@ switch (tokstr[0])
                 tokstr[4] == 'i' &&
                 tokstr[5] == 'c' &&
                 tokstr[6] == '\0')
-            {                                     /* static     */
+            {                                     /* static   */
               if( pState->pCPC->keywords & HAS_KEYWORD_STATIC )
                 return STATIC_TOK;
             }
@@ -399,7 +399,7 @@ switch (tokstr[0])
                 tokstr[4] == 'c' &&
                 tokstr[5] == 't' &&
                 tokstr[6] == '\0')
-            {                                     /* struct     */
+            {                                     /* struct   */
               return STRUCT_TOK;
             }
 
@@ -415,7 +415,7 @@ switch (tokstr[0])
             tokstr[4] == 'c' &&
             tokstr[5] == 'h' &&
             tokstr[6] == '\0')
-        {                                         /* switch     */
+        {                                         /* switch   */
           return SWITCH_TOK;
         }
 
@@ -433,7 +433,7 @@ switch (tokstr[0])
         tokstr[5] == 'e' &&
         tokstr[6] == 'f' &&
         tokstr[7] == '\0')
-    {                                             /* typedef    */
+    {                                             /* typedef  */
       return TYPEDEF_TOK;
     }
 
@@ -449,7 +449,7 @@ switch (tokstr[0])
             if (tokstr[3] == 'o' &&
                 tokstr[4] == 'n' &&
                 tokstr[5] == '\0')
-            {                                     /* union      */
+            {                                     /* union    */
               return UNION_TOK;
             }
 
@@ -462,7 +462,7 @@ switch (tokstr[0])
                 tokstr[6] == 'e' &&
                 tokstr[7] == 'd' &&
                 tokstr[8] == '\0')
-            {                                     /* unsigned   */
+            {                                     /* unsigned */
               if( pState->pCPC->keywords & HAS_KEYWORD_UNSIGNED )
                 return UNSIGNED_TOK;
             }
@@ -486,7 +486,7 @@ switch (tokstr[0])
           case 'i':
             if (tokstr[3] == 'd' &&
                 tokstr[4] == '\0')
-            {                                     /* void       */
+            {                                     /* void     */
               if( pState->pCPC->keywords & HAS_KEYWORD_VOID )
                 return VOID_TOK;
             }
@@ -500,7 +500,7 @@ switch (tokstr[0])
                 tokstr[6] == 'l' &&
                 tokstr[7] == 'e' &&
                 tokstr[8] == '\0')
-            {                                     /* volatile   */
+            {                                     /* volatile */
               if( pState->pCPC->keywords & HAS_KEYWORD_VOLATILE )
                 return VOLATILE_TOK;
             }
@@ -521,7 +521,7 @@ switch (tokstr[0])
         tokstr[3] == 'l' &&
         tokstr[4] == 'e' &&
         tokstr[5] == '\0')
-    {                                             /* while      */
+    {                                             /* while    */
       return WHILE_TOK;
     }
 

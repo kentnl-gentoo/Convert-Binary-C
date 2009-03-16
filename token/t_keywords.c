@@ -6,7 +6,7 @@ switch (str[0])
       case 's':
         if (str[2] == 'm' &&
             str[3] == '\0')
-        {                                         /* asm        */
+        {                                         /* asm      */
           keywords &= ~HAS_KEYWORD_ASM;
           goto success;
         }
@@ -17,7 +17,7 @@ switch (str[0])
         if (str[2] == 't' &&
             str[3] == 'o' &&
             str[4] == '\0')
-        {                                         /* auto       */
+        {                                         /* auto     */
           keywords &= ~HAS_KEYWORD_AUTO;
           goto success;
         }
@@ -34,7 +34,7 @@ switch (str[0])
         str[3] == 's' &&
         str[4] == 't' &&
         str[5] == '\0')
-    {                                             /* const      */
+    {                                             /* const    */
       keywords &= ~HAS_KEYWORD_CONST;
       goto success;
     }
@@ -48,7 +48,7 @@ switch (str[0])
         str[4] == 'l' &&
         str[5] == 'e' &&
         str[6] == '\0')
-    {                                             /* double     */
+    {                                             /* double   */
       keywords &= ~HAS_KEYWORD_DOUBLE;
       goto success;
     }
@@ -62,7 +62,7 @@ switch (str[0])
         if (str[2] == 'u' &&
             str[3] == 'm' &&
             str[4] == '\0')
-        {                                         /* enum       */
+        {                                         /* enum     */
           keywords &= ~HAS_KEYWORD_ENUM;
           goto success;
         }
@@ -75,7 +75,7 @@ switch (str[0])
             str[4] == 'r' &&
             str[5] == 'n' &&
             str[6] == '\0')
-        {                                         /* extern     */
+        {                                         /* extern   */
           keywords &= ~HAS_KEYWORD_EXTERN;
           goto success;
         }
@@ -92,7 +92,7 @@ switch (str[0])
         str[3] == 'a' &&
         str[4] == 't' &&
         str[5] == '\0')
-    {                                             /* float      */
+    {                                             /* float    */
       keywords &= ~HAS_KEYWORD_FLOAT;
       goto success;
     }
@@ -106,7 +106,7 @@ switch (str[0])
         str[4] == 'n' &&
         str[5] == 'e' &&
         str[6] == '\0')
-    {                                             /* inline     */
+    {                                             /* inline   */
       keywords &= ~HAS_KEYWORD_INLINE;
       goto success;
     }
@@ -118,7 +118,7 @@ switch (str[0])
         str[2] == 'n' &&
         str[3] == 'g' &&
         str[4] == '\0')
-    {                                             /* long       */
+    {                                             /* long     */
       keywords &= ~HAS_KEYWORD_LONG;
       goto success;
     }
@@ -138,7 +138,7 @@ switch (str[0])
                 str[6] == 'e' &&
                 str[7] == 'r' &&
                 str[8] == '\0')
-            {                                     /* register   */
+            {                                     /* register */
               keywords &= ~HAS_KEYWORD_REGISTER;
               goto success;
             }
@@ -152,7 +152,7 @@ switch (str[0])
                 str[6] == 'c' &&
                 str[7] == 't' &&
                 str[8] == '\0')
-            {                                     /* restrict   */
+            {                                     /* restrict */
               keywords &= ~HAS_KEYWORD_RESTRICT;
               goto success;
             }
@@ -175,7 +175,7 @@ switch (str[0])
             str[3] == 'r' &&
             str[4] == 't' &&
             str[5] == '\0')
-        {                                         /* short      */
+        {                                         /* short    */
           keywords &= ~HAS_KEYWORD_SHORT;
           goto success;
         }
@@ -188,7 +188,7 @@ switch (str[0])
             str[4] == 'e' &&
             str[5] == 'd' &&
             str[6] == '\0')
-        {                                         /* signed     */
+        {                                         /* signed   */
           keywords &= ~HAS_KEYWORD_SIGNED;
           goto success;
         }
@@ -201,7 +201,7 @@ switch (str[0])
             str[4] == 'i' &&
             str[5] == 'c' &&
             str[6] == '\0')
-        {                                         /* static     */
+        {                                         /* static   */
           keywords &= ~HAS_KEYWORD_STATIC;
           goto success;
         }
@@ -221,7 +221,7 @@ switch (str[0])
         str[6] == 'e' &&
         str[7] == 'd' &&
         str[8] == '\0')
-    {                                             /* unsigned   */
+    {                                             /* unsigned */
       keywords &= ~HAS_KEYWORD_UNSIGNED;
       goto success;
     }
@@ -237,7 +237,7 @@ switch (str[0])
           case 'i':
             if (str[3] == 'd' &&
                 str[4] == '\0')
-            {                                     /* void       */
+            {                                     /* void     */
               keywords &= ~HAS_KEYWORD_VOID;
               goto success;
             }
@@ -251,7 +251,7 @@ switch (str[0])
                 str[6] == 'l' &&
                 str[7] == 'e' &&
                 str[8] == '\0')
-            {                                     /* volatile   */
+            {                                     /* volatile */
               keywords &= ~HAS_KEYWORD_VOLATILE;
               goto success;
             }
