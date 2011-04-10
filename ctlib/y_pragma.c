@@ -1,10 +1,9 @@
-
-/* A Bison parser, made by GNU Bison 2.4.1.  */
+/* A Bison parser, made by GNU Bison 2.4.3.  */
 
 /* Skeleton implementation for Bison's Yacc-like parsers in C
    
-      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
-   Free Software Foundation, Inc.
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
+   2009, 2010 Free Software Foundation, Inc.
    
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -46,7 +45,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.4.1"
+#define YYBISON_VERSION "2.4.3"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -90,13 +89,13 @@
 *
 * $Project: /Convert-Binary-C $
 * $Author: mhx $
-* $Date: 2009/03/15 04:10:48 +0100 $
-* $Revision: 20 $
+* $Date: 2011/04/10 12:32:20 +0200 $
+* $Revision: 21 $
 * $Source: /ctlib/pragma.y $
 *
 ********************************************************************************
 *
-* Copyright (c) 2002-2009 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -272,7 +271,7 @@ static const int tokentab[] = {
 
 
 /* Line 189 of yacc.c  */
-#line 276 "ctlib/y_pragma.c"
+#line 275 "ctlib/y_pragma.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -320,7 +319,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 324 "ctlib/y_pragma.c"
+#line 323 "ctlib/y_pragma.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -346,7 +345,7 @@ static        void         packelem_delete(PackElement *pPack);
 
 
 /* Line 264 of yacc.c  */
-#line 350 "ctlib/y_pragma.c"
+#line 349 "ctlib/y_pragma.c"
 
 #ifdef short
 # undef short
@@ -396,7 +395,7 @@ typedef short int yytype_int16;
 #define YYSIZE_MAXIMUM ((YYSIZE_T) -1)
 
 #ifndef YY_
-# if YYENABLE_NLS
+# if defined YYENABLE_NLS && YYENABLE_NLS
 #  if ENABLE_NLS
 #   include <libintl.h> /* INFRINGES ON USER NAME SPACE */
 #   define YY_(msgid) dgettext ("bison-runtime", msgid)
@@ -731,9 +730,18 @@ static const yytype_uint8 yystos[] =
 
 /* Like YYERROR except do call yyerror.  This remains here temporarily
    to ease the transition to the new meaning of YYERROR, for GCC.
-   Once GCC version 2 has supplanted version 1, this can go.  */
+   Once GCC version 2 has supplanted version 1, this can go.  However,
+   YYFAIL appears to be in use.  Nevertheless, it is formally deprecated
+   in Bison 2.4.2's NEWS entry, where a plan to phase it out is
+   discussed.  */
 
 #define YYFAIL		goto yyerrlab
+#if defined YYFAIL
+  /* This is here to suppress warnings from the GCC cpp's
+     -Wunused-macros.  Normally we don't worry about that warning, but
+     some users do, and we want to make it easy for users to remove
+     YYFAIL uses, which will produce warnings from Bison 2.5.  */
+#endif
 
 #define YYRECOVERING()  (!!yyerrstatus)
 
@@ -790,7 +798,7 @@ while (YYID (0))
    we won't break user code: when these are the locations we know.  */
 
 #ifndef YY_LOCATION_PRINT
-# if YYLTYPE_IS_TRIVIAL
+# if defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
 #  define YY_LOCATION_PRINT(File, Loc)			\
      fprintf (File, "%d.%d-%d.%d",			\
 	      (Loc).first_line, (Loc).first_column,	\
@@ -1528,21 +1536,21 @@ yyreduce:
     {
         case 3:
 
-/* Line 1455 of yacc.c  */
+/* Line 1464 of yacc.c  */
 #line 231 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 4:
 
-/* Line 1455 of yacc.c  */
+/* Line 1464 of yacc.c  */
 #line 233 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 6:
 
-/* Line 1455 of yacc.c  */
+/* Line 1464 of yacc.c  */
 #line 239 "ctlib/pragma.y"
     {
 	    if (is_valid_pack_arg(PSTATE, (yyvsp[(1) - (1)].ival)))
@@ -1554,7 +1562,7 @@ yyreduce:
 
   case 7:
 
-/* Line 1455 of yacc.c  */
+/* Line 1464 of yacc.c  */
 #line 246 "ctlib/pragma.y"
     {
 	    if (is_valid_pack_arg(PSTATE, (yyvsp[(3) - (3)].ival)))
@@ -1567,7 +1575,7 @@ yyreduce:
 
   case 8:
 
-/* Line 1455 of yacc.c  */
+/* Line 1464 of yacc.c  */
 #line 254 "ctlib/pragma.y"
     {
 	    PackElement *pPack = LL_pop(PSTATE->pack.stack);
@@ -1584,8 +1592,8 @@ yyreduce:
 
 
 
-/* Line 1455 of yacc.c  */
-#line 1589 "ctlib/y_pragma.c"
+/* Line 1464 of yacc.c  */
+#line 1597 "ctlib/y_pragma.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1796,7 +1804,7 @@ yyreturn:
 
 
 
-/* Line 1675 of yacc.c  */
+/* Line 1684 of yacc.c  */
 #line 267 "ctlib/pragma.y"
 
 

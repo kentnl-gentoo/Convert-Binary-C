@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Convert-Binary-C
-version:            0.74
+version:            0.75
 abstract:           Binary Data Conversion using C Types
 author:
     - Marcus Holland-Moritz <mhx@cpan.org>
@@ -23,7 +23,7 @@ no_index:
         - support
     file:
         - bin/elf.PL
-generated_by:       ExtUtils::MakeMaker version 6.49_01
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4
