@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Convert-Binary-C
-version:            0.75
+version:            0.76
 abstract:           Binary Data Conversion using C Types
 author:
     - Marcus Holland-Moritz <mhx@cpan.org>
