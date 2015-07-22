@@ -427,4 +427,5 @@ xsubs/sourcify.xs
 xsubs/tag.xs
 xsubs/typedef.xs
 xsubs/typeof.xs
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

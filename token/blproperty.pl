@@ -8,15 +8,7 @@
 #
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:29 +0200 $
-# $Revision: 15 $
-# $Source: /token/blproperty.pl $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -53,16 +45,16 @@ my %engines = (
 
 );
 
-my @properties = do { my %seen; grep !$seen{$_}++,
+my @properties = do { my %seen; sort grep !$seen{$_}++,
                       map keys %$_, values %engines };
-my @values     = do { my %seen; grep !$seen{$_}++,
+my @values     = do { my %seen; sort grep !$seen{$_}++,
                       map { map { exists $_->{choice} ? @{$_->{choice}} : () } values %$_ } values %engines };
 
 my $file = shift;
 my $fh = IO::File->new(">$file") or die "$file: $!\n";
 
 sub to_name
-{ 
+{
   my($pre, $s) = @_;
   $s =~ s/([A-Z])(?=[a-z])/_$1/g;
   $s = "_$s" unless $s =~ /^_/;
@@ -70,7 +62,7 @@ sub to_name
 }
 
 sub to_member
-{ 
+{
   my $s = shift;
   $s =~ s/([A-Z])/_$1/g;
   $s =~ s/^_//;

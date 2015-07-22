@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:27 +0200 $
-# $Revision: 9 $
-# $Source: /tests/503_bfgeneric.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -286,7 +278,7 @@ while (1) {
              $code,
              "data = $init\n",
              "expected: ", showbits($packed[$i]), "\n",
-             "     got: ", showbits($p), "\n");       
+             "     got: ", showbits($p), "\n");
       }
 
       my $u = $c[$i]->unpack($type, $packed[$i]);
@@ -87604,4 +87596,3 @@ ffffffa94010c000a0180000c0000000c22b9a02d5000000
 5700000000600300d27d00000100000034a2d81809000000
 0000005700c0c000fba400004000000031b1446809000000
 =
-

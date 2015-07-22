@@ -8,15 +8,7 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
-* $Author: mhx $
-* $Date: 2011/04/10 12:32:31 +0200 $
-* $Revision: 29 $
-* $Source: /util/memalloc.h $
-*
-********************************************************************************
-*
-* Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of either the Artistic License or the
@@ -353,8 +345,10 @@ int SetDebugMemAlloc( void (*dbfunc)(char *, ...), unsigned long dbflags );
 #ifdef ABORT_IF_NO_MEM
 # define abortMEMALLOC( call, size, expr )                                     \
         do {                                                                   \
-          if( (expr) == NULL && size > 0 ) {                                   \
-            fprintf(stderr, "%s(%d): out of memory!\n", call, size);           \
+          size_t tmp_size__ = (size);                                          \
+          if( (expr) == NULL && tmp_size__ > 0 ) {                             \
+            fprintf(stderr, "%s(%u): out of memory!\n",                        \
+                    call, (unsigned) tmp_size__);                              \
             abort();                                                           \
           }                                                                    \
         } while(0)

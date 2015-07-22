@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:21 +0200 $
-# $Revision: 25 $
-# $Source: /tests/001_init.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -144,23 +136,23 @@ ok(defined $p);
 for my $class (qw(Convert::Binary::C Convert::Binary::C::Cached)) {
   eval { $p = $class->new };
   is($@, '');
-  
+
   eval { $p->{''} = 0 };
   like($@, qr/^Modification of a read-only value attempted/);
-  
+
   $tmp = delete $p->{''};
-  
+
   eval { $p->clean };
   like($@, qr/THIS is corrupt/);
-  
+
   $p->{''} = $tmp;
-  
+
   $e = {'' => $tmp};
   bless $e, ref $p;
-  
+
   eval { $e->clean };
   like($@, qr/THIS->hv is corrupt/);
-  
+
   # don't forget to rebless to avoid warnings during cleanup
   bless $e, 'main';
 }

@@ -1,20 +1,12 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:27 +0200 $
-# $Revision: 31 $
-# $Source: /tests/603_complex.t $
-#
-################################################################################
-#
 #              THIS IS AN AUTOMATICALLY GENERATED TEST SCRIPT
 #
 #                    ALL CHANGES MADE HERE WILL BE LOST
 #
 ################################################################################
 #
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -2922,10 +2914,10 @@ sub hexdump
 {
   my $data = shift;
   my $dump = '';
-  
+
   while (length $data) {
     my($i, $d, $t) = (0, '', '');
-    
+
     for my $c (unpack 'C*', substr $data, 0, 16, '') {
       $d .= sprintf "%02X", $c;
       $d .= ' ';
@@ -2934,7 +2926,7 @@ sub hexdump
       $d .= ' ';
       $t .= ' ' unless $i % 8;
     }
-  
+
     $dump .= sprintf "%-53s%s\n", $d, $t;
   }
 
@@ -3345,4 +3337,3 @@ sub packcheck
 
   ($ok, $rcok);
 }
-

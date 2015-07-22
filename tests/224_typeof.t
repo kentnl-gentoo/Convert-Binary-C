@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:24 +0200 $
-# $Revision: 11 $
-# $Source: /tests/224_typeof.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -34,7 +26,7 @@ ok($@,'',"failed to parse C code");
 {
   my @warn;
   local $SIG{__WARN__} = sub { push @warn, $_[0] };
-  
+
   for my $t ( @tests ) {
     ok( $c->typeof($t->{name}), $t->{type} );
   }
@@ -104,4 +96,3 @@ struct foo.c.d                  =>  u_32 :4
 struct foo.c.e                  =>  signed short :5
 struct foo.d                    =>  int :16
 struct foo.e                    =>  int *
-

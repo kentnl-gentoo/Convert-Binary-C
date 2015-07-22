@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:24 +0200 $
-# $Revision: 16 $
-# $Source: /tests/222_ieee.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -116,4 +108,3 @@ __DATA__
  1.0            | 3F F0 00 00 00 00 00 00 | 3F 80 00 00
  3.1415926535   | 40 09 21 FB 54 41 17 44 | 40 49 0F DB
  1.220703125e-4 | 3F 20 00 00 00 00 00 00 | 39 00 00 00
-

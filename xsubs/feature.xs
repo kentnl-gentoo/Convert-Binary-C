@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:32 +0200 $
-# $Revision: 7 $
-# $Source: /xsubs/feature.xs $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -59,15 +51,6 @@ feature(...)
       case 'i':
         if (strEQ(feat, "ieeefp"))
 #ifdef CBC_HAVE_IEEE_FP
-          XSRETURN_YES;
-#else
-          XSRETURN_NO;
-#endif
-        break;
-
-      case 't':
-        if (strEQ(feat, "threads"))
-#ifdef CBC_THREAD_SAFE
           XSRETURN_YES;
 #else
           XSRETURN_NO;

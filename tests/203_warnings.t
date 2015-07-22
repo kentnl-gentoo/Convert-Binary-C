@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:21 +0200 $
-# $Revision: 78 $
-# $Source: /tests/203_warnings.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -163,8 +155,8 @@ eval_test(q{
   $x = $p->sizeof('long long');                                 # no warning
   $x = $p->typeof('long double');                               # no warning
 
-  $p->parse($code{pragma_pack_1});                              # (E) line 5: invalid argument 3 to #pragma pack 
-  $p->parse($code{pragma_pack_2});                              # (E) line 1: invalid argument 5 to #pragma pack 
+  $p->parse($code{pragma_pack_1});                              # (E) line 5: invalid argument 3 to #pragma pack
+  $p->parse($code{pragma_pack_2});                              # (E) line 1: invalid argument 5 to #pragma pack
   $p->parse($code{pragma_pack_3});                              # no warning
 
   $p->parse($code{macro});                                      # (E) macro ... FOO ... redefined
@@ -667,7 +659,7 @@ eval_test(q{
   $x = $p->unpack('test', "\0"x$p->sizeof('test'));             # (1) Expected a hash reference to look up member 'a' in 'foo[1][1].a', not a string value
   $p->tag('inner_struct', Format => undef);                     # no error
   $p->tag('inner_struct', Hooks => {unpack=>sub{{foo=>1}}});    # no error
-  $x = $p->unpack('test', "\0"x$p->sizeof('test'));             # (1) Cannot find member 'a' in hash (in 'foo[1][1].a') 
+  $x = $p->unpack('test', "\0"x$p->sizeof('test'));             # (1) Cannot find member 'a' in hash (in 'foo[1][1].a')
   $p->tag('inner_struct', Hooks => undef);                      # no error
 
   $x = $p->unpack('test', "\0"x$p->sizeof('test'));             # no error (just to be safe)
@@ -967,4 +959,3 @@ struct dimtag_fail {
   char foo;
   int array[2];     /* starts at offset 3 */
 };
-

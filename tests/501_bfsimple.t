@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:27 +0200 $
-# $Revision: 17 $
-# $Source: /tests/501_bfsimple.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -108,7 +100,7 @@ for my $cfg ({ bo => 'BigEndian'    },
   my $bfs = $c->unpack('bfs', pack "C*", (255)x4);
   my $bfue = $c->unpack('bfue', pack "C*", (255)x4);
   my $bfse = $c->unpack('bfse', pack "C*", (255)x4);
-  
+
   for (1 .. 7) {
     is($bfu->{"b$_"}, (1 << $_) - 1);
     is($bfs->{"b$_"}, -1);
@@ -453,4 +445,3 @@ sub packbits
   }
   pack "C*", reverse @b;
 }
-

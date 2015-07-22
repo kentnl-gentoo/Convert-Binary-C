@@ -371,10 +371,10 @@ const char *bl_property_string(BLProperty property)
 {
   static const char *properties[] = {
     "Align",
-    "Offset",
+    "BlockSize",
     "ByteOrder",
     "MaxAlign",
-    "BlockSize"
+    "Offset"
   };
 
   if (property < sizeof properties / sizeof properties[0])

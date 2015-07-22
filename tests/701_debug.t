@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:28 +0200 $
-# $Revision: 25 $
-# $Source: /tests/701_debug.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -94,4 +86,3 @@ eval qq{
 
 ok( $@, qr/^You must pass an even number of module arguments/ );
 ok( scalar @warnings, 0, "unexpected warning(s)" );
-

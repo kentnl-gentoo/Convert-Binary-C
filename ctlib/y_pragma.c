@@ -87,15 +87,7 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
-* $Author: mhx $
-* $Date: 2011/04/10 12:32:20 +0200 $
-* $Revision: 21 $
-* $Source: /ctlib/pragma.y $
-*
-********************************************************************************
-*
-* Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -271,7 +263,7 @@ static const int tokentab[] = {
 
 
 /* Line 189 of yacc.c  */
-#line 275 "ctlib/y_pragma.c"
+#line 267 "ctlib/y_pragma.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -312,14 +304,14 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 197 "ctlib/pragma.y"
+#line 189 "ctlib/pragma.y"
 
   int ival;
 
 
 
 /* Line 214 of yacc.c  */
-#line 323 "ctlib/y_pragma.c"
+#line 315 "ctlib/y_pragma.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -330,7 +322,7 @@ typedef union YYSTYPE
 /* Copy the second part of user declarations.  */
 
 /* Line 264 of yacc.c  */
-#line 201 "ctlib/pragma.y"
+#line 193 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTION PROTOTYPES ===========================================*/
@@ -345,7 +337,7 @@ static        void         packelem_delete(PackElement *pPack);
 
 
 /* Line 264 of yacc.c  */
-#line 349 "ctlib/y_pragma.c"
+#line 341 "ctlib/y_pragma.c"
 
 #ifdef short
 # undef short
@@ -629,7 +621,7 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,   226,   226,   230,   232,   234,   238,   245,   253
+       0,   218,   218,   222,   224,   226,   230,   237,   245
 };
 #endif
 
@@ -1537,21 +1529,21 @@ yyreduce:
         case 3:
 
 /* Line 1464 of yacc.c  */
-#line 231 "ctlib/pragma.y"
+#line 223 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 4:
 
 /* Line 1464 of yacc.c  */
-#line 233 "ctlib/pragma.y"
+#line 225 "ctlib/pragma.y"
     { PSTATE->pack.current = 0; ;}
     break;
 
   case 6:
 
 /* Line 1464 of yacc.c  */
-#line 239 "ctlib/pragma.y"
+#line 231 "ctlib/pragma.y"
     {
 	    if (is_valid_pack_arg(PSTATE, (yyvsp[(1) - (1)].ival)))
 	    {
@@ -1563,7 +1555,7 @@ yyreduce:
   case 7:
 
 /* Line 1464 of yacc.c  */
-#line 246 "ctlib/pragma.y"
+#line 238 "ctlib/pragma.y"
     {
 	    if (is_valid_pack_arg(PSTATE, (yyvsp[(3) - (3)].ival)))
 	    {
@@ -1576,7 +1568,7 @@ yyreduce:
   case 8:
 
 /* Line 1464 of yacc.c  */
-#line 254 "ctlib/pragma.y"
+#line 246 "ctlib/pragma.y"
     {
 	    PackElement *pPack = LL_pop(PSTATE->pack.stack);
 
@@ -1593,7 +1585,7 @@ yyreduce:
 
 
 /* Line 1464 of yacc.c  */
-#line 1597 "ctlib/y_pragma.c"
+#line 1589 "ctlib/y_pragma.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1805,7 +1797,7 @@ yyreturn:
 
 
 /* Line 1684 of yacc.c  */
-#line 267 "ctlib/pragma.y"
+#line 259 "ctlib/pragma.y"
 
 
 /*===== STATIC FUNCTIONS =====================================================*/

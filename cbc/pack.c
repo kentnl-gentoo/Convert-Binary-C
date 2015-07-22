@@ -8,15 +8,7 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
-* $Author: mhx $
-* $Date: 2011/04/10 14:17:02 +0200 $
-* $Revision: 59 $
-* $Source: /cbc/pack.c $
-*
-********************************************************************************
-*
-* Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -1094,9 +1086,9 @@ static void pack_format(pPACKARGS, const CtTag *format, unsigned size, u_32 flag
       refstr = SvROK(sv) ? " (Are you sure you want to pack a reference type?)"
                          : "";
 
-      WARN((aTHX_ "Source string \"%s\" is longer (%d byte%s) than '%s'"
-                  " (%d byte%s) while packing '%s' format%s",
-            copy, len, len == 1 ? "" : "s", idl_to_str(aTHX_ &(PACK->idl)),
+      WARN((aTHX_ "Source string \"%s\" is longer (%u byte%s) than '%s'"
+                  " (%u byte%s) while packing '%s' format%s",
+            copy, (unsigned) len, len == 1 ? "" : "s", idl_to_str(aTHX_ &(PACK->idl)),
             size, size == 1 ? "" : "s", fmtstr, refstr));
 
       len = size;

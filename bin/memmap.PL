@@ -7,15 +7,7 @@ $Config{startperl} -w
 print OUT <<'!NO!SUBS!';
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2004/12/24 17:15:00 +0100 $
-# $Revision: 8 $
-# $Source: /bin/memmap.PL $
-#
-################################################################################
-#
-# Copyright (c) 2002-2004 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #

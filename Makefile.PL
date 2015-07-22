@@ -1,15 +1,7 @@
 #!/usr/bin/perl
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:20 +0200 $
-# $Revision: 114 $
-# $Source: /Makefile.PL $
-#
-################################################################################
-# 
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 # 
@@ -159,13 +151,6 @@ $^O eq 'aix' and push @DEFINE, qw( POSIX_JMP );
                e_flags => [qw( CBC_HAVE_IEEE_FP )],
                d_flags => [qw()],
              },
-  ($Config{usethreads} || $Config{use5005threads} || $Config{useithreads}) ? (
-    '~threads' => {
-                 enabled => 1,
-                 e_flags => [qw( CBC_THREAD_SAFE )],
-                 d_flags => [qw()],
-               }
-  ) : (),
   $Config{gccversion} ? (
   '$format-check' => {
                enabled => 0,

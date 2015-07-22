@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:25 +0200 $
-# $Revision: 17 $
-# $Source: /tests/232_native.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -93,4 +85,3 @@ sub byte_order
   my $byteorder = $Config{byteorder} || unpack( "a*", pack "L", 0x34333231 );
   $byteorder eq '4321' || $byteorder eq '87654321' ? 'BigEndian' : 'LittleEndian';
 }
-

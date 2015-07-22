@@ -8,15 +8,7 @@
 #
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 14:44:53 +0200 $
-# $Revision: 94 $
-# $Source: /lib/Convert/Binary/C.pm $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -27,15 +19,13 @@ package Convert::Binary::C;
 use strict;
 use DynaLoader;
 use Carp;
-use vars qw( @ISA $VERSION $XS_VERSION $AUTOLOAD );
+use vars qw( @ISA $VERSION $AUTOLOAD );
 
 @ISA = qw(DynaLoader);
 
-$VERSION    = do { my @r = '$Snapshot: /Convert-Binary-C/0.76 $' =~ /(\d+\.\d+(?:_\d+)?)/; @r ? $r[0] : '9.99' };
-$XS_VERSION = $VERSION;
-$VERSION    = eval $VERSION;
+$VERSION = '0.77';
 
-bootstrap Convert::Binary::C $XS_VERSION;
+bootstrap Convert::Binary::C $VERSION;
 
 # Unfortunately, XS AUTOLOAD isn't supported
 # by stable perl distributions before 5.8.0.
@@ -393,7 +383,7 @@ Or by parsing C code embedded in your script:
   CCODE
 
 Now the object C<$c> will know everything about C<struct foo>.
-The example above uses a so-called here-document. It allows to
+The example above uses a so-called here-document. It allows one to
 easily embed multi-line strings in your code. You can find more
 about here-documents in L<perldata> or L<perlop>.
 
@@ -1150,7 +1140,7 @@ Resulting in:
 
 The final and most powerful way to define a C<Dimension> tag is
 to pass it a subroutine reference. The referenced subroutine can
-execute whatever code is neccessary to determine the size of the
+execute whatever code is necessary to determine the size of the
 tagged array:
 
   sub get_size
@@ -3272,7 +3262,7 @@ are both equivalent and will print
   offset = 4
   offset = 4
 
-This allows to
+This allows one to
 
 =over 2
 
@@ -5473,7 +5463,7 @@ want to rate the module at L<http://cpanratings.perl.org/>.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 

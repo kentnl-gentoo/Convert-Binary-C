@@ -87,15 +87,7 @@
 *
 ********************************************************************************
 *
-* $Project: /Convert-Binary-C $
-* $Author: mhx $
-* $Date: 2011/04/10 12:32:20 +0200 $
-* $Revision: 99 $
-* $Source: /ctlib/parser.y $
-*
-********************************************************************************
-*
-* Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+* Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 * This program is free software; you can redistribute it and/or modify
 * it under the same terms as Perl itself.
 *
@@ -284,7 +276,7 @@ struct _parserState {
 
 
 /* Line 189 of yacc.c  */
-#line 288 "ctlib/y_parser.c"
+#line 280 "ctlib/y_parser.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -383,7 +375,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 252 "ctlib/parser.y"
+#line 244 "ctlib/parser.y"
 
   HashNode           identifier;
   Declarator        *pDecl;
@@ -405,7 +397,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 409 "ctlib/y_parser.c"
+#line 401 "ctlib/y_parser.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -416,7 +408,7 @@ typedef union YYSTYPE
 /* Copy the second part of user declarations.  */
 
 /* Line 264 of yacc.c  */
-#line 271 "ctlib/parser.y"
+#line 263 "ctlib/parser.y"
 
 
 /*===== STATIC VARIABLES =====================================================*/
@@ -521,7 +513,7 @@ static        void  parser_error(ParserState *pState, const char *msg);
 
 
 /* Line 264 of yacc.c  */
-#line 525 "ctlib/y_parser.c"
+#line 517 "ctlib/y_parser.c"
 
 #ifdef short
 # undef short
@@ -957,43 +949,43 @@ static const yytype_int16 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   627,   627,   628,   636,   639,   641,   645,   649,   650,
-     652,   655,   661,   663,   667,   668,   672,   673,   681,   682,
-     687,   702,   703,   704,   714,   715,   716,   717,   718,   718,
-     719,   719,   720,   721,   722,   726,   727,   731,   732,   736,
-     737,   738,   739,   757,   758,   762,   763,   764,   765,   766,
-     767,   771,   772,   776,   777,   779,   786,   796,   797,   799,
-     804,   805,   807,   812,   813,   815,   817,   819,   824,   825,
-     827,   832,   833,   838,   839,   844,   845,   850,   851,   856,
-     857,   862,   863,   868,   869,   873,   874,   875,   876,   877,
-     878,   879,   880,   881,   882,   883,   887,   888,   891,   892,
-     896,   900,   902,   940,   941,   942,   943,   950,   974,   980,
-     991,  1013,  1019,  1031,  1036,  1037,  1042,  1047,  1048,  1054,
-    1055,  1056,  1060,  1061,  1064,  1066,  1070,  1071,  1075,  1076,
-    1077,  1081,  1082,  1083,  1084,  1088,  1089,  1090,  1091,  1095,
-    1100,  1105,  1113,  1114,  1118,  1119,  1120,  1124,  1125,  1126,
-    1130,  1131,  1134,  1139,  1144,  1152,  1153,  1154,  1158,  1159,
-    1160,  1161,  1162,  1163,  1167,  1168,  1169,  1170,  1171,  1172,
-    1173,  1174,  1175,  1179,  1180,  1184,  1201,  1237,  1266,  1275,
-    1276,  1280,  1281,  1285,  1296,  1310,  1311,  1315,  1319,  1332,
-    1346,  1373,  1393,  1394,  1398,  1402,  1419,  1455,  1486,  1494,
-    1509,  1528,  1541,  1557,  1558,  1562,  1563,  1567,  1568,  1569,
-    1570,  1571,  1572,  1573,  1574,  1575,  1576,  1577,  1578,  1579,
-    1580,  1588,  1589,  1593,  1594,  1601,  1614,  1635,  1643,  1654,
-    1656,  1660,  1661,  1662,  1666,  1667,  1670,  1672,  1676,  1677,
-    1681,  1682,  1685,  1687,  1692,  1693,  1694,  1695,  1696,  1697,
-    1698,  1702,  1703,  1704,  1708,  1709,  1710,  1711,  1715,  1716,
-    1720,  1721,  1725,  1729,  1730,  1731,  1735,  1736,  1737,  1741,
-    1742,  1743,  1744,  1750,  1752,  1756,  1757,  1761,  1762,  1763,
-    1767,  1767,  1769,  1769,  1771,  1771,  1773,  1773,  1775,  1775,
-    1778,  1778,  1779,  1779,  1780,  1780,  1781,  1781,  1782,  1782,
-    1784,  1784,  1785,  1785,  1786,  1786,  1787,  1787,  1788,  1788,
-    1792,  1793,  1797,  1798,  1802,  1806,  1820,  1827,  1828,  1834,
-    1843,  1844,  1855,  1856,  1862,  1868,  1874,  1883,  1884,  1889,
-    1897,  1901,  1905,  1906,  1910,  1911,  1917,  1926,  1931,  1932,
-    1940,  1952,  1956,  1957,  1958,  1962,  1967,  1968,  1976,  1977,
-    1978,  1996,  1997,  1998,  2002,  2013,  2024,  2035,  2036,  2047,
-    2061,  2066,  2071,  2076,  2084,  2085,  2086,  2101
+       0,   619,   619,   620,   628,   631,   633,   637,   641,   642,
+     644,   647,   653,   655,   659,   660,   664,   665,   673,   674,
+     679,   694,   695,   696,   706,   707,   708,   709,   710,   710,
+     711,   711,   712,   713,   714,   718,   719,   723,   724,   728,
+     729,   730,   731,   749,   750,   754,   755,   756,   757,   758,
+     759,   763,   764,   768,   769,   771,   778,   788,   789,   791,
+     796,   797,   799,   804,   805,   807,   809,   811,   816,   817,
+     819,   824,   825,   830,   831,   836,   837,   842,   843,   848,
+     849,   854,   855,   860,   861,   865,   866,   867,   868,   869,
+     870,   871,   872,   873,   874,   875,   879,   880,   883,   884,
+     888,   892,   894,   932,   933,   934,   935,   942,   966,   972,
+     983,  1005,  1011,  1023,  1028,  1029,  1034,  1039,  1040,  1046,
+    1047,  1048,  1052,  1053,  1056,  1058,  1062,  1063,  1067,  1068,
+    1069,  1073,  1074,  1075,  1076,  1080,  1081,  1082,  1083,  1087,
+    1092,  1097,  1105,  1106,  1110,  1111,  1112,  1116,  1117,  1118,
+    1122,  1123,  1126,  1131,  1136,  1144,  1145,  1146,  1150,  1151,
+    1152,  1153,  1154,  1155,  1159,  1160,  1161,  1162,  1163,  1164,
+    1165,  1166,  1167,  1171,  1172,  1176,  1193,  1229,  1258,  1267,
+    1268,  1272,  1273,  1277,  1288,  1302,  1303,  1307,  1311,  1324,
+    1338,  1365,  1385,  1386,  1390,  1394,  1411,  1447,  1478,  1486,
+    1501,  1520,  1533,  1549,  1550,  1554,  1555,  1559,  1560,  1561,
+    1562,  1563,  1564,  1565,  1566,  1567,  1568,  1569,  1570,  1571,
+    1572,  1580,  1581,  1585,  1586,  1593,  1606,  1627,  1635,  1646,
+    1648,  1652,  1653,  1654,  1658,  1659,  1662,  1664,  1668,  1669,
+    1673,  1674,  1677,  1679,  1684,  1685,  1686,  1687,  1688,  1689,
+    1690,  1694,  1695,  1696,  1700,  1701,  1702,  1703,  1707,  1708,
+    1712,  1713,  1717,  1721,  1722,  1723,  1727,  1728,  1729,  1733,
+    1734,  1735,  1736,  1742,  1744,  1748,  1749,  1753,  1754,  1755,
+    1759,  1759,  1761,  1761,  1763,  1763,  1765,  1765,  1767,  1767,
+    1770,  1770,  1771,  1771,  1772,  1772,  1773,  1773,  1774,  1774,
+    1776,  1776,  1777,  1777,  1778,  1778,  1779,  1779,  1780,  1780,
+    1784,  1785,  1789,  1790,  1794,  1798,  1812,  1819,  1820,  1826,
+    1835,  1836,  1847,  1848,  1854,  1860,  1866,  1875,  1876,  1881,
+    1889,  1893,  1897,  1898,  1902,  1903,  1909,  1918,  1923,  1924,
+    1932,  1944,  1948,  1949,  1950,  1954,  1959,  1960,  1968,  1969,
+    1970,  1988,  1989,  1990,  1994,  2005,  2016,  2027,  2028,  2039,
+    2053,  2058,  2063,  2068,  2076,  2077,  2078,  2093
 };
 #endif
 
@@ -2015,7 +2007,7 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
       case 64: /* "IDENTIFIER" */
 
 /* Line 724 of yacc.c  */
-#line 431 "ctlib/parser.y"
+#line 423 "ctlib/parser.y"
 	{
   if ((yyvaluep->identifier))
     fprintf(yyoutput, "'%s' len=%d, hash=0x%lx", (yyvaluep->identifier)->key, (yyvaluep->identifier)->keylen, (unsigned long)(yyvaluep->identifier)->hash);
@@ -2024,12 +2016,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2028 "ctlib/y_parser.c"
+#line 2020 "ctlib/y_parser.c"
 	break;
       case 155: /* "member_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2054,12 +2046,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2058 "ctlib/y_parser.c"
+#line 2050 "ctlib/y_parser.c"
 	break;
       case 166: /* "identifier_or_typedef_name" */
 
 /* Line 724 of yacc.c  */
-#line 431 "ctlib/parser.y"
+#line 423 "ctlib/parser.y"
 	{
   if ((yyvaluep->identifier))
     fprintf(yyoutput, "'%s' len=%d, hash=0x%lx", (yyvaluep->identifier)->key, (yyvaluep->identifier)->keylen, (unsigned long)(yyvaluep->identifier)->hash);
@@ -2068,12 +2060,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2072 "ctlib/y_parser.c"
+#line 2064 "ctlib/y_parser.c"
 	break;
       case 203: /* "declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2098,12 +2090,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2102 "ctlib/y_parser.c"
+#line 2094 "ctlib/y_parser.c"
 	break;
       case 204: /* "typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2128,12 +2120,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2132 "ctlib/y_parser.c"
+#line 2124 "ctlib/y_parser.c"
 	break;
       case 205: /* "parameter_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2158,12 +2150,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2162 "ctlib/y_parser.c"
+#line 2154 "ctlib/y_parser.c"
 	break;
       case 206: /* "clean_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2188,12 +2180,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2192 "ctlib/y_parser.c"
+#line 2184 "ctlib/y_parser.c"
 	break;
       case 207: /* "clean_postfix_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2218,12 +2210,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2222 "ctlib/y_parser.c"
+#line 2214 "ctlib/y_parser.c"
 	break;
       case 208: /* "paren_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2248,12 +2240,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2252 "ctlib/y_parser.c"
+#line 2244 "ctlib/y_parser.c"
 	break;
       case 209: /* "paren_postfix_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2278,12 +2270,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2282 "ctlib/y_parser.c"
+#line 2274 "ctlib/y_parser.c"
 	break;
       case 210: /* "simple_paren_typedef_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2308,12 +2300,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2312 "ctlib/y_parser.c"
+#line 2304 "ctlib/y_parser.c"
 	break;
       case 211: /* "identifier_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2338,12 +2330,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2342 "ctlib/y_parser.c"
+#line 2334 "ctlib/y_parser.c"
 	break;
       case 212: /* "unary_identifier_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2368,12 +2360,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2372 "ctlib/y_parser.c"
+#line 2364 "ctlib/y_parser.c"
 	break;
       case 213: /* "postfix_identifier_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2398,12 +2390,12 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2402 "ctlib/y_parser.c"
+#line 2394 "ctlib/y_parser.c"
 	break;
       case 214: /* "paren_identifier_declarator" */
 
 /* Line 724 of yacc.c  */
-#line 511 "ctlib/parser.y"
+#line 503 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2428,7 +2420,7 @@ yy_symbol_value_print (yyoutput, yytype, yyvaluep)
 };
 
 /* Line 724 of yacc.c  */
-#line 2432 "ctlib/y_parser.c"
+#line 2424 "ctlib/y_parser.c"
 	break;
       default:
 	break;
@@ -2798,7 +2790,7 @@ yydestruct (yymsg, yytype, yyvaluep)
       case 64: /* "IDENTIFIER" */
 
 /* Line 1009 of yacc.c  */
-#line 422 "ctlib/parser.y"
+#line 414 "ctlib/parser.y"
 	{
   if ((yyvaluep->identifier))
   {
@@ -2808,12 +2800,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2812 "ctlib/y_parser.c"
+#line 2804 "ctlib/y_parser.c"
 	break;
       case 150: /* "member_declaration_list_opt" */
 
 /* Line 1009 of yacc.c  */
-#line 570 "ctlib/parser.y"
+#line 562 "ctlib/parser.y"
 	{
   if ((yyvaluep->list))
   {
@@ -2823,12 +2815,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2827 "ctlib/y_parser.c"
+#line 2819 "ctlib/y_parser.c"
 	break;
       case 151: /* "member_declaration_list" */
 
 /* Line 1009 of yacc.c  */
-#line 570 "ctlib/parser.y"
+#line 562 "ctlib/parser.y"
 	{
   if ((yyvaluep->list))
   {
@@ -2838,12 +2830,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2842 "ctlib/y_parser.c"
+#line 2834 "ctlib/y_parser.c"
 	break;
       case 152: /* "member_declaration" */
 
 /* Line 1009 of yacc.c  */
-#line 467 "ctlib/parser.y"
+#line 459 "ctlib/parser.y"
 	{
   if ((yyvaluep->pStructDecl))
   {
@@ -2853,12 +2845,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2857 "ctlib/y_parser.c"
+#line 2849 "ctlib/y_parser.c"
 	break;
       case 153: /* "unnamed_su_declaration" */
 
 /* Line 1009 of yacc.c  */
-#line 467 "ctlib/parser.y"
+#line 459 "ctlib/parser.y"
 	{
   if ((yyvaluep->pStructDecl))
   {
@@ -2868,12 +2860,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2872 "ctlib/y_parser.c"
+#line 2864 "ctlib/y_parser.c"
 	break;
       case 154: /* "member_declaring_list" */
 
 /* Line 1009 of yacc.c  */
-#line 467 "ctlib/parser.y"
+#line 459 "ctlib/parser.y"
 	{
   if ((yyvaluep->pStructDecl))
   {
@@ -2883,12 +2875,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2887 "ctlib/y_parser.c"
+#line 2879 "ctlib/y_parser.c"
 	break;
       case 155: /* "member_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2898,12 +2890,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2902 "ctlib/y_parser.c"
+#line 2894 "ctlib/y_parser.c"
 	break;
       case 160: /* "enumerator_list" */
 
 /* Line 1009 of yacc.c  */
-#line 553 "ctlib/parser.y"
+#line 545 "ctlib/parser.y"
 	{
   if ((yyvaluep->list))
   {
@@ -2913,12 +2905,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2917 "ctlib/y_parser.c"
+#line 2909 "ctlib/y_parser.c"
 	break;
       case 166: /* "identifier_or_typedef_name" */
 
 /* Line 1009 of yacc.c  */
-#line 422 "ctlib/parser.y"
+#line 414 "ctlib/parser.y"
 	{
   if ((yyvaluep->identifier))
   {
@@ -2928,12 +2920,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2932 "ctlib/y_parser.c"
+#line 2924 "ctlib/y_parser.c"
 	break;
       case 203: /* "declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2943,12 +2935,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2947 "ctlib/y_parser.c"
+#line 2939 "ctlib/y_parser.c"
 	break;
       case 204: /* "typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2958,12 +2950,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2962 "ctlib/y_parser.c"
+#line 2954 "ctlib/y_parser.c"
 	break;
       case 205: /* "parameter_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2973,12 +2965,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2977 "ctlib/y_parser.c"
+#line 2969 "ctlib/y_parser.c"
 	break;
       case 206: /* "clean_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -2988,12 +2980,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 2992 "ctlib/y_parser.c"
+#line 2984 "ctlib/y_parser.c"
 	break;
       case 207: /* "clean_postfix_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3003,12 +2995,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3007 "ctlib/y_parser.c"
+#line 2999 "ctlib/y_parser.c"
 	break;
       case 208: /* "paren_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3018,12 +3010,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3022 "ctlib/y_parser.c"
+#line 3014 "ctlib/y_parser.c"
 	break;
       case 209: /* "paren_postfix_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3033,12 +3025,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3037 "ctlib/y_parser.c"
+#line 3029 "ctlib/y_parser.c"
 	break;
       case 210: /* "simple_paren_typedef_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3048,12 +3040,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3052 "ctlib/y_parser.c"
+#line 3044 "ctlib/y_parser.c"
 	break;
       case 211: /* "identifier_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3063,12 +3055,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3067 "ctlib/y_parser.c"
+#line 3059 "ctlib/y_parser.c"
 	break;
       case 212: /* "unary_identifier_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3078,12 +3070,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3082 "ctlib/y_parser.c"
+#line 3074 "ctlib/y_parser.c"
 	break;
       case 213: /* "postfix_identifier_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3093,12 +3085,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3097 "ctlib/y_parser.c"
+#line 3089 "ctlib/y_parser.c"
 	break;
       case 214: /* "paren_identifier_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 491 "ctlib/parser.y"
+#line 483 "ctlib/parser.y"
 	{
   if ((yyvaluep->pDecl))
   {
@@ -3108,12 +3100,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3112 "ctlib/y_parser.c"
+#line 3104 "ctlib/y_parser.c"
 	break;
       case 218: /* "postfixing_abstract_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 561 "ctlib/parser.y"
+#line 553 "ctlib/parser.y"
 	{
   if ((yyvaluep->list))
   {
@@ -3123,12 +3115,12 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3127 "ctlib/y_parser.c"
+#line 3119 "ctlib/y_parser.c"
 	break;
       case 219: /* "array_abstract_declarator" */
 
 /* Line 1009 of yacc.c  */
-#line 561 "ctlib/parser.y"
+#line 553 "ctlib/parser.y"
 	{
   if ((yyvaluep->list))
   {
@@ -3138,7 +3130,7 @@ yydestruct (yymsg, yytype, yyvaluep)
 };
 
 /* Line 1009 of yacc.c  */
-#line 3142 "ctlib/y_parser.c"
+#line 3134 "ctlib/y_parser.c"
 	break;
 
       default:
@@ -3442,14 +3434,14 @@ yyreduce:
         case 3:
 
 /* Line 1464 of yacc.c  */
-#line 629 "ctlib/parser.y"
+#line 621 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (2)].value), +, (yyvsp[(2) - (2)].value)); ;}
     break;
 
   case 17:
 
 /* Line 1464 of yacc.c  */
-#line 674 "ctlib/parser.y"
+#line 666 "ctlib/parser.y"
     {
 	    if ((yyvsp[(2) - (7)].identifier))
 	      HN_delete((yyvsp[(2) - (7)].identifier));
@@ -3459,7 +3451,7 @@ yyreduce:
   case 20:
 
 /* Line 1464 of yacc.c  */
-#line 688 "ctlib/parser.y"
+#line 680 "ctlib/parser.y"
     {
 	    UNDEF_VAL((yyval.value));
 	    if ((yyvsp[(1) - (1)].identifier))
@@ -3479,133 +3471,133 @@ yyreduce:
   case 22:
 
 /* Line 1464 of yacc.c  */
-#line 703 "ctlib/parser.y"
+#line 695 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(1) - (1)].value); (yyval.value).iv++; ;}
     break;
 
   case 23:
 
 /* Line 1464 of yacc.c  */
-#line 704 "ctlib/parser.y"
+#line 696 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(2) - (3)].value); ;}
     break;
 
   case 25:
 
 /* Line 1464 of yacc.c  */
-#line 715 "ctlib/parser.y"
+#line 707 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 26:
 
 /* Line 1464 of yacc.c  */
-#line 716 "ctlib/parser.y"
+#line 708 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 27:
 
 /* Line 1464 of yacc.c  */
-#line 717 "ctlib/parser.y"
+#line 709 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 28:
 
 /* Line 1464 of yacc.c  */
-#line 718 "ctlib/parser.y"
+#line 710 "ctlib/parser.y"
     {;}
     break;
 
   case 29:
 
 /* Line 1464 of yacc.c  */
-#line 718 "ctlib/parser.y"
+#line 710 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 30:
 
 /* Line 1464 of yacc.c  */
-#line 719 "ctlib/parser.y"
+#line 711 "ctlib/parser.y"
     {;}
     break;
 
   case 31:
 
 /* Line 1464 of yacc.c  */
-#line 719 "ctlib/parser.y"
+#line 711 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 32:
 
 /* Line 1464 of yacc.c  */
-#line 720 "ctlib/parser.y"
+#line 712 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 33:
 
 /* Line 1464 of yacc.c  */
-#line 721 "ctlib/parser.y"
+#line 713 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 34:
 
 /* Line 1464 of yacc.c  */
-#line 722 "ctlib/parser.y"
+#line 714 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 35:
 
 /* Line 1464 of yacc.c  */
-#line 726 "ctlib/parser.y"
+#line 718 "ctlib/parser.y"
     { if((yyvsp[(1) - (1)].identifier)) HN_delete((yyvsp[(1) - (1)].identifier)); ;}
     break;
 
   case 36:
 
 /* Line 1464 of yacc.c  */
-#line 727 "ctlib/parser.y"
+#line 719 "ctlib/parser.y"
     {;}
     break;
 
   case 37:
 
 /* Line 1464 of yacc.c  */
-#line 731 "ctlib/parser.y"
+#line 723 "ctlib/parser.y"
     {;}
     break;
 
   case 38:
 
 /* Line 1464 of yacc.c  */
-#line 732 "ctlib/parser.y"
+#line 724 "ctlib/parser.y"
     {;}
     break;
 
   case 40:
 
 /* Line 1464 of yacc.c  */
-#line 737 "ctlib/parser.y"
+#line 729 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 41:
 
 /* Line 1464 of yacc.c  */
-#line 738 "ctlib/parser.y"
+#line 730 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 42:
 
 /* Line 1464 of yacc.c  */
-#line 740 "ctlib/parser.y"
+#line 732 "ctlib/parser.y"
     {
 	    switch( (yyvsp[(1) - (2)].oper) ) {
 	      case '-' : UNARY_OP((yyval.value), -, (yyvsp[(2) - (2)].value)); break;
@@ -3628,77 +3620,77 @@ yyreduce:
   case 43:
 
 /* Line 1464 of yacc.c  */
-#line 757 "ctlib/parser.y"
+#line 749 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(2) - (2)].value); ;}
     break;
 
   case 44:
 
 /* Line 1464 of yacc.c  */
-#line 758 "ctlib/parser.y"
+#line 750 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(3) - (4)].value); ;}
     break;
 
   case 45:
 
 /* Line 1464 of yacc.c  */
-#line 762 "ctlib/parser.y"
+#line 754 "ctlib/parser.y"
     { (yyval.oper) = '&'; ;}
     break;
 
   case 46:
 
 /* Line 1464 of yacc.c  */
-#line 763 "ctlib/parser.y"
+#line 755 "ctlib/parser.y"
     { (yyval.oper) = '*'; ;}
     break;
 
   case 47:
 
 /* Line 1464 of yacc.c  */
-#line 764 "ctlib/parser.y"
+#line 756 "ctlib/parser.y"
     { (yyval.oper) = '+'; ;}
     break;
 
   case 48:
 
 /* Line 1464 of yacc.c  */
-#line 765 "ctlib/parser.y"
+#line 757 "ctlib/parser.y"
     { (yyval.oper) = '-'; ;}
     break;
 
   case 49:
 
 /* Line 1464 of yacc.c  */
-#line 766 "ctlib/parser.y"
+#line 758 "ctlib/parser.y"
     { (yyval.oper) = '~'; ;}
     break;
 
   case 50:
 
 /* Line 1464 of yacc.c  */
-#line 767 "ctlib/parser.y"
+#line 759 "ctlib/parser.y"
     { (yyval.oper) = '!'; ;}
     break;
 
   case 52:
 
 /* Line 1464 of yacc.c  */
-#line 772 "ctlib/parser.y"
+#line 764 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(4) - (4)].value); (yyval.value).flags |= V_IS_UNSAFE_CAST; ;}
     break;
 
   case 54:
 
 /* Line 1464 of yacc.c  */
-#line 778 "ctlib/parser.y"
+#line 770 "ctlib/parser.y"
     { BINARY_OP( (yyval.value), (yyvsp[(1) - (3)].value), *, (yyvsp[(3) - (3)].value) ); ;}
     break;
 
   case 55:
 
 /* Line 1464 of yacc.c  */
-#line 780 "ctlib/parser.y"
+#line 772 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (3)].value).iv == 0)
 	      UNDEF_VAL((yyval.value));
@@ -3710,7 +3702,7 @@ yyreduce:
   case 56:
 
 /* Line 1464 of yacc.c  */
-#line 787 "ctlib/parser.y"
+#line 779 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (3)].value).iv == 0)
 	      UNDEF_VAL((yyval.value));
@@ -3722,252 +3714,252 @@ yyreduce:
   case 58:
 
 /* Line 1464 of yacc.c  */
-#line 798 "ctlib/parser.y"
+#line 790 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), +, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 59:
 
 /* Line 1464 of yacc.c  */
-#line 800 "ctlib/parser.y"
+#line 792 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), -, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 61:
 
 /* Line 1464 of yacc.c  */
-#line 806 "ctlib/parser.y"
+#line 798 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), <<, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 62:
 
 /* Line 1464 of yacc.c  */
-#line 808 "ctlib/parser.y"
+#line 800 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), >>, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 64:
 
 /* Line 1464 of yacc.c  */
-#line 814 "ctlib/parser.y"
+#line 806 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), <,  (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 65:
 
 /* Line 1464 of yacc.c  */
-#line 816 "ctlib/parser.y"
+#line 808 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), >,  (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 66:
 
 /* Line 1464 of yacc.c  */
-#line 818 "ctlib/parser.y"
+#line 810 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), <=, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 67:
 
 /* Line 1464 of yacc.c  */
-#line 820 "ctlib/parser.y"
+#line 812 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), >=, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 69:
 
 /* Line 1464 of yacc.c  */
-#line 826 "ctlib/parser.y"
+#line 818 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), ==, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 70:
 
 /* Line 1464 of yacc.c  */
-#line 828 "ctlib/parser.y"
+#line 820 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), !=, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 72:
 
 /* Line 1464 of yacc.c  */
-#line 834 "ctlib/parser.y"
+#line 826 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), &, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 74:
 
 /* Line 1464 of yacc.c  */
-#line 840 "ctlib/parser.y"
+#line 832 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), ^, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 76:
 
 /* Line 1464 of yacc.c  */
-#line 846 "ctlib/parser.y"
+#line 838 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), |, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 78:
 
 /* Line 1464 of yacc.c  */
-#line 852 "ctlib/parser.y"
+#line 844 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), &&, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 80:
 
 /* Line 1464 of yacc.c  */
-#line 858 "ctlib/parser.y"
+#line 850 "ctlib/parser.y"
     { BINARY_OP((yyval.value), (yyvsp[(1) - (3)].value), ||, (yyvsp[(3) - (3)].value)); ;}
     break;
 
   case 82:
 
 /* Line 1464 of yacc.c  */
-#line 864 "ctlib/parser.y"
+#line 856 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(1) - (5)].value).iv ? (yyvsp[(3) - (5)].value) : (yyvsp[(5) - (5)].value); (yyval.value).flags |= (yyvsp[(1) - (5)].value).flags; ;}
     break;
 
   case 84:
 
 /* Line 1464 of yacc.c  */
-#line 869 "ctlib/parser.y"
+#line 861 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 85:
 
 /* Line 1464 of yacc.c  */
-#line 873 "ctlib/parser.y"
+#line 865 "ctlib/parser.y"
     {;}
     break;
 
   case 86:
 
 /* Line 1464 of yacc.c  */
-#line 874 "ctlib/parser.y"
+#line 866 "ctlib/parser.y"
     {;}
     break;
 
   case 87:
 
 /* Line 1464 of yacc.c  */
-#line 875 "ctlib/parser.y"
+#line 867 "ctlib/parser.y"
     {;}
     break;
 
   case 88:
 
 /* Line 1464 of yacc.c  */
-#line 876 "ctlib/parser.y"
+#line 868 "ctlib/parser.y"
     {;}
     break;
 
   case 89:
 
 /* Line 1464 of yacc.c  */
-#line 877 "ctlib/parser.y"
+#line 869 "ctlib/parser.y"
     {;}
     break;
 
   case 90:
 
 /* Line 1464 of yacc.c  */
-#line 878 "ctlib/parser.y"
+#line 870 "ctlib/parser.y"
     {;}
     break;
 
   case 91:
 
 /* Line 1464 of yacc.c  */
-#line 879 "ctlib/parser.y"
+#line 871 "ctlib/parser.y"
     {;}
     break;
 
   case 92:
 
 /* Line 1464 of yacc.c  */
-#line 880 "ctlib/parser.y"
+#line 872 "ctlib/parser.y"
     {;}
     break;
 
   case 93:
 
 /* Line 1464 of yacc.c  */
-#line 881 "ctlib/parser.y"
+#line 873 "ctlib/parser.y"
     {;}
     break;
 
   case 94:
 
 /* Line 1464 of yacc.c  */
-#line 882 "ctlib/parser.y"
+#line 874 "ctlib/parser.y"
     {;}
     break;
 
   case 95:
 
 /* Line 1464 of yacc.c  */
-#line 883 "ctlib/parser.y"
+#line 875 "ctlib/parser.y"
     {;}
     break;
 
   case 96:
 
 /* Line 1464 of yacc.c  */
-#line 887 "ctlib/parser.y"
+#line 879 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 99:
 
 /* Line 1464 of yacc.c  */
-#line 892 "ctlib/parser.y"
+#line 884 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(3) - (3)].value); ;}
     break;
 
   case 102:
 
 /* Line 1464 of yacc.c  */
-#line 902 "ctlib/parser.y"
+#line 894 "ctlib/parser.y"
     {;}
     break;
 
   case 103:
 
 /* Line 1464 of yacc.c  */
-#line 940 "ctlib/parser.y"
+#line 932 "ctlib/parser.y"
     {;}
     break;
 
   case 104:
 
 /* Line 1464 of yacc.c  */
-#line 941 "ctlib/parser.y"
+#line 933 "ctlib/parser.y"
     {;}
     break;
 
   case 105:
 
 /* Line 1464 of yacc.c  */
-#line 942 "ctlib/parser.y"
+#line 934 "ctlib/parser.y"
     {;}
     break;
 
   case 106:
 
 /* Line 1464 of yacc.c  */
-#line 943 "ctlib/parser.y"
+#line 935 "ctlib/parser.y"
     {;}
     break;
 
   case 107:
 
 /* Line 1464 of yacc.c  */
-#line 951 "ctlib/parser.y"
+#line 943 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pTypedefList) = NULL;
@@ -3996,7 +3988,7 @@ yyreduce:
   case 108:
 
 /* Line 1464 of yacc.c  */
-#line 975 "ctlib/parser.y"
+#line 967 "ctlib/parser.y"
     {
 	    (yyval.pTypedefList) = NULL;
 	    if ((yyvsp[(2) - (4)].pDecl))
@@ -4007,7 +3999,7 @@ yyreduce:
   case 109:
 
 /* Line 1464 of yacc.c  */
-#line 981 "ctlib/parser.y"
+#line 973 "ctlib/parser.y"
     {
 	    (yyval.pTypedefList) = (yyvsp[(1) - (5)].pTypedefList);
 	    if ((yyval.pTypedefList))
@@ -4020,7 +4012,7 @@ yyreduce:
   case 110:
 
 /* Line 1464 of yacc.c  */
-#line 992 "ctlib/parser.y"
+#line 984 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pTypedefList) = NULL;
@@ -4047,7 +4039,7 @@ yyreduce:
   case 111:
 
 /* Line 1464 of yacc.c  */
-#line 1014 "ctlib/parser.y"
+#line 1006 "ctlib/parser.y"
     {
 	    (yyval.pTypedefList) = NULL;
 	    if ((yyvsp[(2) - (4)].pDecl))
@@ -4058,7 +4050,7 @@ yyreduce:
   case 112:
 
 /* Line 1464 of yacc.c  */
-#line 1020 "ctlib/parser.y"
+#line 1012 "ctlib/parser.y"
     {
 	    (yyval.pTypedefList) = (yyvsp[(1) - (5)].pTypedefList);
 	    if ((yyval.pTypedefList))
@@ -4071,7 +4063,7 @@ yyreduce:
   case 113:
 
 /* Line 1464 of yacc.c  */
-#line 1032 "ctlib/parser.y"
+#line 1024 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = NULL;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (1)].uval);
@@ -4081,7 +4073,7 @@ yyreduce:
   case 116:
 
 /* Line 1464 of yacc.c  */
-#line 1043 "ctlib/parser.y"
+#line 1035 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = NULL;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (1)].uval);
@@ -4091,77 +4083,77 @@ yyreduce:
   case 120:
 
 /* Line 1464 of yacc.c  */
-#line 1055 "ctlib/parser.y"
+#line 1047 "ctlib/parser.y"
     { (yyval.uval) = (yyvsp[(2) - (2)].uval);      ;}
     break;
 
   case 121:
 
 /* Line 1464 of yacc.c  */
-#line 1056 "ctlib/parser.y"
+#line 1048 "ctlib/parser.y"
     { (yyval.uval) = (yyvsp[(1) - (2)].uval) | (yyvsp[(2) - (2)].uval); ;}
     break;
 
   case 127:
 
 /* Line 1464 of yacc.c  */
-#line 1071 "ctlib/parser.y"
+#line 1063 "ctlib/parser.y"
     { (yyval.uval) = 0;  ;}
     break;
 
   case 131:
 
 /* Line 1464 of yacc.c  */
-#line 1081 "ctlib/parser.y"
+#line 1073 "ctlib/parser.y"
     { (yyval.uval) = LLC_OR((yyvsp[(1) - (2)].uval), (yyvsp[(2) - (2)].uval)); ;}
     break;
 
   case 132:
 
 /* Line 1464 of yacc.c  */
-#line 1082 "ctlib/parser.y"
+#line 1074 "ctlib/parser.y"
     { (yyval.uval) = LLC_OR((yyvsp[(1) - (2)].uval), (yyvsp[(2) - (2)].uval)); ;}
     break;
 
   case 133:
 
 /* Line 1464 of yacc.c  */
-#line 1083 "ctlib/parser.y"
+#line 1075 "ctlib/parser.y"
     { (yyval.uval) = LLC_OR((yyvsp[(1) - (2)].uval), (yyvsp[(2) - (2)].uval)); ;}
     break;
 
   case 134:
 
 /* Line 1464 of yacc.c  */
-#line 1084 "ctlib/parser.y"
+#line 1076 "ctlib/parser.y"
     { (yyval.uval) = LLC_OR((yyvsp[(1) - (2)].uval), (yyvsp[(2) - (2)].uval)); ;}
     break;
 
   case 136:
 
 /* Line 1464 of yacc.c  */
-#line 1089 "ctlib/parser.y"
+#line 1081 "ctlib/parser.y"
     { (yyval.uval) = (yyvsp[(2) - (2)].uval);             ;}
     break;
 
   case 137:
 
 /* Line 1464 of yacc.c  */
-#line 1090 "ctlib/parser.y"
+#line 1082 "ctlib/parser.y"
     { (yyval.uval) = (yyvsp[(1) - (2)].uval);             ;}
     break;
 
   case 138:
 
 /* Line 1464 of yacc.c  */
-#line 1091 "ctlib/parser.y"
+#line 1083 "ctlib/parser.y"
     { (yyval.uval) = LLC_OR((yyvsp[(1) - (2)].uval), (yyvsp[(2) - (2)].uval)); ;}
     break;
 
   case 139:
 
 /* Line 1464 of yacc.c  */
-#line 1096 "ctlib/parser.y"
+#line 1088 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(2) - (2)].tspec).ptr;
 	    (yyval.tspec).tflags = (yyvsp[(2) - (2)].tspec).tflags | (yyvsp[(1) - (2)].uval);
@@ -4171,7 +4163,7 @@ yyreduce:
   case 140:
 
 /* Line 1464 of yacc.c  */
-#line 1101 "ctlib/parser.y"
+#line 1093 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(1) - (2)].tspec).ptr;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (2)].tspec).tflags | (yyvsp[(2) - (2)].uval);
@@ -4181,7 +4173,7 @@ yyreduce:
   case 141:
 
 /* Line 1464 of yacc.c  */
-#line 1106 "ctlib/parser.y"
+#line 1098 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(1) - (2)].tspec).ptr;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (2)].tspec).tflags | (yyvsp[(2) - (2)].uval);
@@ -4191,35 +4183,35 @@ yyreduce:
   case 145:
 
 /* Line 1464 of yacc.c  */
-#line 1119 "ctlib/parser.y"
+#line 1111 "ctlib/parser.y"
     { (yyval.tspec) = (yyvsp[(2) - (2)].tspec); ;}
     break;
 
   case 146:
 
 /* Line 1464 of yacc.c  */
-#line 1120 "ctlib/parser.y"
+#line 1112 "ctlib/parser.y"
     { (yyval.tspec) = (yyvsp[(1) - (2)].tspec); ;}
     break;
 
   case 148:
 
 /* Line 1464 of yacc.c  */
-#line 1125 "ctlib/parser.y"
+#line 1117 "ctlib/parser.y"
     { (yyval.tspec) = (yyvsp[(2) - (2)].tspec); ;}
     break;
 
   case 149:
 
 /* Line 1464 of yacc.c  */
-#line 1126 "ctlib/parser.y"
+#line 1118 "ctlib/parser.y"
     { (yyval.tspec) = (yyvsp[(1) - (2)].tspec); ;}
     break;
 
   case 152:
 
 /* Line 1464 of yacc.c  */
-#line 1135 "ctlib/parser.y"
+#line 1127 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(1) - (2)].tspec).ptr;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (2)].tspec).tflags | (yyvsp[(2) - (2)].uval);
@@ -4229,7 +4221,7 @@ yyreduce:
   case 153:
 
 /* Line 1464 of yacc.c  */
-#line 1140 "ctlib/parser.y"
+#line 1132 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(2) - (2)].pTypedef);
 	    (yyval.tspec).tflags = T_TYPE | (yyvsp[(1) - (2)].uval);
@@ -4239,7 +4231,7 @@ yyreduce:
   case 154:
 
 /* Line 1464 of yacc.c  */
-#line 1145 "ctlib/parser.y"
+#line 1137 "ctlib/parser.y"
     {
 	    (yyval.tspec).ptr    = (yyvsp[(1) - (2)].tspec).ptr;
 	    (yyval.tspec).tflags = (yyvsp[(1) - (2)].tspec).tflags | (yyvsp[(2) - (2)].uval);
@@ -4249,133 +4241,133 @@ yyreduce:
   case 155:
 
 /* Line 1464 of yacc.c  */
-#line 1152 "ctlib/parser.y"
+#line 1144 "ctlib/parser.y"
     { (yyval.tspec).ptr = (yyvsp[(1) - (1)].pTypedef); (yyval.tspec).tflags = T_TYPE; ;}
     break;
 
   case 156:
 
 /* Line 1464 of yacc.c  */
-#line 1153 "ctlib/parser.y"
+#line 1145 "ctlib/parser.y"
     { (yyval.tspec).ptr = (yyvsp[(2) - (2)].pTypedef); (yyval.tspec).tflags = T_TYPE; ;}
     break;
 
   case 157:
 
 /* Line 1464 of yacc.c  */
-#line 1154 "ctlib/parser.y"
+#line 1146 "ctlib/parser.y"
     { (yyval.tspec) = (yyvsp[(1) - (2)].tspec);                         ;}
     break;
 
   case 158:
 
 /* Line 1464 of yacc.c  */
-#line 1158 "ctlib/parser.y"
+#line 1150 "ctlib/parser.y"
     { (yyval.uval) = T_TYPEDEF;  ;}
     break;
 
   case 159:
 
 /* Line 1464 of yacc.c  */
-#line 1159 "ctlib/parser.y"
+#line 1151 "ctlib/parser.y"
     { (yyval.uval) = 0;          ;}
     break;
 
   case 160:
 
 /* Line 1464 of yacc.c  */
-#line 1160 "ctlib/parser.y"
+#line 1152 "ctlib/parser.y"
     { (yyval.uval) = 0;          ;}
     break;
 
   case 161:
 
 /* Line 1464 of yacc.c  */
-#line 1161 "ctlib/parser.y"
+#line 1153 "ctlib/parser.y"
     { (yyval.uval) = 0;          ;}
     break;
 
   case 162:
 
 /* Line 1464 of yacc.c  */
-#line 1162 "ctlib/parser.y"
+#line 1154 "ctlib/parser.y"
     { (yyval.uval) = 0;          ;}
     break;
 
   case 163:
 
 /* Line 1464 of yacc.c  */
-#line 1163 "ctlib/parser.y"
+#line 1155 "ctlib/parser.y"
     { (yyval.uval) = 0;          ;}
     break;
 
   case 164:
 
 /* Line 1464 of yacc.c  */
-#line 1167 "ctlib/parser.y"
+#line 1159 "ctlib/parser.y"
     { (yyval.uval) = T_INT;      ;}
     break;
 
   case 165:
 
 /* Line 1464 of yacc.c  */
-#line 1168 "ctlib/parser.y"
+#line 1160 "ctlib/parser.y"
     { (yyval.uval) = T_CHAR;     ;}
     break;
 
   case 166:
 
 /* Line 1464 of yacc.c  */
-#line 1169 "ctlib/parser.y"
+#line 1161 "ctlib/parser.y"
     { (yyval.uval) = T_SHORT;    ;}
     break;
 
   case 167:
 
 /* Line 1464 of yacc.c  */
-#line 1170 "ctlib/parser.y"
+#line 1162 "ctlib/parser.y"
     { (yyval.uval) = T_LONG;     ;}
     break;
 
   case 168:
 
 /* Line 1464 of yacc.c  */
-#line 1171 "ctlib/parser.y"
+#line 1163 "ctlib/parser.y"
     { (yyval.uval) = T_FLOAT;    ;}
     break;
 
   case 169:
 
 /* Line 1464 of yacc.c  */
-#line 1172 "ctlib/parser.y"
+#line 1164 "ctlib/parser.y"
     { (yyval.uval) = T_DOUBLE;   ;}
     break;
 
   case 170:
 
 /* Line 1464 of yacc.c  */
-#line 1173 "ctlib/parser.y"
+#line 1165 "ctlib/parser.y"
     { (yyval.uval) = T_SIGNED;   ;}
     break;
 
   case 171:
 
 /* Line 1464 of yacc.c  */
-#line 1174 "ctlib/parser.y"
+#line 1166 "ctlib/parser.y"
     { (yyval.uval) = T_UNSIGNED; ;}
     break;
 
   case 172:
 
 /* Line 1464 of yacc.c  */
-#line 1175 "ctlib/parser.y"
+#line 1167 "ctlib/parser.y"
     { (yyval.uval) = T_VOID;     ;}
     break;
 
   case 175:
 
 /* Line 1464 of yacc.c  */
-#line 1185 "ctlib/parser.y"
+#line 1177 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4397,7 +4389,7 @@ yyreduce:
   case 176:
 
 /* Line 1464 of yacc.c  */
-#line 1202 "ctlib/parser.y"
+#line 1194 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4438,7 +4430,7 @@ yyreduce:
   case 177:
 
 /* Line 1464 of yacc.c  */
-#line 1238 "ctlib/parser.y"
+#line 1230 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4469,7 +4461,7 @@ yyreduce:
   case 178:
 
 /* Line 1464 of yacc.c  */
-#line 1267 "ctlib/parser.y"
+#line 1259 "ctlib/parser.y"
     {
 	    (yyval.context).uval     = (yyvsp[(1) - (1)].uval);
 	    (yyval.context).ctx.pFI  = PSTATE->pFI;
@@ -4480,28 +4472,28 @@ yyreduce:
   case 179:
 
 /* Line 1464 of yacc.c  */
-#line 1275 "ctlib/parser.y"
+#line 1267 "ctlib/parser.y"
     { (yyval.uval) = T_STRUCT; ;}
     break;
 
   case 180:
 
 /* Line 1464 of yacc.c  */
-#line 1276 "ctlib/parser.y"
+#line 1268 "ctlib/parser.y"
     { (yyval.uval) = T_UNION;  ;}
     break;
 
   case 181:
 
 /* Line 1464 of yacc.c  */
-#line 1280 "ctlib/parser.y"
+#line 1272 "ctlib/parser.y"
     { (yyval.list) = IS_LOCAL ? NULL : LL_new(); ;}
     break;
 
   case 183:
 
 /* Line 1464 of yacc.c  */
-#line 1286 "ctlib/parser.y"
+#line 1278 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -4517,7 +4509,7 @@ yyreduce:
   case 184:
 
 /* Line 1464 of yacc.c  */
-#line 1297 "ctlib/parser.y"
+#line 1289 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -4533,14 +4525,14 @@ yyreduce:
   case 187:
 
 /* Line 1464 of yacc.c  */
-#line 1315 "ctlib/parser.y"
+#line 1307 "ctlib/parser.y"
     { (yyval.pStructDecl) = IS_LOCAL ? NULL : structdecl_new((yyvsp[(1) - (1)].tspec), NULL); ;}
     break;
 
   case 188:
 
 /* Line 1464 of yacc.c  */
-#line 1320 "ctlib/parser.y"
+#line 1312 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pStructDecl) = NULL;
@@ -4558,7 +4550,7 @@ yyreduce:
   case 189:
 
 /* Line 1464 of yacc.c  */
-#line 1333 "ctlib/parser.y"
+#line 1325 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pStructDecl) = NULL;
@@ -4574,7 +4566,7 @@ yyreduce:
   case 190:
 
 /* Line 1464 of yacc.c  */
-#line 1347 "ctlib/parser.y"
+#line 1339 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pDecl) = NULL;
@@ -4606,7 +4598,7 @@ yyreduce:
   case 191:
 
 /* Line 1464 of yacc.c  */
-#line 1374 "ctlib/parser.y"
+#line 1366 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pDecl) = NULL;
@@ -4628,21 +4620,21 @@ yyreduce:
   case 192:
 
 /* Line 1464 of yacc.c  */
-#line 1393 "ctlib/parser.y"
+#line 1385 "ctlib/parser.y"
     { UNDEF_VAL((yyval.value)); ;}
     break;
 
   case 194:
 
 /* Line 1464 of yacc.c  */
-#line 1398 "ctlib/parser.y"
+#line 1390 "ctlib/parser.y"
     { (yyval.value) = (yyvsp[(2) - (2)].value); ;}
     break;
 
   case 195:
 
 /* Line 1464 of yacc.c  */
-#line 1403 "ctlib/parser.y"
+#line 1395 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4664,7 +4656,7 @@ yyreduce:
   case 196:
 
 /* Line 1464 of yacc.c  */
-#line 1420 "ctlib/parser.y"
+#line 1412 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4705,7 +4697,7 @@ yyreduce:
   case 197:
 
 /* Line 1464 of yacc.c  */
-#line 1456 "ctlib/parser.y"
+#line 1448 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4738,7 +4730,7 @@ yyreduce:
   case 198:
 
 /* Line 1464 of yacc.c  */
-#line 1487 "ctlib/parser.y"
+#line 1479 "ctlib/parser.y"
     {
 	    (yyval.context).ctx.pFI  = PSTATE->pFI;
 	    (yyval.context).ctx.line = PSTATE->pLexer->ctok->line;
@@ -4748,7 +4740,7 @@ yyreduce:
   case 199:
 
 /* Line 1464 of yacc.c  */
-#line 1495 "ctlib/parser.y"
+#line 1487 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -4768,7 +4760,7 @@ yyreduce:
   case 200:
 
 /* Line 1464 of yacc.c  */
-#line 1510 "ctlib/parser.y"
+#line 1502 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -4789,7 +4781,7 @@ yyreduce:
   case 201:
 
 /* Line 1464 of yacc.c  */
-#line 1529 "ctlib/parser.y"
+#line 1521 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4807,7 +4799,7 @@ yyreduce:
   case 202:
 
 /* Line 1464 of yacc.c  */
-#line 1542 "ctlib/parser.y"
+#line 1534 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	    {
@@ -4825,119 +4817,119 @@ yyreduce:
   case 207:
 
 /* Line 1464 of yacc.c  */
-#line 1567 "ctlib/parser.y"
+#line 1559 "ctlib/parser.y"
     {;}
     break;
 
   case 208:
 
 /* Line 1464 of yacc.c  */
-#line 1568 "ctlib/parser.y"
+#line 1560 "ctlib/parser.y"
     {;}
     break;
 
   case 209:
 
 /* Line 1464 of yacc.c  */
-#line 1569 "ctlib/parser.y"
+#line 1561 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 210:
 
 /* Line 1464 of yacc.c  */
-#line 1570 "ctlib/parser.y"
+#line 1562 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 211:
 
 /* Line 1464 of yacc.c  */
-#line 1571 "ctlib/parser.y"
+#line 1563 "ctlib/parser.y"
     {;}
     break;
 
   case 212:
 
 /* Line 1464 of yacc.c  */
-#line 1572 "ctlib/parser.y"
+#line 1564 "ctlib/parser.y"
     {;}
     break;
 
   case 213:
 
 /* Line 1464 of yacc.c  */
-#line 1573 "ctlib/parser.y"
+#line 1565 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 214:
 
 /* Line 1464 of yacc.c  */
-#line 1574 "ctlib/parser.y"
+#line 1566 "ctlib/parser.y"
     {;}
     break;
 
   case 215:
 
 /* Line 1464 of yacc.c  */
-#line 1575 "ctlib/parser.y"
+#line 1567 "ctlib/parser.y"
     {;}
     break;
 
   case 216:
 
 /* Line 1464 of yacc.c  */
-#line 1576 "ctlib/parser.y"
+#line 1568 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 217:
 
 /* Line 1464 of yacc.c  */
-#line 1577 "ctlib/parser.y"
+#line 1569 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 218:
 
 /* Line 1464 of yacc.c  */
-#line 1578 "ctlib/parser.y"
+#line 1570 "ctlib/parser.y"
     {;}
     break;
 
   case 219:
 
 /* Line 1464 of yacc.c  */
-#line 1579 "ctlib/parser.y"
+#line 1571 "ctlib/parser.y"
     {;}
     break;
 
   case 220:
 
 /* Line 1464 of yacc.c  */
-#line 1580 "ctlib/parser.y"
+#line 1572 "ctlib/parser.y"
     { if ((yyvsp[(2) - (2)].pDecl)) decl_delete((yyvsp[(2) - (2)].pDecl)); ;}
     break;
 
   case 221:
 
 /* Line 1464 of yacc.c  */
-#line 1588 "ctlib/parser.y"
+#line 1580 "ctlib/parser.y"
     { if ((yyvsp[(1) - (1)].identifier)) HN_delete((yyvsp[(1) - (1)].identifier)); ;}
     break;
 
   case 222:
 
 /* Line 1464 of yacc.c  */
-#line 1589 "ctlib/parser.y"
+#line 1581 "ctlib/parser.y"
     { if ((yyvsp[(3) - (3)].identifier)) HN_delete((yyvsp[(3) - (3)].identifier)); ;}
     break;
 
   case 224:
 
 /* Line 1464 of yacc.c  */
-#line 1595 "ctlib/parser.y"
+#line 1587 "ctlib/parser.y"
     {
 	    (yyval.identifier) = IS_LOCAL ? NULL : HN_new((yyvsp[(1) - (1)].pTypedef)->pDecl->identifier, CTT_IDLEN((yyvsp[(1) - (1)].pTypedef)->pDecl), 0);
 	  ;}
@@ -4946,7 +4938,7 @@ yyreduce:
   case 225:
 
 /* Line 1464 of yacc.c  */
-#line 1602 "ctlib/parser.y"
+#line 1594 "ctlib/parser.y"
     {
 	    if (!IS_LOCAL)
 	    {
@@ -4964,7 +4956,7 @@ yyreduce:
   case 226:
 
 /* Line 1464 of yacc.c  */
-#line 1615 "ctlib/parser.y"
+#line 1607 "ctlib/parser.y"
     {
 	    if (!IS_LOCAL)
 	    {
@@ -4990,7 +4982,7 @@ yyreduce:
   case 227:
 
 /* Line 1464 of yacc.c  */
-#line 1636 "ctlib/parser.y"
+#line 1628 "ctlib/parser.y"
     {
 	    if (!IS_LOCAL)
 	    {
@@ -5003,7 +4995,7 @@ yyreduce:
   case 228:
 
 /* Line 1464 of yacc.c  */
-#line 1644 "ctlib/parser.y"
+#line 1636 "ctlib/parser.y"
     {
 	    if (!IS_LOCAL)
 	    {
@@ -5017,245 +5009,245 @@ yyreduce:
   case 233:
 
 /* Line 1464 of yacc.c  */
-#line 1662 "ctlib/parser.y"
+#line 1654 "ctlib/parser.y"
     {;}
     break;
 
   case 241:
 
 /* Line 1464 of yacc.c  */
-#line 1682 "ctlib/parser.y"
+#line 1674 "ctlib/parser.y"
     { DELETE_NODE((yyvsp[(2) - (2)].identifier)); ;}
     break;
 
   case 251:
 
 /* Line 1464 of yacc.c  */
-#line 1702 "ctlib/parser.y"
+#line 1694 "ctlib/parser.y"
     { DELETE_NODE((yyvsp[(1) - (3)].identifier)); ;}
     break;
 
   case 269:
 
 /* Line 1464 of yacc.c  */
-#line 1741 "ctlib/parser.y"
+#line 1733 "ctlib/parser.y"
     { DELETE_NODE((yyvsp[(2) - (3)].identifier)); ;}
     break;
 
   case 280:
 
 /* Line 1464 of yacc.c  */
-#line 1767 "ctlib/parser.y"
+#line 1759 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 281:
 
 /* Line 1464 of yacc.c  */
-#line 1768 "ctlib/parser.y"
+#line 1760 "ctlib/parser.y"
     { END_LOCAL; decl_delete((yyvsp[(1) - (3)].pDecl)); ;}
     break;
 
   case 282:
 
 /* Line 1464 of yacc.c  */
-#line 1769 "ctlib/parser.y"
+#line 1761 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 283:
 
 /* Line 1464 of yacc.c  */
-#line 1770 "ctlib/parser.y"
+#line 1762 "ctlib/parser.y"
     { END_LOCAL; decl_delete((yyvsp[(2) - (4)].pDecl)); ;}
     break;
 
   case 284:
 
 /* Line 1464 of yacc.c  */
-#line 1771 "ctlib/parser.y"
+#line 1763 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 285:
 
 /* Line 1464 of yacc.c  */
-#line 1772 "ctlib/parser.y"
+#line 1764 "ctlib/parser.y"
     { END_LOCAL; decl_delete((yyvsp[(2) - (4)].pDecl)); ;}
     break;
 
   case 286:
 
 /* Line 1464 of yacc.c  */
-#line 1773 "ctlib/parser.y"
+#line 1765 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 287:
 
 /* Line 1464 of yacc.c  */
-#line 1774 "ctlib/parser.y"
+#line 1766 "ctlib/parser.y"
     { END_LOCAL; decl_delete((yyvsp[(2) - (4)].pDecl)); ;}
     break;
 
   case 288:
 
 /* Line 1464 of yacc.c  */
-#line 1775 "ctlib/parser.y"
+#line 1767 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 289:
 
 /* Line 1464 of yacc.c  */
-#line 1776 "ctlib/parser.y"
+#line 1768 "ctlib/parser.y"
     { END_LOCAL; decl_delete((yyvsp[(2) - (4)].pDecl)); ;}
     break;
 
   case 290:
 
 /* Line 1464 of yacc.c  */
-#line 1778 "ctlib/parser.y"
+#line 1770 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 291:
 
 /* Line 1464 of yacc.c  */
-#line 1778 "ctlib/parser.y"
+#line 1770 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 292:
 
 /* Line 1464 of yacc.c  */
-#line 1779 "ctlib/parser.y"
+#line 1771 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 293:
 
 /* Line 1464 of yacc.c  */
-#line 1779 "ctlib/parser.y"
+#line 1771 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 294:
 
 /* Line 1464 of yacc.c  */
-#line 1780 "ctlib/parser.y"
+#line 1772 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 295:
 
 /* Line 1464 of yacc.c  */
-#line 1780 "ctlib/parser.y"
+#line 1772 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 296:
 
 /* Line 1464 of yacc.c  */
-#line 1781 "ctlib/parser.y"
+#line 1773 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 297:
 
 /* Line 1464 of yacc.c  */
-#line 1781 "ctlib/parser.y"
+#line 1773 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 298:
 
 /* Line 1464 of yacc.c  */
-#line 1782 "ctlib/parser.y"
+#line 1774 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 299:
 
 /* Line 1464 of yacc.c  */
-#line 1782 "ctlib/parser.y"
+#line 1774 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 300:
 
 /* Line 1464 of yacc.c  */
-#line 1784 "ctlib/parser.y"
+#line 1776 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 301:
 
 /* Line 1464 of yacc.c  */
-#line 1784 "ctlib/parser.y"
+#line 1776 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 302:
 
 /* Line 1464 of yacc.c  */
-#line 1785 "ctlib/parser.y"
+#line 1777 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 303:
 
 /* Line 1464 of yacc.c  */
-#line 1785 "ctlib/parser.y"
+#line 1777 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 304:
 
 /* Line 1464 of yacc.c  */
-#line 1786 "ctlib/parser.y"
+#line 1778 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 305:
 
 /* Line 1464 of yacc.c  */
-#line 1786 "ctlib/parser.y"
+#line 1778 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 306:
 
 /* Line 1464 of yacc.c  */
-#line 1787 "ctlib/parser.y"
+#line 1779 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 307:
 
 /* Line 1464 of yacc.c  */
-#line 1787 "ctlib/parser.y"
+#line 1779 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 308:
 
 /* Line 1464 of yacc.c  */
-#line 1788 "ctlib/parser.y"
+#line 1780 "ctlib/parser.y"
     { BEGIN_LOCAL; ;}
     break;
 
   case 309:
 
 /* Line 1464 of yacc.c  */
-#line 1788 "ctlib/parser.y"
+#line 1780 "ctlib/parser.y"
     { END_LOCAL; ;}
     break;
 
   case 314:
 
 /* Line 1464 of yacc.c  */
-#line 1803 "ctlib/parser.y"
+#line 1795 "ctlib/parser.y"
     {
 	    (yyval.pDecl) = IS_LOCAL ? NULL : decl_new((yyvsp[(1) - (1)].pTypedef)->pDecl->identifier, CTT_IDLEN((yyvsp[(1) - (1)].pTypedef)->pDecl));
 	  ;}
@@ -5264,7 +5256,7 @@ yyreduce:
   case 315:
 
 /* Line 1464 of yacc.c  */
-#line 1807 "ctlib/parser.y"
+#line 1799 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.pDecl) = NULL;
@@ -5283,7 +5275,7 @@ yyreduce:
   case 318:
 
 /* Line 1464 of yacc.c  */
-#line 1829 "ctlib/parser.y"
+#line 1821 "ctlib/parser.y"
     {
 	    if ((yyvsp[(2) - (2)].pDecl))
 	      (yyvsp[(2) - (2)].pDecl)->pointer_flag = 1;
@@ -5294,7 +5286,7 @@ yyreduce:
   case 319:
 
 /* Line 1464 of yacc.c  */
-#line 1835 "ctlib/parser.y"
+#line 1827 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (3)].pDecl))
 	      (yyvsp[(3) - (3)].pDecl)->pointer_flag = 1;
@@ -5305,14 +5297,14 @@ yyreduce:
   case 320:
 
 /* Line 1464 of yacc.c  */
-#line 1843 "ctlib/parser.y"
+#line 1835 "ctlib/parser.y"
     { (yyval.pDecl) = (yyvsp[(2) - (3)].pDecl); ;}
     break;
 
   case 321:
 
 /* Line 1464 of yacc.c  */
-#line 1845 "ctlib/parser.y"
+#line 1837 "ctlib/parser.y"
     {
 	    POSTFIX_DECL((yyvsp[(2) - (4)].pDecl), (yyvsp[(4) - (4)].list));
 	    (yyval.pDecl) = (yyvsp[(2) - (4)].pDecl);
@@ -5322,7 +5314,7 @@ yyreduce:
   case 323:
 
 /* Line 1464 of yacc.c  */
-#line 1857 "ctlib/parser.y"
+#line 1849 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (4)].pDecl))
 	      (yyvsp[(3) - (4)].pDecl)->pointer_flag = 1;
@@ -5333,7 +5325,7 @@ yyreduce:
   case 324:
 
 /* Line 1464 of yacc.c  */
-#line 1863 "ctlib/parser.y"
+#line 1855 "ctlib/parser.y"
     {
 	    if ((yyvsp[(4) - (5)].pDecl))
 	      (yyvsp[(4) - (5)].pDecl)->pointer_flag = 1;
@@ -5344,7 +5336,7 @@ yyreduce:
   case 325:
 
 /* Line 1464 of yacc.c  */
-#line 1869 "ctlib/parser.y"
+#line 1861 "ctlib/parser.y"
     {
 	    if ((yyvsp[(2) - (2)].pDecl))
 	      (yyvsp[(2) - (2)].pDecl)->pointer_flag = 1;
@@ -5355,7 +5347,7 @@ yyreduce:
   case 326:
 
 /* Line 1464 of yacc.c  */
-#line 1875 "ctlib/parser.y"
+#line 1867 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (3)].pDecl))
 	      (yyvsp[(3) - (3)].pDecl)->pointer_flag = 1;
@@ -5366,14 +5358,14 @@ yyreduce:
   case 327:
 
 /* Line 1464 of yacc.c  */
-#line 1883 "ctlib/parser.y"
+#line 1875 "ctlib/parser.y"
     { (yyval.pDecl) = (yyvsp[(2) - (3)].pDecl); ;}
     break;
 
   case 328:
 
 /* Line 1464 of yacc.c  */
-#line 1885 "ctlib/parser.y"
+#line 1877 "ctlib/parser.y"
     {
 	    POSTFIX_DECL((yyvsp[(2) - (4)].pDecl), (yyvsp[(3) - (4)].list));
 	    (yyval.pDecl) = (yyvsp[(2) - (4)].pDecl);
@@ -5383,7 +5375,7 @@ yyreduce:
   case 329:
 
 /* Line 1464 of yacc.c  */
-#line 1890 "ctlib/parser.y"
+#line 1882 "ctlib/parser.y"
     {
 	    POSTFIX_DECL((yyvsp[(2) - (4)].pDecl), (yyvsp[(4) - (4)].list));
 	    (yyval.pDecl) = (yyvsp[(2) - (4)].pDecl);
@@ -5393,7 +5385,7 @@ yyreduce:
   case 330:
 
 /* Line 1464 of yacc.c  */
-#line 1898 "ctlib/parser.y"
+#line 1890 "ctlib/parser.y"
     {
 	    (yyval.pDecl) = IS_LOCAL ? NULL : decl_new((yyvsp[(1) - (1)].pTypedef)->pDecl->identifier, CTT_IDLEN((yyvsp[(1) - (1)].pTypedef)->pDecl));
 	  ;}
@@ -5402,14 +5394,14 @@ yyreduce:
   case 331:
 
 /* Line 1464 of yacc.c  */
-#line 1901 "ctlib/parser.y"
+#line 1893 "ctlib/parser.y"
     { (yyval.pDecl) = (yyvsp[(2) - (3)].pDecl); ;}
     break;
 
   case 335:
 
 /* Line 1464 of yacc.c  */
-#line 1912 "ctlib/parser.y"
+#line 1904 "ctlib/parser.y"
     {
 	    if ((yyvsp[(2) - (2)].pDecl))
 	      (yyvsp[(2) - (2)].pDecl)->pointer_flag = 1;
@@ -5420,7 +5412,7 @@ yyreduce:
   case 336:
 
 /* Line 1464 of yacc.c  */
-#line 1918 "ctlib/parser.y"
+#line 1910 "ctlib/parser.y"
     {
 	    if ((yyvsp[(3) - (3)].pDecl))
 	      (yyvsp[(3) - (3)].pDecl)->pointer_flag = 1;
@@ -5431,7 +5423,7 @@ yyreduce:
   case 337:
 
 /* Line 1464 of yacc.c  */
-#line 1927 "ctlib/parser.y"
+#line 1919 "ctlib/parser.y"
     {
 	    POSTFIX_DECL((yyvsp[(1) - (2)].pDecl), (yyvsp[(2) - (2)].list));
 	    (yyval.pDecl) = (yyvsp[(1) - (2)].pDecl);
@@ -5441,14 +5433,14 @@ yyreduce:
   case 338:
 
 /* Line 1464 of yacc.c  */
-#line 1931 "ctlib/parser.y"
+#line 1923 "ctlib/parser.y"
     { (yyval.pDecl) = (yyvsp[(2) - (3)].pDecl); ;}
     break;
 
   case 339:
 
 /* Line 1464 of yacc.c  */
-#line 1933 "ctlib/parser.y"
+#line 1925 "ctlib/parser.y"
     {
 	    POSTFIX_DECL((yyvsp[(2) - (4)].pDecl), (yyvsp[(4) - (4)].list));
 	    (yyval.pDecl) = (yyvsp[(2) - (4)].pDecl);
@@ -5458,7 +5450,7 @@ yyreduce:
   case 340:
 
 /* Line 1464 of yacc.c  */
-#line 1941 "ctlib/parser.y"
+#line 1933 "ctlib/parser.y"
     {
 	    if ((yyvsp[(1) - (1)].identifier))
 	    {
@@ -5475,35 +5467,35 @@ yyreduce:
   case 341:
 
 /* Line 1464 of yacc.c  */
-#line 1952 "ctlib/parser.y"
+#line 1944 "ctlib/parser.y"
     { (yyval.pDecl) = (yyvsp[(2) - (3)].pDecl); ;}
     break;
 
   case 342:
 
 /* Line 1464 of yacc.c  */
-#line 1956 "ctlib/parser.y"
+#line 1948 "ctlib/parser.y"
     {;}
     break;
 
   case 343:
 
 /* Line 1464 of yacc.c  */
-#line 1957 "ctlib/parser.y"
+#line 1949 "ctlib/parser.y"
     {;}
     break;
 
   case 344:
 
 /* Line 1464 of yacc.c  */
-#line 1958 "ctlib/parser.y"
+#line 1950 "ctlib/parser.y"
     {;}
     break;
 
   case 345:
 
 /* Line 1464 of yacc.c  */
-#line 1963 "ctlib/parser.y"
+#line 1955 "ctlib/parser.y"
     {
 	    if ((yyvsp[(1) - (4)].pDecl))
 	      decl_delete((yyvsp[(1) - (4)].pDecl));
@@ -5513,14 +5505,14 @@ yyreduce:
   case 346:
 
 /* Line 1464 of yacc.c  */
-#line 1967 "ctlib/parser.y"
+#line 1959 "ctlib/parser.y"
     {;}
     break;
 
   case 347:
 
 /* Line 1464 of yacc.c  */
-#line 1969 "ctlib/parser.y"
+#line 1961 "ctlib/parser.y"
     {
 	    if ((yyvsp[(4) - (4)].list))
 	      LL_destroy((yyvsp[(4) - (4)].list), (LLDestroyFunc) value_delete);
@@ -5530,7 +5522,7 @@ yyreduce:
   case 350:
 
 /* Line 1464 of yacc.c  */
-#line 1979 "ctlib/parser.y"
+#line 1971 "ctlib/parser.y"
     {
 	    (yyval.absDecl).pointer_flag  = 0;
 	    (yyval.absDecl).multiplicator = 1;
@@ -5550,21 +5542,21 @@ yyreduce:
   case 352:
 
 /* Line 1464 of yacc.c  */
-#line 1997 "ctlib/parser.y"
+#line 1989 "ctlib/parser.y"
     { (yyval.list) = NULL; ;}
     break;
 
   case 353:
 
 /* Line 1464 of yacc.c  */
-#line 1998 "ctlib/parser.y"
+#line 1990 "ctlib/parser.y"
     { (yyval.list) = NULL; ;}
     break;
 
   case 354:
 
 /* Line 1464 of yacc.c  */
-#line 2003 "ctlib/parser.y"
+#line 1995 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -5580,7 +5572,7 @@ yyreduce:
   case 355:
 
 /* Line 1464 of yacc.c  */
-#line 2014 "ctlib/parser.y"
+#line 2006 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -5596,7 +5588,7 @@ yyreduce:
   case 356:
 
 /* Line 1464 of yacc.c  */
-#line 2025 "ctlib/parser.y"
+#line 2017 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -5612,14 +5604,14 @@ yyreduce:
   case 357:
 
 /* Line 1464 of yacc.c  */
-#line 2035 "ctlib/parser.y"
+#line 2027 "ctlib/parser.y"
     { (yyval.list) = NULL; ;}
     break;
 
   case 358:
 
 /* Line 1464 of yacc.c  */
-#line 2037 "ctlib/parser.y"
+#line 2029 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -5635,7 +5627,7 @@ yyreduce:
   case 359:
 
 /* Line 1464 of yacc.c  */
-#line 2048 "ctlib/parser.y"
+#line 2040 "ctlib/parser.y"
     {
 	    if (IS_LOCAL)
 	      (yyval.list) = NULL;
@@ -5651,7 +5643,7 @@ yyreduce:
   case 360:
 
 /* Line 1464 of yacc.c  */
-#line 2062 "ctlib/parser.y"
+#line 2054 "ctlib/parser.y"
     {
 	    (yyval.absDecl).pointer_flag = 1;
 	    (yyval.absDecl).multiplicator = 1;
@@ -5661,7 +5653,7 @@ yyreduce:
   case 361:
 
 /* Line 1464 of yacc.c  */
-#line 2067 "ctlib/parser.y"
+#line 2059 "ctlib/parser.y"
     {
 	    (yyval.absDecl).pointer_flag = 1;
 	    (yyval.absDecl).multiplicator = 1;
@@ -5671,7 +5663,7 @@ yyreduce:
   case 362:
 
 /* Line 1464 of yacc.c  */
-#line 2072 "ctlib/parser.y"
+#line 2064 "ctlib/parser.y"
     {
 	    (yyvsp[(2) - (2)].absDecl).pointer_flag = 1;
 	    (yyval.absDecl) = (yyvsp[(2) - (2)].absDecl);
@@ -5681,7 +5673,7 @@ yyreduce:
   case 363:
 
 /* Line 1464 of yacc.c  */
-#line 2077 "ctlib/parser.y"
+#line 2069 "ctlib/parser.y"
     {
 	    (yyvsp[(3) - (3)].absDecl).pointer_flag = 1;
 	    (yyval.absDecl) = (yyvsp[(3) - (3)].absDecl);
@@ -5691,21 +5683,21 @@ yyreduce:
   case 364:
 
 /* Line 1464 of yacc.c  */
-#line 2084 "ctlib/parser.y"
+#line 2076 "ctlib/parser.y"
     { (yyval.absDecl) = (yyvsp[(2) - (3)].absDecl); ;}
     break;
 
   case 365:
 
 /* Line 1464 of yacc.c  */
-#line 2085 "ctlib/parser.y"
+#line 2077 "ctlib/parser.y"
     { (yyval.absDecl) = (yyvsp[(2) - (3)].absDecl); ;}
     break;
 
   case 366:
 
 /* Line 1464 of yacc.c  */
-#line 2087 "ctlib/parser.y"
+#line 2079 "ctlib/parser.y"
     {
 	    (yyval.absDecl).pointer_flag  = 0;
 	    (yyval.absDecl).multiplicator = 1;
@@ -5725,7 +5717,7 @@ yyreduce:
   case 367:
 
 /* Line 1464 of yacc.c  */
-#line 2102 "ctlib/parser.y"
+#line 2094 "ctlib/parser.y"
     {
 	    (yyval.absDecl) = (yyvsp[(2) - (4)].absDecl);
 	    if ((yyvsp[(4) - (4)].list))
@@ -5736,7 +5728,7 @@ yyreduce:
 
 
 /* Line 1464 of yacc.c  */
-#line 5740 "ctlib/y_parser.c"
+#line 5732 "ctlib/y_parser.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -5948,7 +5940,7 @@ yyreturn:
 
 
 /* Line 1684 of yacc.c  */
-#line 2109 "ctlib/parser.y"
+#line 2101 "ctlib/parser.y"
 
 
 

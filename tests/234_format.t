@@ -1,14 +1,6 @@
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:26 +0200 $
-# $Revision: 11 $
-# $Source: /tests/234_format.t $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -269,4 +261,3 @@ ok($rv, "\x00"x24);
 eval { $c->tag('bits.y', Format => 'Binary'); };
 
 ok($@, qr/Cannot use 'Format' tag on bitfields/);
-

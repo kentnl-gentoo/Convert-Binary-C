@@ -9,15 +9,7 @@
 #
 ################################################################################
 #
-# $Project: /Convert-Binary-C $
-# $Author: mhx $
-# $Date: 2011/04/10 12:32:12 +0200 $
-# $Revision: 69 $
-# $Source: /bin/ccconfig $
-#
-################################################################################
-#
-# Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+# Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
 #
@@ -29,7 +21,7 @@ use Data::Dumper;
 use strict;
 
 my($NAME) = $0 =~ /([\w\.]+)$/;
-my $VERSION = ('$Snapshot: /Convert-Binary-C/0.76 $' =~ /([^\/\s]+)\s*\$$/)[0];
+my $VERSION = '0.77';
 my $MESSAGE = "\nThis is $NAME, v$VERSION ($0).\n";
 my %OPT = (
   'output-format' => 'dumper',
@@ -56,7 +48,7 @@ unless( GetOptions( \%OPT, qw(
 if( $OPT{version} ) {
   print <<VERSION;
 $MESSAGE
-Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
@@ -663,7 +655,7 @@ sub get_config
 
   # Try to remove as many defines as possible
 
-  $self->_msg( "\nNow let's see which defines aren't neccessary..." );
+  $self->_msg( "\nNow let's see which defines aren't necessary..." );
 
   my %orgdef = %{$self->{predefined}};
   my @additional;
@@ -2935,7 +2927,7 @@ a suitable configuration using something like:
 
 =head1 COPYRIGHT
 
-Copyright (c) 2002-2011 Marcus Holland-Moritz. All rights reserved.
+Copyright (c) 2002-2015 Marcus Holland-Moritz. All rights reserved.
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
